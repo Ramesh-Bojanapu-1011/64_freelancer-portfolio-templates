@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import SiteHeader from "@/components/SiteHeader";
-import SiteFooter from "@/components/SiteFooter";
 import { useRouter } from "next/router";
 import Image from "next/image";
+import { ModeToggle } from "@/components/theme/ModeToggle";
 
 type User = {
+  firstname: string;
+  lastname: string;
   email: string;
   password: string;
   role: "user";
@@ -16,6 +17,8 @@ const AuthPage = () => {
   const [tab, setTab] = useState<"user" | "admin">("user");
   const [userForm, setUserForm] = useState({ email: "", password: "" });
   const [userRegForm, setUserRegForm] = useState({
+    firstname: "",
+    lastname: "",
     email: "",
     password: "",
     confirm: "",
@@ -46,7 +49,7 @@ const AuthPage = () => {
     setMessage("");
     const users = getUsers();
     const user = users.find(
-      (u) => u.email === userForm.email && u.password === userForm.password
+      (u) => u.email === userForm.email && u.password === userForm.password,
     );
     if (user) {
       user.loginTime = new Date().toISOString();
@@ -79,6 +82,8 @@ const AuthPage = () => {
     }
     const now = new Date().toISOString();
     const newUser: User = {
+      firstname: "",
+      lastname: "",
       email: userRegForm.email,
       password: userRegForm.password,
       role: "user",
@@ -88,7 +93,13 @@ const AuthPage = () => {
     setUsers(users);
     setMessage("Registration successful! You can now log in.");
     setShowRegister(false);
-    setUserRegForm({ email: "", password: "", confirm: "" });
+    setUserRegForm({
+      firstname: "",
+      lastname: "",
+      email: "",
+      password: "",
+      confirm: "",
+    });
   };
 
   // User Forgot Password
@@ -114,7 +125,7 @@ const AuthPage = () => {
     ) {
       localStorage.setItem(
         "currentUser",
-        JSON.stringify({ email: adminForm.email, role: "admin" })
+        JSON.stringify({ email: adminForm.email, role: "admin" }),
       );
       router.push("/admin-dshbord");
     } else {
@@ -124,8 +135,10 @@ const AuthPage = () => {
 
   return (
     <>
-      <SiteHeader />
-      <main className="flex flex-col items-center justify-center min-h-[70vh] py-12 px-4 bg-gradient-to-br from-blue-50 via-cyan-100 to-blue-100 dark:from-gray-950 dark:via-gray-900 dark:to-blue-950">
+      <main className="flex flex-col items-center justify-center min-h-[100vh] py-12 px-4 bg-gradient-to-br from-blue-50 via-cyan-100 to-blue-100 dark:from-gray-950 dark:via-gray-900 dark:to-blue-950">
+        <div className="absolute top-4 right-4">
+          <ModeToggle />
+        </div>
         <div className="w-full max-w-md bg-white/90 dark:bg-gray-900/90 rounded-xl shadow-2xl p-8">
           <div className="flex justify-center mb-8">
             <Image
@@ -136,33 +149,41 @@ const AuthPage = () => {
             />
           </div>
 
-          <div className="flex justify-center mb-8">
-            <button
-              className={`px-6 py-2 rounded-t-lg font-bold text-lg transition-colors duration-150 ${
-                tab === "user"
-                  ? "bg-gradient-to-r from-cyan-600 to-blue-700 text-yellow-200"
-                  : "bg-blue-100 dark:bg-gray-800 text-blue-900 dark:text-blue-100"
-              }`}
-              onClick={() => {
-                setTab("user");
-                setMessage("");
-              }}
-            >
-              User
-            </button>
-            <button
-              className={`px-6 py-2 rounded-t-lg font-bold text-lg transition-colors duration-150 ml-2 ${
-                tab === "admin"
-                  ? "bg-gradient-to-r from-cyan-600 to-blue-700 text-yellow-200"
-                  : "bg-blue-100 dark:bg-gray-800 text-blue-900 dark:text-blue-100"
-              }`}
-              onClick={() => {
-                setTab("admin");
-                setMessage("");
-              }}
-            >
-              Admin
-            </button>
+          <div className="mb-8">
+            <div className="flex border-b border-blue-200 dark:border-blue-800 relative">
+              <button
+                className={`w-1/2 py-3 text-center font-bold text-lg transition-colors duration-200 z-10 ${
+                  tab === "user"
+                    ? "text-cyan-600"
+                    : "text-gray-500 hover:text-cyan-500"
+                }`}
+                onClick={() => {
+                  setTab("user");
+                  setMessage("");
+                }}
+              >
+                User
+              </button>
+              <button
+                className={`w-1/2 py-3 text-center font-bold text-lg transition-colors duration-200 z-10 ${
+                  tab === "admin"
+                    ? "text-cyan-600"
+                    : "text-gray-500 hover:text-cyan-500"
+                }`}
+                onClick={() => {
+                  setTab("admin");
+                  setMessage("");
+                }}
+              >
+                Admin
+              </button>
+              <span
+                className={`absolute bottom-0 left-0 h-1 bg-gradient-to-r from-cyan-600 to-blue-700 rounded transition-all duration-300 ${
+                  tab === "admin" ? "translate-x-full" : "translate-x-0"
+                }`}
+                style={{ width: "50%" }}
+              />
+            </div>
           </div>
 
           {/* User Tab */}
@@ -228,6 +249,32 @@ const AuthPage = () => {
                   <h2 className="text-2xl font-bold text-blue-900 dark:text-blue-100 mb-2">
                     User Register
                   </h2>
+                  <input
+                    type="text"
+                    placeholder="First Name"
+                    className="w-full px-4 py-2 rounded border border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-gray-800 text-blue-900 dark:text-blue-100 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+                    value={userRegForm.firstname}
+                    onChange={(e) =>
+                      setUserRegForm((f) => ({
+                        ...f,
+                        firstname: e.target.value,
+                      }))
+                    }
+                    required
+                  />
+                  <input
+                    type="text"
+                    placeholder="Last Name"
+                    className="w-full px-4 py-2 rounded border border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-gray-800 text-blue-900 dark:text-blue-100 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+                    value={userRegForm.lastname}
+                    onChange={(e) =>
+                      setUserRegForm((f) => ({
+                        ...f,
+                        lastname: e.target.value,
+                      }))
+                    }
+                    required
+                  />
                   <input
                     type="email"
                     placeholder="Email"
@@ -360,7 +407,6 @@ const AuthPage = () => {
           )}
         </div>
       </main>
-      <SiteFooter />
     </>
   );
 };
