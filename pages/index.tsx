@@ -1,5 +1,6 @@
 import { ModeToggle } from "@/components/theme/ModeToggle";
 import Head from "next/head";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -22,12 +23,12 @@ export default function Home() {
           portfolio templates. Showcase your skills, attract clients, and grow
           your brand with style and confidence.
         </p>
-        <a
+        <Link
           href="/auth"
           className="inline-block px-8 py-3 rounded-full bg-gradient-to-r from-cyan-600 via-sky-500 to-blue-700 text-yellow-200 font-bold text-lg shadow-lg hover:from-yellow-300 hover:to-yellow-400 hover:text-blue-900 transition-all duration-200"
         >
           Go to Auth Page
-        </a>
+        </Link>
       </main>
     </>
   );
