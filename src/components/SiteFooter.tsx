@@ -86,8 +86,8 @@ const socialLinks = [
 
 const SiteFooter = () => {
   return (
-    <footer className="bg-gradient-to-r from-cyan-600 via-sky-500 to-blue-700 dark:from-gray-950 dark:via-gray-900 dark:to-blue-950 text-blue-50 dark:text-blue-100 pt-12 pb-6 px-4">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+    <footer className="bg-gradient-to-r from-cyan-600 via-sky-500 to-blue-700 dark:from-gray-950 dark:via-gray-900 dark:to-blue-950 text-blue-50 dark:text-blue-100 pt-12 pb-6 px-4 sm:px-6 lg:px-8 caret-transparent">
+      <div className="  mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
         {/* Logo & About */}
         <div>
           <div className="flex items-center gap-2 mb-4">

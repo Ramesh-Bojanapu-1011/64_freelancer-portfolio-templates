@@ -5,7 +5,7 @@ export default function Custom404() {
   return (
     <>
       <SiteHeader />
-      <main className="flex flex-col items-center justify-center min-h-[60vh] py-16 px-4 bg-gradient-to-br from-blue-50 via-cyan-100 to-blue-100 dark:from-gray-950 dark:via-gray-900 dark:to-blue-950">
+      <main className="flex flex-col items-center justify-center min-h-[60vh] py-16 px-4 bg-gradient-to-br from-blue-50 via-cyan-100 to-blue-100 dark:from-gray-950 dark:via-gray-900 dark:to-blue-950 caret-transparent">
         <div className="flex flex-col items-center">
           <svg
             width="120"

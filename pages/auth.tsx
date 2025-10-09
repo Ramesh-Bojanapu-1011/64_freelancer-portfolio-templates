@@ -54,8 +54,6 @@ const AuthPage = () => {
     if (user) {
       user.loginTime = new Date().toISOString();
       setUsers(users);
-      localStorage.setItem("role", "user");
-      localStorage.setItem("loginTime", user.loginTime);
       localStorage.setItem("currentUser", JSON.stringify(user));
       router.push("/home1");
     } else {

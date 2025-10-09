@@ -75,7 +75,7 @@ const SiteHeader = () => {
         <div className="flex justify-between h-16 items-center">
           {/* Logo */}
           <Link
-            href="/"
+            href="/home1"
             className="flex items-center gap-2 text-yellow-300 font-extrabold text-2xl tracking-wide drop-shadow-lg"
           >
             <Image
