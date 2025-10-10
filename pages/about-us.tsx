@@ -3,6 +3,7 @@ import Image from "next/image";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import React from "react";
+import Link from "next/link";
 
 const AboutUs = () => {
   return (
@@ -505,12 +506,12 @@ const AboutUs = () => {
               Let’s work together to create something amazing. Reach out and
               let’s make your vision a reality!
             </p>
-            <a
+            <Link
               href="/contact-us"
               className="inline-block px-8 py-3 rounded-full bg-gradient-to-r from-cyan-600 via-sky-500 to-blue-700 text-yellow-200 font-bold text-lg shadow-lg hover:from-yellow-300 hover:to-yellow-400 hover:text-blue-900 transition-all duration-200"
             >
               Contact Us
-            </a>
+            </Link>
           </div>
         </section>
       </main>
