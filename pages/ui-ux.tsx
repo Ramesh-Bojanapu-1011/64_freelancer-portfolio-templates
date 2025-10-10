@@ -5,38 +5,38 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const WebDesign = () => {
+const UIUXDesign = () => {
   return (
     <>
       <Head>
-        <title>Web Design Services - Freelancer Portfolio</title>
+        <title>UI/UX Design Services - Freelancer Portfolio</title>
         <meta
           name="description"
-          content="Creative, modern web design services for freelancers and businesses. Unique layouts, responsive design, and beautiful user experiences."
+          content="Modern UI/UX design services for freelancers and businesses. Creative interfaces, seamless experiences, and user-centered design."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <SiteHeader />
-      <main className="bg-gradient-to-br from-yellow-50 via-cyan-50 to-blue-100 dark:from-gray-950 dark:via-gray-900 dark:to-blue-950 min-h-screen overflow-x-hidden caret-transparent">
+      <main className="bg-gradient-to-br from-blue-50 via-cyan-50 to-yellow-100 dark:from-gray-950 dark:via-gray-900 dark:to-blue-950 min-h-screen overflow-x-hidden">
         {/* Hero Section */}
-        <section className="relative flex flex-col items-center justify-center min-h-[100vh] py-20 px-4 text-center bg-gradient-to-br from-cyan-50 via-blue-100 to-yellow-50 dark:from-cyan-950 dark:via-gray-950 dark:to-blue-950/80 border-b border-cyan-100 dark:border-cyan-900 overflow-hidden">
+        <section className="relative flex flex-col items-center justify-center min-h-[90vh] py-20 px-4 text-center bg-gradient-to-br from-cyan-50 via-blue-100 to-yellow-50 dark:from-cyan-950 dark:via-gray-950 dark:to-blue-950/80 border-b border-cyan-100 dark:border-cyan-900 overflow-hidden">
           <div className="absolute -top-24 -left-24 w-80 h-80 bg-gradient-to-br from-cyan-200 via-blue-200 to-yellow-100 dark:from-cyan-900 dark:via-blue-950 dark:to-yellow-900 rounded-full blur-3xl opacity-20 pointer-events-none animate-pulse"></div>
-          <h1 className="text-5xl md:text-6xl font-extrabold text-blue-900 dark:text-blue-100 mb-4 drop-shadow-lg">
-            Web Design That Inspires
+          <h1 className="text-5xl md:text-6xl font-extrabold text-blue-900 dark:text-yellow-100 mb-4 drop-shadow-lg">
+            UI/UX Design That Delights
           </h1>
           <p className="text-xl md:text-2xl text-blue-800 dark:text-blue-200 mb-8 max-w-2xl mx-auto">
-            Elevate your brand with creative, modern, and responsive web design
-            tailored for freelancers and businesses.
+            Elevate your product with intuitive, beautiful, and user-centered
+            UI/UX design for web, mobile, and SaaS.
           </p>
           <Link
             href="#contact"
             className="inline-block px-8 py-4 rounded-full bg-gradient-to-r from-cyan-600 via-sky-500 to-blue-700 text-yellow-200 font-bold text-lg shadow hover:from-yellow-300 hover:to-yellow-400 hover:text-blue-900 transition-all duration-200"
           >
-            Get Started
+            Get a Free Consultation
           </Link>
         </section>
 
-        {/* Our Web Design Approach Section */}
+        {/* UI/UX Design Philosophy Section */}
         <section className="relative py-20 px-4 bg-gradient-to-tr from-white via-cyan-50 to-yellow-50 dark:from-gray-900 dark:via-cyan-950 dark:to-yellow-900 border-b border-cyan-100 dark:border-cyan-900 overflow-hidden">
           <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12">
             {/* Illustration or Accent */}
@@ -54,107 +54,73 @@ const WebDesign = () => {
             {/* Content */}
             <div className="flex-1 text-center md:text-left relative z-10">
               <h2 className="text-3xl md:text-4xl font-extrabold text-cyan-700 dark:text-cyan-300 mb-4 drop-shadow-lg">
-                Our Web Design Approach
+                Our UI/UX Design Philosophy
               </h2>
               <p className="text-lg text-blue-800 dark:text-blue-200 mb-6 max-w-xl mx-auto md:mx-0 animate-fade-in">
-                We blend{" "}
+                We believe in{" "}
                 <span className="font-bold text-cyan-700 dark:text-yellow-300">
-                  creativity
+                  clarity
                 </span>
                 ,{" "}
                 <span className="font-bold text-blue-700 dark:text-yellow-200">
-                  usability
+                  delight
                 </span>
-                , and the{" "}
+                , and{" "}
                 <span className="font-bold text-emerald-600 dark:text-yellow-400">
-                  latest technology
-                </span>{" "}
-                to craft websites that are not only beautiful but also
-                effective. Every project is a{" "}
-                <span className="font-bold text-cyan-600 dark:text-yellow-300">
-                  collaboration
+                  purpose
                 </span>
-                , ensuring your vision is brought to life with a unique, modern
-                touch.
+                . Every interface is crafted to be intuitive, visually stunning,
+                and deeply aligned with your users&apos; needs.
               </p>
               <ul className="flex flex-col gap-3 text-left text-blue-900 dark:text-blue-100 font-medium animate-fade-in-up">
                 <li className="flex items-center gap-3 group/item hover:scale-105 transition-transform">
                   <span className="inline-block w-4 h-4 rounded-full bg-cyan-400 shadow-lg group-hover/item:scale-125 transition-transform"></span>
-                  <span>
-                    Custom,{" "}
-                    <span className="text-cyan-700 font-semibold">
-                      responsive layouts
-                    </span>{" "}
-                    for every device
-                  </span>
+                  <span>Human-centered, accessible design for all users</span>
                 </li>
                 <li className="flex items-center gap-3 group/item hover:scale-105 transition-transform">
                   <span className="inline-block w-4 h-4 rounded-full bg-yellow-300 shadow-lg group-hover/item:scale-125 transition-transform"></span>
-                  <span>
-                    <span className="text-yellow-600 font-semibold">
-                      User-focused design
-                    </span>{" "}
-                    for better engagement
-                  </span>
+                  <span>Pixel-perfect, scalable interfaces for any device</span>
                 </li>
                 <li className="flex items-center gap-3 group/item hover:scale-105 transition-transform">
                   <span className="inline-block w-4 h-4 rounded-full bg-blue-300 shadow-lg group-hover/item:scale-125 transition-transform"></span>
-                  <span>
-                    Fast,{" "}
-                    <span className="text-blue-700 font-semibold">
-                      accessible
-                    </span>
-                    , and{" "}
-                    <span className="text-emerald-600 font-semibold">
-                      SEO-friendly
-                    </span>{" "}
-                    code
-                  </span>
+                  <span>Seamless, delightful user journeys</span>
                 </li>
                 <li className="flex items-center gap-3 group/item hover:scale-105 transition-transform">
                   <span className="inline-block w-4 h-4 rounded-full bg-emerald-400 shadow-lg group-hover/item:scale-125 transition-transform"></span>
-                  <span>
-                    <span className="text-emerald-700 font-semibold">
-                      Collaboration
-                    </span>{" "}
-                    at every step
-                  </span>
+                  <span>Collaboration at every step</span>
                 </li>
               </ul>
             </div>
           </div>
         </section>
 
-        {/* Featured Web Design Projects Section */}
+        {/* Featured UI/UX Projects Section */}
         <section className="relative py-20 px-4 bg-gradient-to-br from-blue-50 via-cyan-100 to-yellow-50 dark:from-gray-950 dark:via-gray-900 dark:to-blue-950 border-b border-cyan-100 dark:border-cyan-900 overflow-hidden">
           <div className="max-w-6xl mx-auto text-center relative z-10">
             <h2 className="text-3xl md:text-4xl font-extrabold text-blue-900 dark:text-yellow-200 mb-10 drop-shadow-lg tracking-tight">
-              Featured Web Design Projects
+              Featured UI/UX Projects
             </h2>
             {/* Array-driven project cards */}
             {(() => {
               const projects = [
                 {
-                  img: "/web-project-1.png",
-                  title: "Portfolio Website",
-                  desc: "A modern, responsive portfolio for a creative professional, featuring unique layouts and smooth animations.",
-
+                  img: "/uiux-project-1.png",
+                  title: "SaaS Dashboard Redesign",
+                  desc: "A data-rich SaaS dashboard reimagined for clarity, speed, and delight across all devices.",
                   accent:
                     "-top-8 -left-8 bg-gradient-to-br from-cyan-200 via-blue-200 to-yellow-100 dark:from-cyan-900 dark:via-blue-950 dark:to-yellow-900",
                 },
                 {
-                  img: "/web-project-2.png",
-                  title: "E-Commerce Landing",
-                  desc: "A vibrant landing page for an online shop, optimized for conversions and mobile-first experiences.",
-
+                  img: "/uiux-project-2.png",
+                  title: "Mobile App Experience",
+                  desc: "A mobile-first app with intuitive navigation, playful microinteractions, and bold visuals.",
                   accent:
                     "-top-8 -right-8 bg-gradient-to-br from-yellow-100 via-cyan-200 to-blue-100 dark:from-yellow-900 dark:via-cyan-900 dark:to-blue-950",
                 },
                 {
-                  img: "/web-project-3.png",
-                  title: "Business Homepage",
-                  desc: "A clean, professional homepage for a growing business, with custom graphics and interactive features.",
-
+                  img: "/uiux-project-3.png",
+                  title: "E-Commerce UX Overhaul",
+                  desc: "A seamless shopping journey with frictionless checkout and conversion-optimized flows.",
                   accent:
                     "-bottom-8 -left-8 bg-gradient-to-br from-blue-100 via-cyan-200 to-yellow-100 dark:from-blue-900 dark:via-cyan-900 dark:to-yellow-900",
                 },
@@ -190,17 +156,17 @@ const WebDesign = () => {
           </div>
         </section>
 
-        {/* Web Design Process Section */}
+        {/* UI/UX Design Process Section */}
         <section className="relative py-20 px-4 bg-gradient-to-tr from-yellow-50 via-cyan-50 to-blue-100 dark:from-gray-950 dark:via-gray-900 dark:to-blue-950 border-b border-cyan-100 dark:border-cyan-900 overflow-hidden">
           <div className="max-w-5xl mx-auto text-center relative z-10">
             <h2 className="text-3xl md:text-4xl font-extrabold text-cyan-700 dark:text-cyan-300 mb-10 drop-shadow-lg tracking-tight">
-              Our Web Design Process
+              Our UI/UX Design Process
             </h2>
-            <div className="flex flex-col md:flex-row gap-10 md:gap-0 justify-between items-center md:items-stretch">
+            <div className="flex flex-col min-[769px]:flex-row gap-10 md:gap-5 justify-between items-center md:items-stretch">
               {[
                 {
-                  title: "Discovery",
-                  desc: "We start by understanding your goals, audience, and vision to set a strong foundation.",
+                  title: "Research & Discovery",
+                  desc: "We dive deep into your users, goals, and market to uncover insights that drive design decisions.",
                   icon: (
                     <span className="w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-br from-cyan-200 via-blue-200 to-yellow-100 dark:from-cyan-900 dark:via-blue-950 dark:to-yellow-900 shadow-lg border-4 border-cyan-200 dark:border-cyan-800">
                       <svg
@@ -222,8 +188,8 @@ const WebDesign = () => {
                   ),
                 },
                 {
-                  title: "Design & Prototype",
-                  desc: "We craft wireframes and high-fidelity designs, focusing on creativity, usability, and your brand.",
+                  title: "Wireframing & Prototyping",
+                  desc: "We sketch, wireframe, and prototype to explore ideas and validate flows before visual design.",
                   icon: (
                     <span className="w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-br from-yellow-100 via-cyan-200 to-blue-100 dark:from-yellow-900 dark:via-cyan-900 dark:to-blue-950 shadow-lg border-4 border-yellow-200 dark:border-cyan-900">
                       <svg
@@ -251,8 +217,8 @@ const WebDesign = () => {
                   ),
                 },
                 {
-                  title: "Development",
-                  desc: "We build your site with modern code, ensuring speed, accessibility, and responsiveness.",
+                  title: "Visual Design & Handoff",
+                  desc: "We create stunning, on-brand visuals and hand off pixel-perfect assets to development.",
                   icon: (
                     <span className="w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-br from-blue-100 via-cyan-200 to-yellow-100 dark:from-blue-900 dark:via-cyan-900 dark:to-yellow-900 shadow-lg border-4 border-blue-200 dark:border-cyan-900">
                       <svg
@@ -279,8 +245,8 @@ const WebDesign = () => {
                   ),
                 },
                 {
-                  title: "Launch & Support",
-                  desc: "We launch your site and provide ongoing support, so you can focus on your business.",
+                  title: "Testing & Iteration",
+                  desc: "We test with real users, gather feedback, and iterate for continuous improvement.",
                   icon: (
                     <span className="w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-br from-emerald-200 via-cyan-100 to-yellow-100 dark:from-emerald-900 dark:via-cyan-900 dark:to-yellow-900 shadow-lg border-4 border-emerald-200 dark:border-cyan-900">
                       <svg
@@ -326,11 +292,11 @@ const WebDesign = () => {
           </div>
         </section>
 
-        {/* Why Choose Us Section */}
+        {/* Why Choose Us for UI/UX Section */}
         <section className="relative py-20 px-4 bg-gradient-to-br from-white via-cyan-50 to-yellow-50 dark:from-gray-900 dark:via-cyan-950 dark:to-yellow-900 border-b border-cyan-100 dark:border-cyan-900 overflow-hidden">
           <div className="max-w-6xl mx-auto text-center relative z-10">
             <h2 className="text-3xl md:text-4xl font-extrabold text-blue-900 dark:text-yellow-200 mb-10 drop-shadow-lg tracking-tight">
-              Why Choose Us for Web Design?
+              Why Choose Us for UI/UX Design?
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {[
@@ -350,8 +316,8 @@ const WebDesign = () => {
                       </svg>
                     </span>
                   ),
-                  title: "Award-Winning Creativity",
-                  desc: "Our designs have been recognized for their originality and impact.",
+                  title: "Award-Winning UX",
+                  desc: "Our work is recognized for innovation, usability, and impact.",
                 },
                 {
                   icon: (
@@ -373,8 +339,8 @@ const WebDesign = () => {
                       </svg>
                     </span>
                   ),
-                  title: "Proven Results",
-                  desc: "We deliver sites that drive engagement, conversions, and growth.",
+                  title: "User-First Approach",
+                  desc: "We design for real people, not just pixels or trends.",
                 },
                 {
                   icon: (
@@ -401,8 +367,8 @@ const WebDesign = () => {
                       </svg>
                     </span>
                   ),
-                  title: "Modern, Clean Code",
-                  desc: "We use the latest tech for fast, accessible, and maintainable websites.",
+                  title: "Modern, Scalable Systems",
+                  desc: "We create design systems that grow with your business.",
                 },
                 {
                   icon: (
@@ -423,8 +389,8 @@ const WebDesign = () => {
                       </svg>
                     </span>
                   ),
-                  title: "Ongoing Support",
-                  desc: "We’re here for you after launch, with updates and expert help.",
+                  title: "Ongoing Partnership",
+                  desc: "We support you after launch with insights, updates, and care.",
                 },
               ].map((feature, idx) => (
                 <div
@@ -453,18 +419,17 @@ const WebDesign = () => {
           <div className="absolute -top-16 -left-16 w-64 h-64 bg-cyan-400/20 rounded-full blur-2xl pointer-events-none"></div>
           <div className="absolute -bottom-16 -right-16 w-64 h-64 bg-yellow-300/10 rounded-full blur-2xl pointer-events-none"></div>
           <h2 className="text-4xl md:text-5xl font-extrabold text-yellow-200 mb-6 drop-shadow-lg tracking-tight">
-            Ready to Elevate Your Brand?
+            Ready to Transform Your Experience?
           </h2>
           <p className="text-xl md:text-2xl text-blue-100 mb-10 max-w-2xl mx-auto">
-            Let&apos;s build something amazing together. Start your project
-            today and make your vision a reality with a modern, high-impact
-            portfolio.
+            Let’s create something users love. Start your UI/UX project today
+            and make your vision a reality with a modern, high-impact design.
           </p>
           <Link
             href="/contact-us"
             className="inline-block px-10 py-4 rounded-full bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-500 text-blue-900 font-bold text-xl shadow-lg hover:from-cyan-400 hover:to-blue-500 hover:text-yellow-100 transition-all duration-200"
           >
-            Start Your Project
+            Start Your UI/UX Project
           </Link>
         </section>
       </main>
@@ -473,4 +438,4 @@ const WebDesign = () => {
   );
 };
 
-export default WebDesign;
+export default UIUXDesign;
