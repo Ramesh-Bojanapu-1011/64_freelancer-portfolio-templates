@@ -22,7 +22,7 @@ const navLinks = [
       { label: "Branding", href: "/branding" },
       { label: "SEO", href: "/seo" },
       { label: "Content Writing", href: "/content-writing" },
-      { label: "Digital Marketing", href: "/marketing" },
+      { label: "Digital Marketing", href: "/digital-marketing" },
     ],
   },
   { label: "Blog", href: "/blog" },
