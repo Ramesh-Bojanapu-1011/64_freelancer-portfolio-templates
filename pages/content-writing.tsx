@@ -1,4 +1,3 @@
-
 import Head from "next/head";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
@@ -26,7 +25,8 @@ const ContentWriting = () => {
             Words That Win Hearts & Google
           </h1>
           <p className="text-xl md:text-2xl text-blue-800 dark:text-blue-200 mb-8 max-w-2xl mx-auto">
-            Elevate your brand with content that connects, converts, and ranks. We craft copy that tells your story and drives results.
+            Elevate your brand with content that connects, converts, and ranks.
+            We craft copy that tells your story and drives results.
           </p>
           <Link
             href="#contact"
@@ -57,7 +57,20 @@ const ContentWriting = () => {
                 Our Content Philosophy
               </h2>
               <p className="text-lg text-blue-800 dark:text-blue-200 mb-6 max-w-xl mx-auto md:mx-0 animate-fade-in">
-                We believe in <span className="font-bold text-yellow-600 dark:text-yellow-300">clarity</span>, <span className="font-bold text-cyan-700 dark:text-cyan-200">creativity</span>, and <span className="font-bold text-blue-700 dark:text-yellow-200">connection</span>. Every word is chosen to engage, inform, and inspire your audience.
+                We believe in{" "}
+                <span className="font-bold text-yellow-600 dark:text-yellow-300">
+                  clarity
+                </span>
+                ,{" "}
+                <span className="font-bold text-cyan-700 dark:text-cyan-200">
+                  creativity
+                </span>
+                , and{" "}
+                <span className="font-bold text-blue-700 dark:text-yellow-200">
+                  connection
+                </span>
+                . Every word is chosen to engage, inform, and inspire your
+                audience.
               </p>
               <ul className="flex flex-col gap-3 text-left text-blue-900 dark:text-blue-100 font-medium animate-fade-in-up">
                 <li className="flex items-center gap-3 group/item hover:scale-105 transition-transform">
@@ -156,9 +169,20 @@ const ContentWriting = () => {
                   desc: "We learn your goals, audience, and brand to set the stage for great content.",
                   icon: (
                     <span className="w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-br from-yellow-200 via-cyan-200 to-blue-100 dark:from-yellow-900 dark:via-cyan-900 dark:to-blue-950 shadow-lg border-4 border-yellow-200 dark:border-cyan-800">
-                      <svg width="32" height="32" fill="none" viewBox="0 0 24 24">
+                      <svg
+                        width="32"
+                        height="32"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                      >
                         <circle cx="12" cy="12" r="10" fill="#fde68a" />
-                        <path d="M12 8v4l3 2" stroke="#eab308" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                        <path
+                          d="M12 8v4l3 2"
+                          stroke="#eab308"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
                       </svg>
                     </span>
                   ),
@@ -168,9 +192,26 @@ const ContentWriting = () => {
                   desc: "We research topics, keywords, and trends to craft a winning content plan.",
                   icon: (
                     <span className="w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-br from-cyan-100 via-yellow-200 to-blue-100 dark:from-cyan-900 dark:via-yellow-900 dark:to-blue-950 shadow-lg border-4 border-cyan-100 dark:border-yellow-900">
-                      <svg width="32" height="32" fill="none" viewBox="0 0 24 24">
-                        <rect x="4" y="7" width="16" height="10" rx="3" fill="#a7f3d0" />
-                        <path d="M8 11h8M8 15h4" stroke="#0891b2" strokeWidth="2" strokeLinecap="round" />
+                      <svg
+                        width="32"
+                        height="32"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                      >
+                        <rect
+                          x="4"
+                          y="7"
+                          width="16"
+                          height="10"
+                          rx="3"
+                          fill="#a7f3d0"
+                        />
+                        <path
+                          d="M8 11h8M8 15h4"
+                          stroke="#0891b2"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                        />
                       </svg>
                     </span>
                   ),
@@ -180,9 +221,25 @@ const ContentWriting = () => {
                   desc: "We write, edit, and refine content for clarity, creativity, and SEO impact.",
                   icon: (
                     <span className="w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-br from-blue-100 via-yellow-200 to-cyan-100 dark:from-blue-900 dark:via-yellow-900 dark:to-cyan-900 shadow-lg border-4 border-blue-100 dark:border-yellow-900">
-                      <svg width="32" height="32" fill="none" viewBox="0 0 24 24">
-                        <rect x="5" y="5" width="14" height="14" rx="3" fill="#bae6fd" />
-                        <path d="M9 9h6v6H9z" stroke="#0891b2" strokeWidth="2" />
+                      <svg
+                        width="32"
+                        height="32"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                      >
+                        <rect
+                          x="5"
+                          y="5"
+                          width="14"
+                          height="14"
+                          rx="3"
+                          fill="#bae6fd"
+                        />
+                        <path
+                          d="M9 9h6v6H9z"
+                          stroke="#0891b2"
+                          strokeWidth="2"
+                        />
                       </svg>
                     </span>
                   ),
@@ -192,8 +249,19 @@ const ContentWriting = () => {
                   desc: "We deliver, optimize, and support your content for maximum results.",
                   icon: (
                     <span className="w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-br from-emerald-200 via-cyan-100 to-yellow-100 dark:from-emerald-900 dark:via-cyan-900 dark:to-yellow-900 shadow-lg border-4 border-emerald-200 dark:border-cyan-900">
-                      <svg width="32" height="32" fill="none" viewBox="0 0 24 24">
-                        <path d="M12 19V5M5 12l7-7 7 7" stroke="#10b981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      <svg
+                        width="32"
+                        height="32"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M12 19V5M5 12l7-7 7 7"
+                          stroke="#10b981"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
                       </svg>
                     </span>
                   ),
@@ -203,7 +271,9 @@ const ContentWriting = () => {
                   key={step.title}
                   className="flex-1 flex flex-col items-center min-[769px]:items-start relative"
                 >
-                  <div className="flex justify-center items-center w-full">{step.icon}</div>
+                  <div className="flex justify-center items-center w-full">
+                    {step.icon}
+                  </div>
                   <h3 className="mt-4 text-xl font-bold text-cyan-700 dark:text-yellow-300 mb-2 text-center min-[769px]:text-left text-nowrap">
                     {step.title}
                   </h3>
@@ -231,8 +301,16 @@ const ContentWriting = () => {
                 {
                   icon: (
                     <span className="w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-br from-yellow-200 via-cyan-200 to-blue-100 dark:from-yellow-900 dark:via-cyan-900 dark:to-blue-950 shadow-lg border-4 border-yellow-200 dark:border-cyan-800">
-                      <svg width="32" height="32" fill="none" viewBox="0 0 24 24">
-                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01z" fill="#fde68a" />
+                      <svg
+                        width="32"
+                        height="32"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01z"
+                          fill="#fde68a"
+                        />
                       </svg>
                     </span>
                   ),
@@ -242,9 +320,20 @@ const ContentWriting = () => {
                 {
                   icon: (
                     <span className="w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-br from-cyan-100 via-yellow-200 to-blue-100 dark:from-cyan-900 dark:via-yellow-900 dark:to-blue-950 shadow-lg border-4 border-cyan-100 dark:border-yellow-900">
-                      <svg width="32" height="32" fill="none" viewBox="0 0 24 24">
+                      <svg
+                        width="32"
+                        height="32"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                      >
                         <circle cx="12" cy="12" r="10" fill="#a7f3d0" />
-                        <path d="M8 12l2 2 4-4" stroke="#0891b2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                        <path
+                          d="M8 12l2 2 4-4"
+                          stroke="#0891b2"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
                       </svg>
                     </span>
                   ),
@@ -254,9 +343,25 @@ const ContentWriting = () => {
                 {
                   icon: (
                     <span className="w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-br from-blue-100 via-yellow-200 to-cyan-100 dark:from-blue-900 dark:via-yellow-900 dark:to-cyan-900 shadow-lg border-4 border-blue-100 dark:border-yellow-900">
-                      <svg width="32" height="32" fill="none" viewBox="0 0 24 24">
-                        <rect x="5" y="5" width="14" height="14" rx="3" fill="#bae6fd" />
-                        <path d="M9 9h6v6H9z" stroke="#0891b2" strokeWidth="2" />
+                      <svg
+                        width="32"
+                        height="32"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                      >
+                        <rect
+                          x="5"
+                          y="5"
+                          width="14"
+                          height="14"
+                          rx="3"
+                          fill="#bae6fd"
+                        />
+                        <path
+                          d="M9 9h6v6H9z"
+                          stroke="#0891b2"
+                          strokeWidth="2"
+                        />
                       </svg>
                     </span>
                   ),
@@ -266,8 +371,19 @@ const ContentWriting = () => {
                 {
                   icon: (
                     <span className="w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-br from-emerald-200 via-cyan-100 to-yellow-100 dark:from-emerald-900 dark:via-cyan-900 dark:to-yellow-900 shadow-lg border-4 border-emerald-200 dark:border-cyan-900">
-                      <svg width="32" height="32" fill="none" viewBox="0 0 24 24">
-                        <path d="M12 19V5M5 12l7-7 7 7" stroke="#10b981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      <svg
+                        width="32"
+                        height="32"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M12 19V5M5 12l7-7 7 7"
+                          stroke="#10b981"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
                       </svg>
                     </span>
                   ),
@@ -304,7 +420,8 @@ const ContentWriting = () => {
             Ready to Elevate Your Content?
           </h2>
           <p className="text-xl md:text-2xl text-blue-100 dark:text-yellow-100 mb-10 max-w-2xl mx-auto">
-            Let’s tell your story and grow your brand. Start your content writing project today and make your message unforgettable.
+            Let’s tell your story and grow your brand. Start your content
+            writing project today and make your message unforgettable.
           </p>
           <Link
             href="/contact-us"
