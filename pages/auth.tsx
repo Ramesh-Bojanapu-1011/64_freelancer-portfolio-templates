@@ -21,7 +21,6 @@ const AuthPage = () => {
     lastname: "",
     email: "",
     password: "",
-    confirm: "",
   });
   const [userForgot, setUserForgot] = useState({ email: "" });
   const [adminForm, setAdminForm] = useState({ email: "", password: "" });
@@ -69,8 +68,8 @@ const AuthPage = () => {
       setMessage("All fields are required.");
       return;
     }
-    if (userRegForm.password !== userRegForm.confirm) {
-      setMessage("Passwords do not match.");
+    if (userRegForm.password.length < 6) {
+      setMessage("Password must be at least 6 characters.");
       return;
     }
     const users = getUsers();
@@ -80,8 +79,8 @@ const AuthPage = () => {
     }
     const now = new Date().toISOString();
     const newUser: User = {
-      firstname: "",
-      lastname: "",
+      firstname: userRegForm.firstname,
+      lastname: userRegForm.lastname,
       email: userRegForm.email,
       password: userRegForm.password,
       role: "user",
@@ -96,7 +95,6 @@ const AuthPage = () => {
       lastname: "",
       email: "",
       password: "",
-      confirm: "",
     });
   };
 
@@ -125,7 +123,7 @@ const AuthPage = () => {
         "currentUser",
         JSON.stringify({ email: adminForm.email, role: "admin" }),
       );
-      router.push("/admin-dshbord");
+      router.push("/admin-dashbord");
     } else {
       setMessage("Invalid admin credentials.");
     }
@@ -296,16 +294,7 @@ const AuthPage = () => {
                     }
                     required
                   />
-                  <input
-                    type="password"
-                    placeholder="Confirm Password"
-                    className="w-full px-4 py-2 rounded border border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-gray-800 text-blue-900 dark:text-blue-100 focus:outline-none focus:ring-2 focus:ring-cyan-400"
-                    value={userRegForm.confirm}
-                    onChange={(e) =>
-                      setUserRegForm((f) => ({ ...f, confirm: e.target.value }))
-                    }
-                    required
-                  />
+
                   <button
                     type="submit"
                     className="w-full py-2 rounded bg-gradient-to-r from-cyan-600 to-blue-700 text-yellow-200 font-bold text-lg shadow-lg hover:from-yellow-300 hover:to-yellow-400 hover:text-blue-900 transition-all duration-200"

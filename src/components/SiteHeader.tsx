@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { ModeToggle } from "./theme/ModeToggle";
+import { NextRouter, useRouter } from "next/router";
 
 const navLinks = [
   {
@@ -50,9 +51,65 @@ const languages = [
  * - Designed for use at the top of the site as a sticky header.
  */
 const SiteHeader = () => {
+  const router = useRouter();
   const [navOpen, setNavOpen] = React.useState(false);
   const [dropdownOpen, setDropdownOpen] = React.useState<string | null>(null);
   const [langOpen, setLangOpen] = React.useState(false);
+  const [profileOpen, setProfileOpen] = React.useState(false);
+  type User = {
+    firstname?: string;
+    lastname?: string;
+    email?: string;
+    role?: string;
+    registerTime?: string;
+    loginTime?: string;
+  };
+  const [user, setUser] = React.useState<User | null>(null);
+
+  // Get user details from localStorage on mount
+  React.useEffect(() => {
+    if (typeof window !== "undefined") {
+      try {
+        const userStr = localStorage.getItem("currentUser");
+        if (userStr) {
+          setUser(JSON.parse(userStr));
+        } else {
+          setUser(null);
+        }
+      } catch {
+        setUser(null);
+      }
+    }
+  }, []);
+
+  const HandleLogout = (router: NextRouter) => {
+    if (typeof window !== "undefined" && user && user.email) {
+      // Update logoutTime in currentUser
+      const now = new Date().toISOString();
+      const updatedUser = { ...user, logoutTime: now };
+      localStorage.setItem("currentUser", JSON.stringify(updatedUser));
+      // Update users array
+      try {
+        const usersStr = localStorage.getItem("users");
+        if (usersStr) {
+          const usersArr = JSON.parse(usersStr);
+          const idx = usersArr.findIndex(
+            (u: { email?: string }) => u.email === user.email,
+          );
+          if (idx !== -1) {
+            usersArr[idx] = {
+              ...usersArr[idx],
+              logoutTime: now,
+            };
+            localStorage.setItem("users", JSON.stringify(usersArr));
+          }
+        }
+      } catch {}
+      localStorage.removeItem("currentUser");
+    }
+    router.push("/auth");
+  };
+
   const setLang = (code: string) => {
     if (typeof window !== "undefined") {
       if (code === "en") {
@@ -67,7 +124,6 @@ const SiteHeader = () => {
       }
     }
   };
-  const [profileOpen, setProfileOpen] = React.useState(false);
 
   return (
     <header className="sticky top-0 z-50 w-full bg-gradient-to-r from-cyan-600 via-sky-500 to-blue-700 dark:from-gray-950 dark:via-gray-900 dark:to-blue-950 shadow-xl caret-transparent">
@@ -160,17 +216,17 @@ const SiteHeader = () => {
                 className="px-3 py-2 rounded-full bg-yellow-300/20 hover:bg-yellow-300/40 text-yellow-200 flex items-center gap-2 focus:outline-none transition-colors duration-150"
                 onClick={() => setProfileOpen((v) => !v)}
               >
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                >
-                  <circle cx="12" cy="8" r="4" />
-                  <path d="M6 20c0-2.21 3.58-4 8-4s8 1.79 8 4" />
-                </svg>
-                <span className="hidden lg:inline">Profile</span>
+                <span className="hidden lg:inline">
+                  {user && (user.firstname || user.lastname)
+                    ? `${
+                        user.firstname && user.firstname.charAt(0).toUpperCase()
+                      }${
+                        user.lastname && user.lastname.charAt(0).toUpperCase()
+                      }`.trim()
+                    : user && user.email
+                      ? user.email
+                      : "AD"}
+                </span>
                 <svg
                   className="w-4 h-4 ml-1"
                   fill="none"
@@ -186,11 +242,30 @@ const SiteHeader = () => {
                 </svg>
               </button>
               <div
-                className={`absolute right-0 mt-2 w-32 bg-blue-50 dark:bg-gray-900 rounded shadow-lg py-2 transition-all duration-150 z-20 border border-blue-200 dark:border-blue-900 ${
+                className={`absolute right-0 mt-2 w-48 bg-blue-50 dark:bg-gray-900 rounded shadow-lg py-2 transition-all duration-150 z-20 border border-blue-200 dark:border-blue-900 ${
                   profileOpen ? "block" : "hidden"
                 }`}
               >
-                <button className="block w-full text-left px-4 py-2 text-blue-900 dark:text-blue-100 hover:bg-cyan-100 dark:hover:bg-blue-950 rounded transition-colors duration-100">
+                {user ? (
+                  <div className="px-4 py-2 text-blue-900 dark:text-blue-100 border-b border-blue-100 dark:border-blue-800">
+                    <div className="font-semibold">
+                      {user.firstname || user.lastname
+                        ? `${user.firstname || ""} ${
+                            user.lastname || ""
+                          }`.trim()
+                        : user.email}
+                    </div>
+                    {user.email && (
+                      <div className="text-xs text-blue-700 dark:text-blue-300 truncate">
+                        {user.email}
+                      </div>
+                    )}
+                  </div>
+                ) : null}
+                <button
+                  onClick={() => HandleLogout(router)}
+                  className="block w-full text-left px-4 py-2 text-blue-900 dark:text-blue-100 hover:bg-cyan-100 dark:hover:bg-blue-950 rounded transition-colors duration-100"
+                >
                   Logout
                 </button>
               </div>
@@ -322,23 +397,21 @@ const SiteHeader = () => {
                 className="w-full flex justify-between items-center px-3 py-2 rounded-md text-yellow-700 dark:text-yellow-200 font-semibold hover:bg-yellow-100 dark:hover:bg-yellow-900 transition-colors duration-150"
                 onClick={() => setProfileOpen((v) => !v)}
               >
-                Profile
-                <svg
-                  className="w-4 h-4 ml-1"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
+                {user && (user.firstname || user.lastname)
+                  ? `${
+                      user.firstname && user.firstname.charAt(0).toUpperCase()
+                    }${
+                      user.lastname && user.lastname.charAt(0).toUpperCase()
+                    }`.trim()
+                  : user && user.email
+                    ? user.email
+                    : "AD"}
               </button>
               <div className={`pl-4 mt-1 ${profileOpen ? "block" : "hidden"}`}>
-                <button className="block w-full text-left px-4 py-2 text-yellow-700 dark:text-yellow-200 hover:bg-yellow-100 dark:hover:bg-yellow-900 rounded transition-colors duration-100">
+                <button
+                  onClick={() => HandleLogout(router)}
+                  className="block w-full text-left px-4 py-2 text-yellow-700 dark:text-yellow-200 hover:bg-yellow-100 dark:hover:bg-yellow-900 rounded transition-colors duration-100"
+                >
                   Logout
                 </button>
               </div>
