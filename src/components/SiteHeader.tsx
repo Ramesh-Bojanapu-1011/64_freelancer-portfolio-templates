@@ -126,7 +126,7 @@ const SiteHeader = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-gradient-to-r from-cyan-600 via-sky-500 to-blue-700 dark:from-gray-950 dark:via-gray-900 dark:to-blue-950 shadow-xl caret-transparent max-h-screen overflow-y-auto">
+    <header className="sticky top-0 z-50 w-full bg-gradient-to-r from-cyan-600 via-sky-500 to-blue-700 dark:from-gray-950 dark:via-gray-900 dark:to-blue-950 shadow-xl caret-transparent max-h-screen overflow-y-auto text-nowrap">
       <nav className="  mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           {/* Logo */}
@@ -143,7 +143,7 @@ const SiteHeader = () => {
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden min-[769px]:flex items-center gap-4">
             {navLinks.map((link) =>
               link.dropdown ? (
                 <div key={link.label} className="relative group">
@@ -286,7 +286,7 @@ const SiteHeader = () => {
           </div>
 
           {/* Mobile Hamburger */}
-          <div className="md:hidden flex items-center">
+          <div className="min-[769px]:hidden flex items-center">
             <button
               className="text-yellow-200 p-2 rounded-md focus:outline-none hover:bg-yellow-300/20 transition-colors duration-150"
               onClick={() => setNavOpen((v) => !v)}
@@ -311,7 +311,7 @@ const SiteHeader = () => {
 
         {/* Mobile Nav */}
         <div
-          className={`md:hidden transition-all duration-300 bg-blue-50/95 dark:bg-gray-950/95 rounded-b-lg shadow-lg overflow-hidden ${
+          className={`min-[769px]:hidden transition-all duration-300 bg-blue-50/95 dark:bg-gray-950/95 rounded-b-lg shadow-lg overflow-hidden ${
             navOpen ? "max-h-[600px] py-4" : "max-h-0 py-0"
           }`}
         >
