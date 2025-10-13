@@ -3,16 +3,15 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import React from "react";
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
 
 const StandoutPortfolioBlog = () => {
+  const { t } = useTranslation();
   return (
     <>
       <Head>
-        <title>Building a Standout Freelancer Portfolio | Blog</title>
-        <meta
-          name="description"
-          content="Learn how to build a standout freelancer portfolio that attracts clients and showcases your unique skills. Tips, strategies, and inspiration for freelancers."
-        />
+        <title>{t("standout.title")}</title>
+        <meta name="description" content={t("standout.metaDescription")} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <SiteHeader />
@@ -21,7 +20,7 @@ const StandoutPortfolioBlog = () => {
         <section className="relative flex flex-col items-center justify-center min-h-[40vh] py-12 px-4 text-center bg-gradient-to-br from-yellow-50 via-cyan-50 to-blue-100 dark:from-cyan-950 dark:via-gray-950 dark:to-blue-950/80 border-b border-cyan-100 dark:border-cyan-900 overflow-hidden">
           <div className="absolute -top-24 -left-24 w-80 h-80 bg-gradient-to-br from-yellow-200 via-cyan-200 to-blue-100 dark:from-yellow-900 dark:via-cyan-900 dark:to-blue-950 rounded-full blur-3xl opacity-20 pointer-events-none animate-pulse"></div>
           <h1 className="text-4xl md:text-6xl font-extrabold text-blue-900 dark:text-yellow-100 mb-4 drop-shadow-lg">
-            Building a Standout Freelancer Portfolio
+            {t("standout.heroTitle")}
           </h1>
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-4 text-base text-blue-700 dark:text-blue-200 opacity-80">
             <span className="inline-flex items-center gap-2">
@@ -33,7 +32,7 @@ const StandoutPortfolioBlog = () => {
                 <path d="M10 2a8 8 0 100 16 8 8 0 000-16zm0 14.5A6.5 6.5 0 1110 3.5a6.5 6.5 0 010 13z" />
                 <circle cx="10" cy="10" r="3" />
               </svg>
-              By <span className="font-semibold">Alex Creative</span>
+              {t("standout.by")} <span className="font-semibold">{t("standout.author")}</span>
             </span>
             <span className="hidden md:inline">|</span>
             <span className="inline-flex items-center gap-2">
@@ -55,9 +54,7 @@ const StandoutPortfolioBlog = () => {
               >
                 <path d="M4 3a1 1 0 00-1 1v12a1 1 0 001 1h12a1 1 0 001-1V4a1 1 0 00-1-1H4zm1 2h10v10H5V5z" />
               </svg>
-              <span className="font-semibold">
-                Portfolio, Freelancing, Tips
-              </span>
+              <span className="font-semibold">{t("standout.tags")}</span>
             </span>
           </div>
           <div className="w-full flex justify-center mb-6">
@@ -72,8 +69,7 @@ const StandoutPortfolioBlog = () => {
             />
           </div>
           <p className="text-xl md:text-2xl text-blue-800 dark:text-blue-200 mb-2 max-w-2xl mx-auto">
-            Your portfolio is your digital handshake. Discover how to craft a
-            portfolio that wins clients and sets you apart in a crowded market.
+            {t("standout.heroDesc")}
           </p>
         </section>
 
@@ -111,157 +107,104 @@ const StandoutPortfolioBlog = () => {
               <div className="rounded-[22px] bg-white/90 dark:bg-gray-900/90 px-6 py-10 md:px-12 md:py-14">
                 <article className="prose prose-lg dark:prose-invert prose-yellow prose-headings:text-blue-900 dark:prose-headings:text-yellow-200 prose-a:text-cyan-700 dark:prose-a:text-cyan-300">
                   <h2 className="relative inline-block pb-1 mb-6 after:block after:absolute after:left-0 after:bottom-0 after:w-full after:h-2 after:bg-gradient-to-r after:from-yellow-200 after:via-cyan-200 after:to-blue-200 after:rounded-full after:opacity-60 animate-pulse">
-                    Why Your Portfolio Matters
+                    {t("standout.section.whyTitle")}
                   </h2>
-                  <p>
-                    In the world of freelancing, your portfolio is more than a
-                    collection of work—it&#39;s your brand, your story, and your
-                    best sales tool. A standout portfolio not only showcases
-                    your skills but also builds trust and credibility with
-                    potential clients.
-                  </p>
+                  <p>{t("standout.section.intro")}</p>
                   <h3 className="font-extrabold text-cyan-700 dark:text-yellow-300 mt-10 animate-fade-in-up">
-                    1. Define Your Unique Value
+                    {t("standout.section.step1.title")}
                   </h3>
-                  <p>
-                    Start by identifying what makes you different. Are you a web
-                    designer with a knack for storytelling? A developer who
-                    loves clean, accessible code? Highlight your strengths and
-                    the problems you solve best.
-                  </p>
+                  <p>{t("standout.section.step1.desc")}</p>
                   <h3 className="font-extrabold text-cyan-700 dark:text-yellow-300 mt-10 animate-fade-in-up">
-                    2. Curate, Don’t Just Collect
+                    {t("standout.section.step2.title")}
                   </h3>
-                  <p>
-                    Quality beats quantity. Select projects that reflect your
-                    best work and align with the type of clients you want to
-                    attract. For each project, share the story behind it—your
-                    process, challenges, and the results you delivered.
-                  </p>
+                  <p>{t("standout.section.step2.desc")}</p>
                   <h3 className="font-extrabold text-cyan-700 dark:text-yellow-300 mt-10 animate-fade-in-up">
-                    3. Show, Don’t Tell
+                    {t("standout.section.step3.title")}
                   </h3>
-                  <p>
-                    Use visuals, case studies, and testimonials to bring your
-                    work to life. Screenshots, before-and-after comparisons, and
-                    client feedback add credibility and make your portfolio
-                    memorable.
-                  </p>
+                  <p>{t("standout.section.step3.desc")}</p>
                   <h3 className="font-extrabold text-cyan-700 dark:text-yellow-300 mt-10 animate-fade-in-up">
-                    4. Make It Easy to Navigate
+                    {t("standout.section.step4.title")}
                   </h3>
-                  <p>
-                    A clean, intuitive layout helps visitors find what they’re
-                    looking for. Use clear categories, project tags, and a
-                    simple menu. Don’t forget a strong call-to-action—make it
-                    easy for clients to contact you.
-                  </p>
+                  <p>{t("standout.section.step4.desc")}</p>
                   <h3 className="font-extrabold text-cyan-700 dark:text-yellow-300 mt-10 animate-fade-in-up">
-                    5. Keep It Fresh
+                    {t("standout.section.step5.title")}
                   </h3>
-                  <p>
-                    Update your portfolio regularly with new work, skills, and
-                    achievements. An up-to-date portfolio signals that you’re
-                    active, engaged, and always improving.
-                  </p>
+                  <p>{t("standout.section.step5.desc")}</p>
                   <blockquote className="border-l-4 border-cyan-400 bg-cyan-50 dark:bg-cyan-900/30 px-6 py-4 rounded-xl shadow-md text-lg font-semibold text-blue-900 dark:text-yellow-100 my-8 animate-fade-in scale-105">
-                    <span className="text-3xl mr-2 align-middle text-cyan-400 dark:text-yellow-200">
-                      “
-                    </span>
-                    Your portfolio is the bridge between your talent and your
-                    next big opportunity.
-                    <span className="text-3xl ml-2 align-middle text-cyan-400 dark:text-yellow-200">
-                      ”
-                    </span>
+                    <span className="text-3xl mr-2 align-middle text-cyan-400 dark:text-yellow-200">“</span>
+                    {t("standout.section.quote")}
+                    <span className="text-3xl ml-2 align-middle text-cyan-400 dark:text-yellow-200">”</span>
                   </blockquote>
                   <h3 className="font-extrabold text-cyan-700 dark:text-yellow-300 mt-10 animate-fade-in-up">
-                    Ready to Stand Out?
+                    {t("standout.section.ctaTitle")}
                   </h3>
-                  <p>
-                    Building a standout freelancer portfolio takes time and
-                    intention, but the rewards are worth it. Start today, and
-                    let your work open doors to new possibilities.
-                  </p>
+                  <p>{t("standout.section.ctaDesc")}</p>
                   <h3 className="font-extrabold text-cyan-700 dark:text-yellow-300 mt-10 animate-fade-in-up">
-                    Common Portfolio Mistakes to Avoid
+                    {t("standout.section.mistakesTitle")}
                   </h3>
                   <ul className="list-disc pl-6 text-blue-800 dark:text-blue-200">
                     <li>
                       <span className="font-semibold text-yellow-600 dark:text-yellow-300">
-                        Overloading with projects:
+                        {t("standout.section.mistakes.overload.title")}:
                       </span>{" "}
-                      Too many items can overwhelm visitors. Curate your best
-                      work.
+                      {t("standout.section.mistakes.overload.desc")}
                     </li>
                     <li>
                       <span className="font-semibold text-yellow-600 dark:text-yellow-300">
-                        Lack of context:
+                        {t("standout.section.mistakes.context.title")}:
                       </span>{" "}
-                      Don&#39;t just show the final result—explain your process
-                      and the impact.
+                      {t("standout.section.mistakes.context.desc")}
                     </li>
                     <li>
                       <span className="font-semibold text-yellow-600 dark:text-yellow-300">
-                        Outdated work:
+                        {t("standout.section.mistakes.outdated.title")}:
                       </span>{" "}
-                      Remove old or irrelevant projects to keep your portfolio
-                      fresh.
+                      {t("standout.section.mistakes.outdated.desc")}
                     </li>
                     <li>
                       <span className="font-semibold text-yellow-600 dark:text-yellow-300">
-                        No clear call-to-action:
+                        {t("standout.section.mistakes.cta.title")}:
                       </span>{" "}
-                      Make it easy for clients to contact you or start a
-                      project.
+                      {t("standout.section.mistakes.cta.desc")}
                     </li>
                   </ul>
                   <h3 className="font-extrabold text-cyan-700 dark:text-yellow-300 mt-10 animate-fade-in-up">
-                    Tips for Visual Storytelling
+                    {t("standout.section.visualTitle")}
                   </h3>
                   <ul className="list-disc pl-6 text-blue-800 dark:text-blue-200">
                     <li>
                       <span className="font-semibold text-cyan-700 dark:text-yellow-200">
-                        Use before-and-after images
+                        {t("standout.section.visual.beforeAfter")}
                       </span>{" "}
-                      to highlight your impact.
+                      {t("standout.section.visual.beforeAfterDesc")}
                     </li>
                     <li>
                       <span className="font-semibold text-cyan-700 dark:text-yellow-200">
-                        Add short video walkthroughs
+                        {t("standout.section.visual.videos")}
                       </span>{" "}
-                      for interactive or animated projects.
+                      {t("standout.section.visual.videosDesc")}
                     </li>
                     <li>
                       <span className="font-semibold text-cyan-700 dark:text-yellow-200">
-                        Incorporate client testimonials
+                        {t("standout.section.visual.testimonials")}
                       </span>{" "}
-                      with photos or logos for credibility.
+                      {t("standout.section.visual.testimonialsDesc")}
                     </li>
                     <li>
                       <span className="font-semibold text-cyan-700 dark:text-yellow-200">
-                        Show your process visually
+                        {t("standout.section.visual.process")}
                       </span>{" "}
-                      with sketches, wireframes, or moodboards.
+                      {t("standout.section.visual.processDesc")}
                     </li>
                   </ul>
                   <h3 className="font-extrabold text-cyan-700 dark:text-yellow-300 mt-10 animate-fade-in-up">
-                    Inspiration: Portfolios That Shine
+                    {t("standout.section.inspirationTitle")}
                   </h3>
-                  <p>
-                    Explore portfolios from top freelancers in your field.
-                    Notice how they present their work, tell their story, and
-                    guide visitors to take action. Let their creativity inspire
-                    your own unique approach.
-                  </p>
+                  <p>{t("standout.section.inspirationDesc")}</p>
                   <blockquote className="border-l-4 border-yellow-400 bg-yellow-50 dark:bg-yellow-900/20 px-6 py-4 rounded-xl shadow text-lg font-semibold text-blue-900 dark:text-yellow-100 my-8 animate-fade-in scale-105">
-                    <span className="text-2xl mr-2 align-middle text-yellow-400 dark:text-yellow-200">
-                      ★
-                    </span>
-                    &quot;A great portfolio is not just a gallery—it&#39;s a
-                    journey through your creative mind.&quot;
-                    <span className="text-2xl ml-2 align-middle text-yellow-400 dark:text-yellow-200">
-                      ★
-                    </span>
+                    <span className="text-2xl mr-2 align-middle text-yellow-400 dark:text-yellow-200">★</span>
+                    {t("standout.section.inspirationQuote")}
+                    <span className="text-2xl ml-2 align-middle text-yellow-400 dark:text-yellow-200">★</span>
                   </blockquote>
                 </article>
               </div>
