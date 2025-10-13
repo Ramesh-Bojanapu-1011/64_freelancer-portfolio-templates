@@ -4,13 +4,18 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const Home2 = () => {
+  const { t } = useTranslation();
   return (
     <>
       <Head>
-        <title>Freelancer Portfolio - Home 2</title>
-        <meta name="description" content="Freelancer Portfolio Home 2" />
+        <title>{t("home2.title", "Freelancer Portfolio - Home 2")}</title>
+        <meta
+          name="description"
+          content={t("home2.metaDescription", "Freelancer Portfolio Home 2")}
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <SiteHeader />
@@ -18,17 +23,19 @@ const Home2 = () => {
         {/* Hero Section */}
         <section className="flex flex-col items-center justify-center min-h-[100vh] py-16 px-4 text-center">
           <h1 className="text-5xl md:text-6xl font-extrabold text-blue-900 dark:text-blue-100 mb-4 drop-shadow-lg">
-            Build Your Dream Portfolio
+            {t("home2.heroTitle", "Build Your Dream Portfolio")}
           </h1>
           <p className="text-xl md:text-2xl text-blue-800 dark:text-blue-200 mb-8 max-w-2xl mx-auto">
-            Showcase your talent, attract clients, and grow your freelance
-            business with a modern, professional portfolio.
+            {t(
+              "home2.heroDesc",
+              "Showcase your talent, attract clients, and grow your freelance business with a modern, professional portfolio.",
+            )}
           </p>
           <Link
             href="#contact"
             className="inline-block px-8 py-3 rounded-full bg-gradient-to-r from-cyan-600 via-sky-500 to-blue-700 text-yellow-200 font-bold text-lg shadow-lg hover:from-yellow-300 hover:to-yellow-400 hover:text-blue-900 transition-all duration-200"
           >
-            Get Started
+            {t("home2.getStarted", "Get Started")}
           </Link>
         </section>
 
@@ -45,7 +52,7 @@ const Home2 = () => {
                   className="rounded-3xl border-4 border-cyan-400 shadow-xl object-cover bg-white dark:bg-gray-900"
                 />
                 <span className="absolute -bottom-4 left-1/2 -translate-x-1/2 px-6 py-2 rounded-full bg-gradient-to-r from-cyan-600 to-blue-700 text-yellow-100 font-bold text-base shadow-lg tracking-wide border-2 text-nowrap border-white dark:border-gray-900">
-                  Freelancer / Portfolio Expert
+                  {t("home2.badge", "Freelancer / Portfolio Expert")}
                 </span>
               </div>
             </div>
@@ -66,19 +73,30 @@ const Home2 = () => {
                       d="M12 11c0-1.657-1.343-3-3-3s-3 1.343-3 3 1.343 3 3 3 3-1.343 3-3zm0 0c0-1.657 1.343-3 3-3s3 1.343 3 3-1.343 3-3 3-3-1.343-3-3zm-6 8v-1a4 4 0 014-4h4a4 4 0 014 4v1"
                     />
                   </svg>
-                  About Me
+                  {t("home2.aboutTitle", "About Me")}
                 </h2>
                 <p className="text-xl text-blue-900 dark:text-blue-100 mb-8 leading-relaxed">
-                  I am a{" "}
+                  {t("home2.aboutDesc1", "I am a ")}
                   <span className="font-semibold text-cyan-700 dark:text-cyan-300">
-                    creative freelancer
-                  </span>{" "}
-                  with a passion for{" "}
-                  <span className="font-semibold">web design</span>,{" "}
-                  <span className="font-semibold">branding</span>, and{" "}
-                  <span className="font-semibold">digital marketing</span>. My
-                  mission is to help you stand out online with a stunning,
-                  effective portfolio.
+                    {t("home2.aboutPassion", "creative freelancer")}
+                  </span>
+                  {t("home2.aboutDesc2", " with a passion for ")}
+                  <span className="font-semibold">
+                    {t("nav.webDesign", "web design")}
+                  </span>
+                  ,
+                  <span className="font-semibold">
+                    {t("nav.branding", "branding")}
+                  </span>
+                  ,{t("home2.aboutDesc3", " and ")}
+                  <span className="font-semibold">
+                    {t("nav.digitalMarketing", "digital marketing")}
+                  </span>
+                  .
+                  {t(
+                    "home2.aboutDesc4",
+                    " My mission is to help you stand out online with a stunning, effective portfolio.",
+                  )}
                 </p>
                 {/* Vertical stepper timeline */}
                 <ol className="relative border-l-4 border-cyan-300 dark:border-cyan-800 ml-4">
@@ -99,10 +117,13 @@ const Home2 = () => {
                       </svg>
                     </span>
                     <h3 className="text-2xl font-bold text-blue-800 dark:text-blue-200 mb-1">
-                      5+ Years Experience
+                      {t("home2.experienceTitle", "5+ Years Experience")}
                     </h3>
                     <p className="text-blue-700 dark:text-blue-300 text-base">
-                      Delivering quality freelance projects worldwide.
+                      {t(
+                        "home2.experienceDesc",
+                        "Delivering quality freelance projects worldwide.",
+                      )}
                     </p>
                   </li>
                   <li className="ml-6">
@@ -123,10 +144,13 @@ const Home2 = () => {
                       </svg>
                     </span>
                     <h3 className="text-2xl font-bold text-blue-800 dark:text-blue-200 mb-1">
-                      100+ Projects
+                      {t("home2.projectsTitle", "100+ Projects")}
                     </h3>
                     <p className="text-blue-700 dark:text-blue-300 text-base">
-                      Successfully completed for happy clients.
+                      {t(
+                        "home2.projectsDesc",
+                        "Successfully completed for happy clients.",
+                      )}
                     </p>
                   </li>
                 </ol>
@@ -142,13 +166,16 @@ const Home2 = () => {
           <div className="absolute -bottom-24 -right-24 w-80 h-80 bg-gradient-to-tl from-cyan-100 via-blue-100 to-transparent dark:from-cyan-900 dark:via-blue-950 dark:to-transparent -rotate-12 rounded-full blur-2xl opacity-10 pointer-events-none"></div>
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl font-extrabold text-cyan-700 dark:text-cyan-300 mb-12 text-center tracking-tight">
-              What I Offer
+              {t("home2.servicesTitle", "What I Offer")}
             </h2>
             <div className="flex flex-col md:flex-row gap-10 md:gap-8 justify-center items-stretch">
               {[
                 {
-                  title: "Web Design",
-                  desc: "Modern, responsive websites tailored to your brand.",
+                  title: t("nav.webDesign", "Web Design"),
+                  desc: t(
+                    "home2.serviceWebDesc",
+                    "Modern, responsive websites tailored to your brand.",
+                  ),
                   iconBg:
                     "bg-gradient-to-br from-cyan-400 via-blue-400 to-blue-200 dark:from-cyan-700 dark:via-blue-800 dark:to-blue-900",
                   icon: (
@@ -167,8 +194,11 @@ const Home2 = () => {
                   ),
                 },
                 {
-                  title: "Branding",
-                  desc: "Unique visual identity to make your business memorable.",
+                  title: t("nav.branding", "Branding"),
+                  desc: t(
+                    "home2.serviceBrandingDesc",
+                    "Unique visual identity to make your business memorable.",
+                  ),
                   iconBg:
                     "bg-gradient-to-br from-yellow-300 via-yellow-400 to-yellow-100 dark:from-yellow-700 dark:via-yellow-800 dark:to-yellow-900",
                   icon: (
@@ -185,8 +215,11 @@ const Home2 = () => {
                   ),
                 },
                 {
-                  title: "Digital Marketing",
-                  desc: "Grow your reach and attract more clients online.",
+                  title: t("nav.digitalMarketing", "Digital Marketing"),
+                  desc: t(
+                    "home2.serviceMarketingDesc",
+                    "Grow your reach and attract more clients online.",
+                  ),
                   iconBg:
                     "bg-gradient-to-br from-blue-400 via-cyan-400 to-blue-100 dark:from-blue-700 dark:via-cyan-800 dark:to-blue-900",
                   icon: (
@@ -230,9 +263,9 @@ const Home2 = () => {
           <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-gradient-to-tl from-cyan-100 via-blue-100 to-yellow-100 dark:from-cyan-900 dark:via-blue-950 dark:to-yellow-900 rounded-full blur-3xl opacity-20 pointer-events-none animate-pulse"></div>
           <div className="max-w-7xl mx-auto relative z-10">
             <h2 className="text-4xl font-extrabold text-cyan-700 dark:text-cyan-300 mb-16 text-center tracking-tight drop-shadow-lg">
-              Portfolio{" "}
+              {t("home2.portfolioTitle", "Portfolio")}{" "}
               <span className="bg-gradient-to-r from-yellow-300 via-cyan-400 to-blue-400 bg-clip-text text-transparent">
-                Showcase
+                {t("home2.portfolioShowcase", "Showcase")}
               </span>
             </h2>
             {/* Portfolio cards array */}
@@ -246,14 +279,17 @@ const Home2 = () => {
                     "absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br from-yellow-200 via-cyan-200 to-blue-200 dark:from-yellow-900 dark:via-cyan-900 dark:to-blue-900",
                   image:
                     "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80",
-                  alt: "Creative Web App",
+                  alt: t("home2.portfolio1Title", "Creative Web App"),
                   overlayFrom: "from-cyan-900/70",
                   badge: "bg-cyan-600 text-yellow-100",
                   badgeText: "#01",
-                  title: "Creative Web App",
+                  title: t("home2.portfolio1Title", "Creative Web App"),
                   titleColor: "text-cyan-700 dark:text-cyan-300",
                   overlayTitle: "text-yellow-100",
-                  desc: "A modern web application for a tech startup, featuring real-time collaboration and a sleek UI.",
+                  desc: t(
+                    "home2.portfolio1Desc",
+                    "A modern web application for a tech startup, featuring real-time collaboration and a sleek UI.",
+                  ),
                   overlayDesc: "text-blue-100",
                   cardDesc: "text-blue-800 dark:text-blue-200",
                   mt: "",
@@ -266,14 +302,17 @@ const Home2 = () => {
                     "absolute -bottom-10 -left-10 w-32 h-32 bg-gradient-to-br from-cyan-200 via-yellow-200 to-blue-200 dark:from-cyan-900 dark:via-yellow-900 dark:to-blue-900",
                   image:
                     "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=600&q=80",
-                  alt: "Branding Project",
+                  alt: t("home2.portfolio2Title", "Branding Project"),
                   overlayFrom: "from-yellow-900/70",
                   badge: "bg-yellow-400 text-cyan-900",
                   badgeText: "#02",
-                  title: "Branding Project",
+                  title: t("home2.portfolio2Title", "Branding Project"),
                   titleColor: "text-yellow-600 dark:text-yellow-300",
                   overlayTitle: "text-yellow-100",
-                  desc: "A unique branding identity for a creative agency, blending bold colors and modern typography.",
+                  desc: t(
+                    "home2.portfolio2Desc",
+                    "A unique branding identity for a creative agency, blending bold colors and modern typography.",
+                  ),
                   overlayDesc: "text-blue-100",
                   cardDesc: "text-blue-800 dark:text-blue-200",
                   mt: "mt-10 md:mt-0",
@@ -286,14 +325,17 @@ const Home2 = () => {
                     "absolute -top-10 -left-10 w-32 h-32 bg-gradient-to-br from-blue-200 via-cyan-200 to-yellow-200 dark:from-blue-900 dark:via-cyan-900 dark:to-yellow-900",
                   image:
                     "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80",
-                  alt: "Marketing Campaign",
+                  alt: t("home2.portfolio3Title", "Marketing Campaign"),
                   overlayFrom: "from-blue-900/70",
                   badge: "bg-blue-600 text-yellow-100",
                   badgeText: "#03",
-                  title: "Marketing Campaign",
+                  title: t("home2.portfolio3Title", "Marketing Campaign"),
                   titleColor: "text-blue-700 dark:text-blue-300",
                   overlayTitle: "text-yellow-100",
-                  desc: "A digital marketing campaign that increased client engagement by 200% through creative strategy.",
+                  desc: t(
+                    "home2.portfolio3Desc",
+                    "A digital marketing campaign that increased client engagement by 200% through creative strategy.",
+                  ),
                   overlayDesc: "text-blue-100",
                   cardDesc: "text-blue-800 dark:text-blue-200",
                   mt: "mt-10 lg:mt-0",
@@ -360,31 +402,40 @@ const Home2 = () => {
         <section className="py-24 px-4 bg-gradient-to-tr from-blue-100 via-cyan-100 to-yellow-50 dark:from-blue-950 dark:via-cyan-950 dark:to-yellow-950 border-y border-cyan-100 dark:border-cyan-900  ">
           <div className=" mx-auto">
             <h2 className="text-3xl font-extrabold text-cyan-700 dark:text-cyan-300 mb-14 text-center">
-              What Clients Say
+              {t("home2.testimonialsTitle", "What Clients Say")}
             </h2>
             {/* Horizontal scrollable carousel */}
             <div className="flex flex-wrap justify-center gap-10   pb-4    ">
               {[
                 {
-                  name: "Emily R.",
-                  role: "Entrepreneur",
-                  text: "The new website brought my business to life! Professional, creative, and easy to work with.",
+                  name: t("home2.testimonial1Name", "Emily R."),
+                  role: t("home2.testimonial1Role", "Entrepreneur"),
+                  text: t(
+                    "home2.testimonial1Text",
+                    "The new website brought my business to life! Professional, creative, and easy to work with.",
+                  ),
                   avatar: "https://randomuser.me/api/portraits/women/65.jpg",
                   bg: "bg-gradient-to-br from-yellow-50 via-cyan-50 to-blue-100 dark:from-yellow-900 dark:via-cyan-900 dark:to-blue-950",
                   accent: "from-yellow-300 via-cyan-300 to-blue-300",
                 },
                 {
-                  name: "Michael B.",
-                  role: "Consultant",
-                  text: "Outstanding service and attention to detail. My portfolio stands out and attracts more clients.",
+                  name: t("home2.testimonial2Name", "Michael B."),
+                  role: t("home2.testimonial2Role", "Consultant"),
+                  text: t(
+                    "home2.testimonial2Text",
+                    "Outstanding service and attention to detail. My portfolio stands out and attracts more clients.",
+                  ),
                   avatar: "https://randomuser.me/api/portraits/men/43.jpg",
                   bg: "bg-gradient-to-br from-blue-50 via-cyan-50 to-yellow-100 dark:from-blue-900 dark:via-cyan-900 dark:to-yellow-900",
                   accent: "from-blue-300 via-cyan-300 to-yellow-200",
                 },
                 {
-                  name: "Sara K.",
-                  role: "Designer",
-                  text: "A fantastic experience! The site is beautiful and the process was smooth from start to finish.",
+                  name: t("home2.testimonial3Name", "Sara K."),
+                  role: t("home2.testimonial3Role", "Designer"),
+                  text: t(
+                    "home2.testimonial3Text",
+                    "A fantastic experience! The site is beautiful and the process was smooth from start to finish.",
+                  ),
                   avatar: "https://randomuser.me/api/portraits/women/68.jpg",
                   bg: "bg-gradient-to-br from-cyan-50 via-yellow-50 to-blue-100 dark:from-cyan-900 dark:via-yellow-900 dark:to-blue-950",
                   accent: "from-cyan-300 via-yellow-200 to-blue-200",
@@ -444,12 +495,13 @@ const Home2 = () => {
           <div className="absolute -top-24 -right-24 w-96 h-96 bg-gradient-to-br from-cyan-200 via-blue-200 to-yellow-100 dark:from-cyan-900 dark:via-blue-950 dark:to-yellow-900 rounded-full blur-3xl opacity-20 pointer-events-none"></div>
           <div className="max-w-3xl mx-auto flex flex-col items-center text-center relative z-10">
             <h2 className="text-4xl font-extrabold text-cyan-700 dark:text-cyan-300 mb-8 tracking-tight">
-              Let&apos;s Collaborate!
+              {t("home2.contactTitle", "Let's Collaborate!")}
             </h2>
             <p className="text-xl text-blue-900 dark:text-blue-100 mb-10 max-w-2xl">
-              Interested in working together on your next project? Whether you
-              need a stunning website, a fresh brand identity, or a digital
-              marketing boost, I&apos;m here to help you shine online.
+              {t(
+                "home2.contactDesc",
+                "Interested in working together on your next project? Whether you need a stunning website, a fresh brand identity, or a digital marketing boost, I'm here to help you shine online.",
+              )}
             </p>
             <div className="w-full max-w-xl bg-white/90 dark:bg-gray-900/90 rounded-3xl shadow-2xl border border-cyan-100 dark:border-cyan-900 p-10 mb-8 flex flex-col items-center">
               <h3 className="text-2xl font-bold text-cyan-700 dark:text-cyan-300 mb-4 flex items-center gap-2">
@@ -471,18 +523,19 @@ const Home2 = () => {
                     d="M16 21l5-5m0 0l-5-5m5 5H9"
                   />
                 </svg>
-                Project Inquiry
+                {t("home2.contactFormTitle", "Project Inquiry")}
               </h3>
               <p className="text-blue-800 dark:text-blue-200 mb-6">
-                Tell me about your goals, timeline, and vision. I&apos;ll get
-                back to you with ideas and a plan to make your project a
-                success.
+                {t(
+                  "home2.contactFormDesc",
+                  "Tell me about your goals, timeline, and vision. I'll get back to you with ideas and a plan to make your project a success.",
+                )}
               </p>
               <Link
                 href="/contact-us"
                 className="inline-block px-8 py-3 rounded-full bg-gradient-to-r from-cyan-600 via-sky-500 to-blue-700 text-yellow-200 font-bold text-lg shadow-lg hover:from-yellow-300 hover:to-yellow-400 hover:text-blue-900 transition-all duration-200 mb-2"
               >
-                Contact Us
+                {t("home2.contactButton", "Contact Us")}
               </Link>
               <div className="flex gap-4 justify-center mt-4">
                 <Link
