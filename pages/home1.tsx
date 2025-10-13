@@ -4,16 +4,22 @@ import SiteFooter from "@/components/SiteFooter";
 import React from "react";
 import aos from "aos";
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
+import Link from "next/link";
 
 const Home1 = () => {
+  const { t } = useTranslation();
   React.useEffect(() => {
     aos.init({});
   }, []);
   return (
     <>
       <Head>
-        <title>Freelancer Portfolio - Home 1</title>
-        <meta name="description" content="Freelancer Portfolio Home 1" />
+        <title>{t("home1.title", "Freelancer Portfolio - Home 1")}</title>
+        <meta
+          name="description"
+          content={t("home1.metaDescription", "Freelancer Portfolio Home 1")}
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <SiteHeader />
@@ -21,17 +27,19 @@ const Home1 = () => {
         {/* Hero Section */}
         <section className="flex flex-col items-center justify-center min-h-[100vh] py-16 px-4 text-center">
           <h1 className="text-5xl md:text-6xl font-extrabold text-blue-900 dark:text-blue-100 mb-4 drop-shadow-lg">
-            Elevate Your Freelance Brand
+            {t("home1.heroTitle", "Elevate Your Freelance Brand")}
           </h1>
           <p className="text-xl md:text-2xl text-blue-800 dark:text-blue-200 mb-8 max-w-2xl mx-auto">
-            Modern portfolio templates to showcase your skills, attract clients,
-            and grow your business with confidence.
+            {t(
+              "home1.heroDesc",
+              "Modern portfolio templates to showcase your skills, attract clients, and grow your business with confidence.",
+            )}
           </p>
           <a
             href="#contact"
             className="inline-block px-8 py-3 rounded-full bg-gradient-to-r from-cyan-600 via-sky-500 to-blue-700 text-yellow-200 font-bold text-lg shadow-lg hover:from-yellow-300 hover:to-yellow-400 hover:text-blue-900 transition-all duration-200"
           >
-            Get Started
+            {t("home1.getStarted", "Get Started")}
           </a>
         </section>
 
@@ -54,7 +62,7 @@ const Home1 = () => {
                   />
                 </div>
                 <span className="inline-block bg-gradient-to-r from-cyan-600 to-blue-700 text-yellow-200 font-bold px-5 py-2 rounded-full text-base shadow-lg tracking-wide mt-2">
-                  Freelancer / Portfolio Expert
+                  {t("home1.badge", "Freelancer / Portfolio Expert")}
                 </span>
               </div>
               {/* About text and timeline stats */}
@@ -73,21 +81,34 @@ const Home1 = () => {
                       d="M12 11c0-1.657-1.343-3-3-3s-3 1.343-3 3 1.343 3 3 3 3-1.343 3-3zm0 0c0-1.657 1.343-3 3-3s3 1.343 3 3-1.343 3-3 3-3-1.343-3-3zm-6 8v-1a4 4 0 014-4h4a4 4 0 014 4v1"
                     />
                   </svg>
-                  About Me
+                  {t("home1.aboutTitle", "About Me")}
                 </h2>
                 <p className="text-xl text-blue-900 dark:text-blue-100 mb-8 leading-relaxed">
-                  I am a{" "}
+                  {t("home1.aboutDesc1", "I am a ")}
                   <span className="font-semibold text-cyan-700 dark:text-cyan-300">
-                    passionate freelancer
-                  </span>{" "}
-                  with expertise in{" "}
-                  <span className="font-semibold">web design</span>,{" "}
-                  <span className="font-semibold">UI/UX</span>,{" "}
-                  <span className="font-semibold">branding</span>, and{" "}
-                  <span className="font-semibold">digital marketing</span>. My
-                  mission is to help businesses and individuals build a strong
-                  online presence with beautiful, functional, and effective
-                  portfolio websites.
+                    {t("home1.aboutPassion", "passionate freelancer")}
+                  </span>
+                  {t("home1.aboutDesc2", " with expertise in ")}
+                  <span className="font-semibold">
+                    {t("nav.webDesign", "web design")}
+                  </span>
+                  ,
+                  <span className="font-semibold">
+                    {t("nav.uiux", "UI/UX")}
+                  </span>
+                  ,
+                  <span className="font-semibold">
+                    {t("nav.branding", "branding")}
+                  </span>
+                  ,{t("home1.aboutDesc3", ", and ")}
+                  <span className="font-semibold">
+                    {t("nav.digitalMarketing", "digital marketing")}
+                  </span>
+                  .
+                  {t(
+                    "home1.aboutDesc4",
+                    " My mission is to help businesses and individuals build a strong online presence with beautiful, functional, and effective portfolio websites.",
+                  )}
                 </p>
                 {/* Timeline style stats */}
                 <ol className="relative border-l-4 border-cyan-300 dark:border-cyan-800 ml-4">
@@ -108,10 +129,13 @@ const Home1 = () => {
                       </svg>
                     </span>
                     <h3 className="text-2xl font-bold text-blue-800 dark:text-blue-200 mb-1">
-                      5+ Years Experience
+                      {t("home1.experienceTitle", "5+ Years Experience")}
                     </h3>
                     <p className="text-blue-700 dark:text-blue-300 text-base">
-                      Delivering quality freelance projects worldwide.
+                      {t(
+                        "home1.experienceDesc",
+                        "Delivering quality freelance projects worldwide.",
+                      )}
                     </p>
                   </li>
                   <li className="ml-6">
@@ -132,10 +156,13 @@ const Home1 = () => {
                       </svg>
                     </span>
                     <h3 className="text-2xl font-bold text-blue-800 dark:text-blue-200 mb-1">
-                      100+ Projects
+                      {t("home1.projectsTitle", "100+ Projects")}
                     </h3>
                     <p className="text-blue-700 dark:text-blue-300 text-base">
-                      Successfully completed for happy clients.
+                      {t(
+                        "home1.projectsDesc",
+                        "Successfully completed for happy clients.",
+                      )}
                     </p>
                   </li>
                 </ol>
@@ -172,23 +199,39 @@ const Home1 = () => {
                     opacity={0.5}
                   ></path>
                 </svg>
-                Why Choose Us?
+                {t("home1.whyChooseUsTitle", "Why Choose Us?")}
               </h2>
               <p className="text-xl text-blue-900 dark:text-blue-100 mb-6 leading-relaxed">
-                We are dedicated to delivering{" "}
+                {t("home1.whyChooseUsDesc1", "We are dedicated to delivering ")}
                 <span className="font-semibold text-cyan-700 dark:text-cyan-300">
-                  exceptional digital services
-                </span>{" "}
-                that help you stand out and succeed. Our team combines
-                creativity, technical expertise, and a passion for client
-                success.
+                  {t(
+                    "home1.whyChooseUsExceptional",
+                    "exceptional digital services",
+                  )}
+                </span>
+                {t(
+                  "home1.whyChooseUsDesc2",
+                  " that help you stand out and succeed. Our team combines creativity, technical expertise, and a passion for client success.",
+                )}
               </p>
               {(() => {
                 const points = [
-                  "Personalized solutions for every client",
-                  "Cutting-edge design & technology",
-                  "Transparent communication & support",
-                  "Proven results & client satisfaction",
+                  t(
+                    "home1.whyChooseUsPoint1",
+                    "Personalized solutions for every client",
+                  ),
+                  t(
+                    "home1.whyChooseUsPoint2",
+                    "Cutting-edge design & technology",
+                  ),
+                  t(
+                    "home1.whyChooseUsPoint3",
+                    "Transparent communication & support",
+                  ),
+                  t(
+                    "home1.whyChooseUsPoint4",
+                    "Proven results & client satisfaction",
+                  ),
                 ];
                 return (
                   <ul className="space-y-4 mb-8">
@@ -217,19 +260,22 @@ const Home1 = () => {
                   </ul>
                 );
               })()}
-              <a
+              <Link
                 href="#contact"
                 className="inline-block px-8 py-3 rounded-full bg-gradient-to-r from-cyan-600 via-sky-500 to-blue-700 text-yellow-200 font-bold text-lg shadow-lg hover:from-yellow-300 hover:to-yellow-400 hover:text-blue-900 transition-all duration-200"
               >
-                Let&apos;s Work Together
-              </a>
+                {t("home1.letsWorkTogether")}
+              </Link>
             </div>
             {/* Image */}
             <div className="flex-1 flex justify-center" data-aos="fade-left">
               <div className="relative w-full max-w-md aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border-4 border-cyan-200 dark:border-cyan-800 bg-white dark:bg-gray-900">
                 <Image
                   src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80"
-                  alt="Teamwork and Digital Services"
+                  alt={t(
+                    "home1.whyChooseUsImageAlt",
+                    "Teamwork and Digital Services",
+                  )}
                   fill
                   className="object-cover object-center"
                   sizes="(max-width: 768px) 100vw, 400px"
@@ -252,12 +298,12 @@ const Home1 = () => {
           <div className="absolute -bottom-20 -left-20 w-96 h-96 bg-gradient-to-tl from-cyan-100 via-blue-100 to-transparent dark:from-cyan-900 dark:via-blue-950 dark:to-transparent -rotate-12 rounded-full blur-2xl opacity-10 pointer-events-none"></div>
           <div className="relative max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold text-cyan-700 dark:text-cyan-300 mb-8 text-center">
-              Awards & Recognitions
+              {t("home1.awardsTitle", "Awards & Recognitions")}
             </h2>
             <div className="flex flex-wrap justify-center items-center gap-8 mb-12">
               {[
                 {
-                  title: "Top Rated Freelancer 2025",
+                  title: t("home1.award1", "Top Rated Freelancer 2025"),
                   icon: (
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -283,7 +329,7 @@ const Home1 = () => {
                   ),
                 },
                 {
-                  title: "Awards Honorable Mention",
+                  title: t("home1.award2", "Awards Honorable Mention"),
                   icon: (
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -324,7 +370,7 @@ const Home1 = () => {
                   ),
                 },
                 {
-                  title: "CSS Design Awards Winner",
+                  title: t("home1.award3", "CSS Design Awards Winner"),
                   icon: (
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -549,7 +595,7 @@ const Home1 = () => {
                   ),
                 },
                 {
-                  title: "Featured in Web Designer Mag",
+                  title: t("home1.award4", "Featured in Web Designer Mag"),
                   icon: (
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -608,14 +654,20 @@ const Home1 = () => {
         >
           <div className="max-w-5xl mx-auto py-16 px-4">
             <h2 className="text-3xl font-bold text-cyan-700 dark:text-cyan-300 mb-8 text-center">
-              How We Work
+              {t("home1.processTitle", "How We Work")}
             </h2>
             <div className="relative">
               <ol className="relative border-l-4 border-cyan-300 dark:border-cyan-800 ml-5">
                 {[
                   {
-                    title: "Discovery & Consultation",
-                    desc: "We start by understanding your goals, audience, and vision to craft a tailored strategy.",
+                    title: t(
+                      "home1.processStep1Title",
+                      "Discovery & Consultation",
+                    ),
+                    desc: t(
+                      "home1.processStep1Desc",
+                      "We start by understanding your goals, audience, and vision to craft a tailored strategy.",
+                    ),
                     icon: (
                       <svg
                         className="w-8 h-8 text-cyan-400"
@@ -630,8 +682,11 @@ const Home1 = () => {
                     ),
                   },
                   {
-                    title: "Design & Development",
-                    desc: "We create modern, responsive designs and develop robust solutions to bring your project to life.",
+                    title: t("home1.processStep2Title", "Design & Development"),
+                    desc: t(
+                      "home1.processStep2Desc",
+                      "We create modern, responsive designs and develop robust solutions to bring your project to life.",
+                    ),
                     icon: (
                       <svg
                         className="w-8 h-8 text-blue-400"
@@ -648,8 +703,11 @@ const Home1 = () => {
                     ),
                   },
                   {
-                    title: "Feedback & Revisions",
-                    desc: "We collaborate with you to refine and perfect the work, ensuring it matches your expectations.",
+                    title: t("home1.processStep3Title", "Feedback & Revisions"),
+                    desc: t(
+                      "home1.processStep3Desc",
+                      "We collaborate with you to refine and perfect the work, ensuring it matches your expectations.",
+                    ),
                     icon: (
                       <svg
                         className="w-8 h-8 text-yellow-400"
@@ -663,8 +721,11 @@ const Home1 = () => {
                     ),
                   },
                   {
-                    title: "Launch & Support",
-                    desc: "We launch your project and provide ongoing support to help you grow and succeed.",
+                    title: t("home1.processStep4Title", "Launch & Support"),
+                    desc: t(
+                      "home1.processStep4Desc",
+                      "We launch your project and provide ongoing support to help you grow and succeed.",
+                    ),
                     icon: (
                       <svg
                         className="w-8 h-8 text-green-400"
@@ -702,41 +763,55 @@ const Home1 = () => {
         {/* Client Testimonials Section */}
         <section
           id="testimonials"
-          className="relative  mx-auto py-16 px-6 flex flex-col items-center justify-center text-center rounded-3xl bg-gradient-to-br from-blue-100 via-cyan-100 to-yellow-50 dark:from-blue-950 dark:via-cyan-950 dark:to-yellow-950 shadow-xl my-12 overflow-hidden"
+          className="relative  mx-auto py-16 px-6 flex flex-col items-center justify-center text-center rounded-3xl bg-gradient-to-br from-blue-100 via-cyan-100 to-yellow-50 dark:from-blue-950 dark:via-cyan-950 dark:to-yellow-950     overflow-hidden"
         >
           <div className="absolute -top-10 -right-10 w-40 h-40 bg-cyan-400/20 rounded-full blur-2xl pointer-events-none"></div>
           <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-yellow-300/10 rounded-full blur-2xl pointer-events-none"></div>
           <h2 className="text-3xl md:text-4xl font-extrabold text-cyan-700 dark:text-cyan-200 mb-4 drop-shadow-lg tracking-tight">
-            What Clients Say
+            {t("home1.testimonialsTitle", "What Clients Say")}
           </h2>
           <p className="text-lg md:text-xl text-blue-800 dark:text-blue-100 mb-8 max-w-2xl mx-auto">
-            Hear from some of my amazing clients and collaborators about their
-            experience working with me.
+            {t(
+              "home1.testimonialsDesc",
+              "Hear from some of my amazing clients and collaborators about their experience working with me.",
+            )}
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
             {[
               {
-                name: "Sarah K.",
-                role: "Startup Founder",
-                text: "Absolutely thrilled with my new portfolio site! The process was smooth, creative, and the results exceeded my expectations.",
+                name: t("home1.testimonial1Name", "Sarah K."),
+                role: t("home1.testimonial1Role", "Startup Founder"),
+                text: t(
+                  "home1.testimonial1Text",
+                  "Absolutely thrilled with my new portfolio site! The process was smooth, creative, and the results exceeded my expectations.",
+                ),
                 avatar: "https://randomuser.me/api/portraits/men/33.jpg",
               },
               {
-                name: "James L.",
-                role: "Marketing Director",
-                text: "Professional, responsive, and highly skilled. My brand now stands out online and I've seen a real boost in client inquiries.",
+                name: t("home1.testimonial2Name", "James L."),
+                role: t("home1.testimonial2Role", "Marketing Director"),
+                text: t(
+                  "home1.testimonial2Text",
+                  "Professional, responsive, and highly skilled. My brand now stands out online and I've seen a real boost in client inquiries.",
+                ),
                 avatar: "https://randomuser.me/api/portraits/men/32.jpg",
               },
               {
-                name: "Priya S.",
-                role: "Freelancer Coach",
-                text: "A pleasure to work with! The attention to detail and creative vision made all the difference for my business.",
+                name: t("home1.testimonial3Name", "Priya S."),
+                role: t("home1.testimonial3Role", "Freelancer Coach"),
+                text: t(
+                  "home1.testimonial3Text",
+                  "A pleasure to work with! The attention to detail and creative vision made all the difference for my business.",
+                ),
                 avatar: "https://randomuser.me/api/portraits/women/44.jpg",
               },
               {
-                name: "Alex M.",
-                role: "Agency Owner",
-                text: "Delivered on time, on budget, and with a unique flair. Highly recommended for anyone serious about their online presence!",
+                name: t("home1.testimonial4Name", "Alex M."),
+                role: t("home1.testimonial4Role", "Agency Owner"),
+                text: t(
+                  "home1.testimonial4Text",
+                  "Delivered on time, on budget, and with a unique flair. Highly recommended for anyone serious about their online presence!",
+                ),
                 avatar: "https://randomuser.me/api/portraits/men/85.jpg",
               },
             ].map((t, idx) => (
