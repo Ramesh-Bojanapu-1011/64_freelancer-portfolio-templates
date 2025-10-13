@@ -21,7 +21,7 @@ const navLinks = [
     dropdown: [
       { label: "nav.allServices", href: "/services" },
       { label: "nav.webDesign", href: "/web-design" },
-      { label: "nav.uiux", href: "/ui-ux" },
+      { label: "nav.uiux", href: "/ui-ux-design" },
       { label: "nav.branding", href: "/branding" },
       { label: "nav.seo", href: "/seo" },
       { label: "nav.contentWriting", href: "/content-writing" },

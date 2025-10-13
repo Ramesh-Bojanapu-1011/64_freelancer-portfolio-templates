@@ -27,7 +27,7 @@ const useServices = (t: TFunction) => [
         <path d="M3 8h18" />
       </svg>
     ),
-    href: "/services/web-design",
+    href: "/web-design",
   },
   {
     name: t("services.uiux.title", t("nav.uiux")),
@@ -48,7 +48,7 @@ const useServices = (t: TFunction) => [
         <path d="M9 9h.01M15 9h.01" />
       </svg>
     ),
-    href: "/services/ui-ux-design",
+    href: "/ui-ux-design",
   },
   {
     name: t("services.branding.title", t("nav.branding")),

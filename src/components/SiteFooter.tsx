@@ -4,12 +4,12 @@ import Link from "next/link";
 import { useTranslation } from "react-i18next";
 
 const services = [
-  { label: "nav.webDesign", href: "/services/web-design" },
-  { label: "nav.uiux", href: "/services/ui-ux" },
-  { label: "nav.branding", href: "/services/branding" },
-  { label: "nav.seo", href: "/services/seo" },
-  { label: "nav.contentWriting", href: "/services/content-writing" },
-  { label: "nav.digitalMarketing", href: "/services/marketing" },
+  { label: "nav.webDesign", href: "/web-design" },
+  { label: "nav.uiux", href: "/ui-ux-design" },
+  { label: "nav.branding", href: "/branding" },
+  { label: "nav.seo", href: "/seo" },
+  { label: "nav.contentWriting", href: "/content-writing" },
+  { label: "nav.digitalMarketing", href: "/digital-marketing" },
 ];
 
 const quickLinks = [
