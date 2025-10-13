@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { useTranslation } from "react-i18next";
+import i18n from "@/i18n";
 
 const WebDesign = () => {
   const { t } = useTranslation();
@@ -13,7 +14,6 @@ const WebDesign = () => {
     img: string;
     title: string;
     desc: string;
-    accent?: string;
   }>;
 
   const processSteps = t("webDesign.processSteps", {
@@ -110,9 +110,6 @@ const WebDesign = () => {
                   key={i}
                   className="bg-white/90 dark:bg-gray-900/90 rounded-3xl p-8 border border-cyan-100 dark:border-cyan-900 shadow-xl flex flex-col items-center group hover:scale-[1.03] transition-transform duration-300 relative overflow-hidden"
                 >
-                  <span
-                    className={`absolute ${p.accent || "-top-8 -left-8"} w-20 h-20 rounded-full blur-2xl opacity-30 pointer-events-none group-hover:opacity-50 transition-opacity`}
-                  ></span>
                   <Image
                     src={p.img}
                     width={120}
@@ -242,7 +239,11 @@ const WebDesign = () => {
                   </p>
                   {/* Connector line for all but last */}
                   {idx < arr.length - 1 && (
-                    <span className="hidden min-[769px]:block absolute top-7 right-[-50%] w-[100%] h-1 bg-gradient-to-r from-cyan-200 via-yellow-100 to-blue-200 dark:from-cyan-900 dark:via-yellow-900 dark:to-blue-950 opacity-40 z-0"></span>
+                    <span
+                      className={`hidden min-[769px]:block absolute top-7 ${
+                        i18n.language == "en" ? "right-[-50%]" : "left-[-50%]"
+                      }    w-[100%] h-1 bg-gradient-to-r from-cyan-200 via-yellow-100 to-blue-200 dark:from-cyan-900 dark:via-yellow-900 dark:to-blue-950 opacity-40 z-0`}
+                    ></span>
                   )}
                 </div>
               ))}

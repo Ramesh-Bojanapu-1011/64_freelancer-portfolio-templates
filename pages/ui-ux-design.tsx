@@ -4,6 +4,7 @@ import SiteFooter from "@/components/SiteFooter";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import i18n from "@/i18n";
 
 const UIUXDesign = () => {
   return (
@@ -284,7 +285,11 @@ const UIUXDesign = () => {
                   </p>
                   {/* Connector line for all but last */}
                   {idx < arr.length - 1 && (
-                    <span className="hidden min-[769px]:block absolute top-7 right-[-50%] w-[100%] h-1 bg-gradient-to-r from-cyan-200 via-yellow-100 to-blue-200 dark:from-cyan-900 dark:via-yellow-900 dark:to-blue-950 opacity-40 z-0"></span>
+                     <span
+                      className={`hidden min-[769px]:block absolute top-7 ${
+                        i18n.language == "en" ? "right-[-50%]" : "left-[-50%]"
+                      }    w-[100%] h-1 bg-gradient-to-r from-cyan-200 via-yellow-100 to-blue-200 dark:from-cyan-900 dark:via-yellow-900 dark:to-blue-950 opacity-40 z-0`}
+                    ></span>
                   )}
                 </div>
               ))}

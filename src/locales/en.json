@@ -666,20 +666,19 @@
       {
         "img": "/web-project-1.png",
         "title": "Portfolio Website",
-        "desc": "A modern, responsive portfolio for a creative professional, featuring unique layouts and smooth animations.",
-        "accent": "-top-8 -left-8"
+        "desc": "A modern, responsive portfolio for a creative professional, featuring unique layouts and smooth animations."
+        
       },
       {
         "img": "/web-project-2.png",
         "title": "E-Commerce Landing",
-        "desc": "A vibrant landing page for an online shop, optimized for conversions and mobile-first experiences.",
-        "accent": "-top-8 -right-8"
+        "desc": "A vibrant landing page for an online shop, optimized for conversions and mobile-first experiences."
+        
       },
       {
         "img": "/web-project-3.png",
         "title": "Business Homepage",
-        "desc": "A clean, professional homepage for a growing business, with custom graphics and interactive features.",
-        "accent": "-bottom-8 -left-8"
+        "desc": "A clean, professional homepage for a growing business, with custom graphics and interactive features."
       }
     ],
     "processTitle": "Our Web Design Process",
