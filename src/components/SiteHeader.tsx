@@ -126,7 +126,7 @@ const SiteHeader = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-gradient-to-r from-cyan-600 via-sky-500 to-blue-700 dark:from-gray-950 dark:via-gray-900 dark:to-blue-950 shadow-xl caret-transparent">
+    <header className="sticky top-0 z-50 w-full bg-gradient-to-r from-cyan-600 via-sky-500 to-blue-700 dark:from-gray-950 dark:via-gray-900 dark:to-blue-950 shadow-xl caret-transparent max-h-screen overflow-y-auto">
       <nav className="  mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           {/* Logo */}
@@ -223,9 +223,7 @@ const SiteHeader = () => {
                       }${
                         user.lastname && user.lastname.charAt(0).toUpperCase()
                       }`.trim()
-                    : user && user.email
-                      ? user.email
-                      : "AD"}
+                    : user && user.email && "AD"}
                 </span>
                 <svg
                   className="w-4 h-4 ml-1"
@@ -268,6 +266,19 @@ const SiteHeader = () => {
                 >
                   Logout
                 </button>
+                {user &&
+                  user.role === "admin" &&
+                  typeof window !== "undefined" &&
+                  window.location.pathname != "/admin-dashbord" && (
+                    <>
+                      <Link
+                        href="/admin-dashbord"
+                        className="block w-full text-left px-4 py-2 text-blue-900 dark:text-blue-100 hover:bg-cyan-100 dark:hover:bg-blue-950 rounded transition-colors duration-100"
+                      >
+                        Admin Dashboard
+                      </Link>
+                    </>
+                  )}
               </div>
             </div>
 
@@ -403,9 +414,7 @@ const SiteHeader = () => {
                     }${
                       user.lastname && user.lastname.charAt(0).toUpperCase()
                     }`.trim()
-                  : user && user.email
-                    ? user.email
-                    : "AD"}
+                  : user && user.email && "AD"}
               </button>
               <div className={`pl-4 mt-1 ${profileOpen ? "block" : "hidden"}`}>
                 <button
@@ -414,6 +423,19 @@ const SiteHeader = () => {
                 >
                   Logout
                 </button>
+                {user &&
+                  user.role === "admin" &&
+                  typeof window !== "undefined" &&
+                  window.location.pathname != "/admin-dashbord" && (
+                    <>
+                      <Link
+                        href="/admin-dashbord"
+                        className="block w-full text-left px-4 py-2 text-yellow-700 dark:text-yellow-200 hover:bg-yellow-100 dark:hover:bg-yellow-900 rounded transition-colors duration-100"
+                      >
+                        Admin Dashboard
+                      </Link>
+                    </>
+                  )}
               </div>
             </div>
 
