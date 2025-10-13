@@ -4,30 +4,32 @@ import Link from "next/link";
 import React from "react";
 import { ModeToggle } from "./theme/ModeToggle";
 import { NextRouter, useRouter } from "next/router";
+import i18n from "../i18n";
+import { useTranslation } from "react-i18next";
 
 const navLinks = [
   {
-    label: "Home",
+    label: "nav.home",
     dropdown: [
-      { label: "Home 1", href: "/home1" },
-      { label: "Home 2", href: "/home2" },
+      { label: "nav.home1", href: "/home1" },
+      { label: "nav.home2", href: "/home2" },
     ],
   },
-  { label: "About Us", href: "/about-us" },
+  { label: "nav.about", href: "/about-us" },
   {
-    label: "Services",
+    label: "nav.services",
     dropdown: [
-      { label: "All Services", href: "/services" },
-      { label: "Web Design", href: "/web-design" },
-      { label: "UI/UX Design", href: "/ui-ux" },
-      { label: "Branding", href: "/branding" },
-      { label: "SEO", href: "/seo" },
-      { label: "Content Writing", href: "/content-writing" },
-      { label: "Digital Marketing", href: "/digital-marketing" },
+      { label: "nav.allServices", href: "/services" },
+      { label: "nav.webDesign", href: "/web-design" },
+      { label: "nav.uiux", href: "/ui-ux" },
+      { label: "nav.branding", href: "/branding" },
+      { label: "nav.seo", href: "/seo" },
+      { label: "nav.contentWriting", href: "/content-writing" },
+      { label: "nav.digitalMarketing", href: "/digital-marketing" },
     ],
   },
-  { label: "Blog", href: "/blog" },
-  { label: "Contact Us", href: "/contact-us" },
+  { label: "nav.blog", href: "/blog" },
+  { label: "nav.contact", href: "/contact-us" },
 ];
 
 const languages = [
@@ -52,6 +54,7 @@ const languages = [
  */
 const SiteHeader = () => {
   const router = useRouter();
+  const { t } = useTranslation();
   const [navOpen, setNavOpen] = React.useState(false);
   const [dropdownOpen, setDropdownOpen] = React.useState<string | null>(null);
   const [langOpen, setLangOpen] = React.useState(false);
@@ -65,8 +68,10 @@ const SiteHeader = () => {
     loginTime?: string;
   };
   const [user, setUser] = React.useState<User | null>(null);
+  // No need to keep currentLang in state if not used elsewhere
 
   // Get user details from localStorage on mount
+  // RTL/LTR effect and user load
   React.useEffect(() => {
     if (typeof window !== "undefined") {
       try {
@@ -75,6 +80,16 @@ const SiteHeader = () => {
           setUser(JSON.parse(userStr));
         } else {
           setUser(null);
+        }
+        const lang = localStorage.getItem("selectedLanguageCode") || "en";
+        i18n.changeLanguage(lang);
+        // Set RTL or LTR on html/body
+        if (lang !== "en") {
+          document.documentElement.setAttribute("dir", "rtl");
+          document.body.classList.add("rtl");
+        } else {
+          document.documentElement.setAttribute("dir", "ltr");
+          document.body.classList.remove("rtl");
         }
       } catch {
         setUser(null);
@@ -112,21 +127,21 @@ const SiteHeader = () => {
 
   const setLang = (code: string) => {
     if (typeof window !== "undefined") {
-      if (code === "en") {
-        localStorage.setItem("selectedLanguage", "English");
-        window.location.reload();
-      } else if (code === "ar") {
-        localStorage.setItem("selectedLanguage", "Arabic");
-        window.location.reload();
-      } else if (code === "he") {
-        localStorage.setItem("selectedLanguage", "Hebrew");
-        window.location.reload();
+      localStorage.setItem("selectedLanguageCode", code);
+      i18n.changeLanguage(code);
+      // Set RTL or LTR on html/body
+      if (code !== "en") {
+        document.documentElement.setAttribute("dir", "rtl");
+        document.body.classList.add("rtl");
+      } else {
+        document.documentElement.setAttribute("dir", "ltr");
+        document.body.classList.remove("rtl");
       }
     }
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-gradient-to-r from-cyan-600 via-sky-500 to-blue-700 dark:from-gray-950 dark:via-gray-900 dark:to-blue-950 shadow-xl caret-transparent max-h-screen overflow-y-auto text-nowrap">
+    <header className="sticky top-0 z-50 w-full bg-gradient-to-r from-cyan-600 via-sky-500 to-blue-700 dark:from-gray-950 dark:via-gray-900 dark:to-blue-950 shadow-xl caret-transparent text-nowrap">
       <nav className="  mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           {/* Logo */}
@@ -152,7 +167,7 @@ const SiteHeader = () => {
                     onMouseEnter={() => setDropdownOpen(link.label)}
                     onMouseLeave={() => setDropdownOpen(null)}
                   >
-                    {link.label}
+                    {t(link.label)}
                     <ChevronDown
                       className={` ${
                         dropdownOpen === link.label && "rotate-180"
@@ -169,7 +184,7 @@ const SiteHeader = () => {
                     {link.dropdown.map((item) => (
                       <Link key={item.label} href={item.href}>
                         <span className="block w-full text-left text-nowrap px-4 py-2 text-blue-900 dark:text-blue-100 hover:bg-cyan-100 dark:hover:bg-blue-950 rounded transition-colors duration-100">
-                          {item.label}
+                          {t(item.label)}
                         </span>
                       </Link>
                     ))}
@@ -178,7 +193,7 @@ const SiteHeader = () => {
               ) : (
                 <Link key={link.label} href={link.href} className="">
                   <span className="text-blue-50 hover:text-yellow-200 transition-colors duration-100">
-                    {link.label}
+                    {t(link.label)}
                   </span>
                 </Link>
               ),
@@ -190,7 +205,7 @@ const SiteHeader = () => {
                 className="px-3 py-2 rounded-md text-blue-50 font-semibold hover:bg-cyan-700/30 flex items-center gap-1 transition-colors duration-150"
                 onClick={() => setLangOpen((v) => !v)}
               >
-                Language
+                {t("nav.language", "Language")}
                 <ChevronDown className={` ${langOpen && "rotate-180"} `} />
               </button>
               <div
@@ -201,7 +216,10 @@ const SiteHeader = () => {
                 {languages.map((lang) => (
                   <button
                     key={lang.code}
-                    onClick={() => setLang(lang.code)}
+                    onClick={() => {
+                      setLang(lang.code);
+                      setLangOpen(false);
+                    }}
                     className="block w-full text-left px-4 py-2 text-blue-900 dark:text-blue-100 hover:bg-cyan-100 dark:hover:bg-blue-950 rounded transition-colors duration-100"
                   >
                     {lang.label}
@@ -218,7 +236,7 @@ const SiteHeader = () => {
               >
                 <span className="hidden lg:inline">
                   {user && (user.firstname || user.lastname)
-                    ? `${
+                    ? `$${
                         user.firstname && user.firstname.charAt(0).toUpperCase()
                       }${
                         user.lastname && user.lastname.charAt(0).toUpperCase()
@@ -264,7 +282,7 @@ const SiteHeader = () => {
                   onClick={() => HandleLogout(router)}
                   className="block w-full text-left px-4 py-2 text-blue-900 dark:text-blue-100 hover:bg-cyan-100 dark:hover:bg-blue-950 rounded transition-colors duration-100"
                 >
-                  Logout
+                  {t("nav.logout")}
                 </button>
                 {user &&
                   user.role === "admin" &&
@@ -275,7 +293,7 @@ const SiteHeader = () => {
                         href="/admin-dashbord"
                         className="block w-full text-left px-4 py-2 text-blue-900 dark:text-blue-100 hover:bg-cyan-100 dark:hover:bg-blue-950 rounded transition-colors duration-100"
                       >
-                        Admin Dashboard
+                        {t("nav.adminDashboard")}
                       </Link>
                     </>
                   )}
@@ -327,7 +345,7 @@ const SiteHeader = () => {
                       )
                     }
                   >
-                    {link.label}
+                    {t(link.label)}
                     <svg
                       className="w-4 h-4 ml-1"
                       fill="none"
@@ -348,13 +366,13 @@ const SiteHeader = () => {
                     }`}
                   >
                     {link.dropdown.map((item) => (
-                      <a
+                      <Link
                         key={item.label}
                         href={item.href}
                         className="block px-4 py-2 text-blue-900 dark:text-blue-100 hover:bg-cyan-100 dark:hover:bg-blue-950 rounded transition-colors duration-100"
                       >
-                        {item.label}
-                      </a>
+                        {t(item.label)}
+                      </Link>
                     ))}
                   </div>
                 </div>
@@ -375,7 +393,7 @@ const SiteHeader = () => {
                 className="w-full flex justify-between items-center px-3 py-2 rounded-md text-blue-900 dark:text-blue-100 font-semibold hover:bg-cyan-100 dark:hover:bg-blue-950 transition-colors duration-150"
                 onClick={() => setLangOpen((v) => !v)}
               >
-                Language
+                {t("nav.language")}
                 <svg
                   className="w-4 h-4 ml-1"
                   fill="none"
@@ -394,6 +412,10 @@ const SiteHeader = () => {
                 {languages.map((lang) => (
                   <button
                     key={lang.code}
+                    onClick={() => {
+                      setLang(lang.code);
+                      setLangOpen(false);
+                    }}
                     className="block w-full text-left px-4 py-2 text-blue-900 dark:text-blue-100 hover:bg-cyan-100 dark:hover:bg-blue-950 rounded transition-colors duration-100"
                   >
                     {lang.label}
@@ -409,19 +431,19 @@ const SiteHeader = () => {
                 onClick={() => setProfileOpen((v) => !v)}
               >
                 {user && (user.firstname || user.lastname)
-                  ? `${
+                  ? `$${
                       user.firstname && user.firstname.charAt(0).toUpperCase()
                     }${
                       user.lastname && user.lastname.charAt(0).toUpperCase()
                     }`.trim()
-                  : user && user.email && "AD"}
+                  : user && user.email && t("nav.profile", "Profile")}
               </button>
               <div className={`pl-4 mt-1 ${profileOpen ? "block" : "hidden"}`}>
                 <button
                   onClick={() => HandleLogout(router)}
                   className="block w-full text-left px-4 py-2 text-yellow-700 dark:text-yellow-200 hover:bg-yellow-100 dark:hover:bg-yellow-900 rounded transition-colors duration-100"
                 >
-                  Logout
+                  {t("nav.logout", "Logout")}
                 </button>
                 {user &&
                   user.role === "admin" &&
@@ -432,7 +454,7 @@ const SiteHeader = () => {
                         href="/admin-dashbord"
                         className="block w-full text-left px-4 py-2 text-yellow-700 dark:text-yellow-200 hover:bg-yellow-100 dark:hover:bg-yellow-900 rounded transition-colors duration-100"
                       >
-                        Admin Dashboard
+                        {t("nav.adminDashboard", "Admin Dashboard")}
                       </Link>
                     </>
                   )}

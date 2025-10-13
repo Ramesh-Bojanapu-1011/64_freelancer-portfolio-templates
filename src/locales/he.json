@@ -1,1 +1,22 @@
-{}
+{
+  "nav": {
+    "home": "דף הבית",
+    "home1": "דף הבית 1",
+    "home2": "דף הבית 2",
+    "about": "אודות",
+    "services": "שירותים",
+    "allServices": "כל השירותים",
+    "webDesign": "עיצוב אתרים",
+    "uiux": "עיצוב UI/UX",
+    "branding": "מיתוג",
+    "seo": "קידום אתרים",
+    "contentWriting": "כתיבת תוכן",
+    "digitalMarketing": "שיווק דיגיטלי",
+    "blog": "בלוג",
+    "contact": "צור קשר",
+    "language": "שפה",
+    "profile": "פרופיל",
+    "logout": "התנתק",
+    "adminDashboard": "לוח ניהול"
+  }
+}
