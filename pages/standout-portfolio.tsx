@@ -32,7 +32,8 @@ const StandoutPortfolioBlog = () => {
                 <path d="M10 2a8 8 0 100 16 8 8 0 000-16zm0 14.5A6.5 6.5 0 1110 3.5a6.5 6.5 0 010 13z" />
                 <circle cx="10" cy="10" r="3" />
               </svg>
-              {t("standout.by")} <span className="font-semibold">{t("standout.author")}</span>
+              {t("standout.by")}{" "}
+              <span className="font-semibold">{t("standout.author")}</span>
             </span>
             <span className="hidden md:inline">|</span>
             <span className="inline-flex items-center gap-2">
@@ -131,9 +132,13 @@ const StandoutPortfolioBlog = () => {
                   </h3>
                   <p>{t("standout.section.step5.desc")}</p>
                   <blockquote className="border-l-4 border-cyan-400 bg-cyan-50 dark:bg-cyan-900/30 px-6 py-4 rounded-xl shadow-md text-lg font-semibold text-blue-900 dark:text-yellow-100 my-8 animate-fade-in scale-105">
-                    <span className="text-3xl mr-2 align-middle text-cyan-400 dark:text-yellow-200">“</span>
+                    <span className="text-3xl mr-2 align-middle text-cyan-400 dark:text-yellow-200">
+                      “
+                    </span>
                     {t("standout.section.quote")}
-                    <span className="text-3xl ml-2 align-middle text-cyan-400 dark:text-yellow-200">”</span>
+                    <span className="text-3xl ml-2 align-middle text-cyan-400 dark:text-yellow-200">
+                      ”
+                    </span>
                   </blockquote>
                   <h3 className="font-extrabold text-cyan-700 dark:text-yellow-300 mt-10 animate-fade-in-up">
                     {t("standout.section.ctaTitle")}
@@ -202,9 +207,13 @@ const StandoutPortfolioBlog = () => {
                   </h3>
                   <p>{t("standout.section.inspirationDesc")}</p>
                   <blockquote className="border-l-4 border-yellow-400 bg-yellow-50 dark:bg-yellow-900/20 px-6 py-4 rounded-xl shadow text-lg font-semibold text-blue-900 dark:text-yellow-100 my-8 animate-fade-in scale-105">
-                    <span className="text-2xl mr-2 align-middle text-yellow-400 dark:text-yellow-200">★</span>
+                    <span className="text-2xl mr-2 align-middle text-yellow-400 dark:text-yellow-200">
+                      ★
+                    </span>
                     {t("standout.section.inspirationQuote")}
-                    <span className="text-2xl ml-2 align-middle text-yellow-400 dark:text-yellow-200">★</span>
+                    <span className="text-2xl ml-2 align-middle text-yellow-400 dark:text-yellow-200">
+                      ★
+                    </span>
                   </blockquote>
                 </article>
               </div>

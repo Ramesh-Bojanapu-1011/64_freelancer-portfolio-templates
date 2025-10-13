@@ -361,8 +361,7 @@
         "date": "Sep 10, 2025"
       }
     }
-  }
-  ,
+  },
   "standout": {
     "title": "Building a Standout Freelancer Portfolio | Blog",
     "metaDescription": "Learn how to build a standout freelancer portfolio that attracts clients and showcases your unique skills.",
@@ -374,20 +373,47 @@
     "section": {
       "whyTitle": "Why Your Portfolio Matters",
       "intro": "In the world of freelancing, your portfolio is more than a collection of work—it’s your brand, your story, and your best sales tool. A standout portfolio not only showcases your skills but also builds trust and credibility with potential clients.",
-      "step1": { "title": "1. Define Your Unique Value", "desc": "Start by identifying what makes you different. Highlight your strengths and the problems you solve best." },
-      "step2": { "title": "2. Curate, Don’t Just Collect", "desc": "Quality beats quantity. Select projects that reflect your best work and align with the clients you want to attract." },
-      "step3": { "title": "3. Show, Don’t Tell", "desc": "Use visuals, case studies, and testimonials to bring your work to life." },
-      "step4": { "title": "4. Make It Easy to Navigate", "desc": "A clean, intuitive layout helps visitors find what they’re looking for. Include a strong call-to-action." },
-      "step5": { "title": "5. Keep It Fresh", "desc": "Update your portfolio regularly with new work, skills, and achievements." },
+      "step1": {
+        "title": "1. Define Your Unique Value",
+        "desc": "Start by identifying what makes you different. Highlight your strengths and the problems you solve best."
+      },
+      "step2": {
+        "title": "2. Curate, Don’t Just Collect",
+        "desc": "Quality beats quantity. Select projects that reflect your best work and align with the clients you want to attract."
+      },
+      "step3": {
+        "title": "3. Show, Don’t Tell",
+        "desc": "Use visuals, case studies, and testimonials to bring your work to life."
+      },
+      "step4": {
+        "title": "4. Make It Easy to Navigate",
+        "desc": "A clean, intuitive layout helps visitors find what they’re looking for. Include a strong call-to-action."
+      },
+      "step5": {
+        "title": "5. Keep It Fresh",
+        "desc": "Update your portfolio regularly with new work, skills, and achievements."
+      },
       "quote": "Your portfolio is the bridge between your talent and your next big opportunity.",
       "ctaTitle": "Ready to Stand Out?",
       "ctaDesc": "Building a standout freelancer portfolio takes time and intention, but the rewards are worth it. Start today, and let your work open doors to new possibilities.",
       "mistakesTitle": "Common Portfolio Mistakes to Avoid",
       "mistakes": {
-        "overload": { "title": "Overloading with projects", "desc": "Too many items can overwhelm visitors. Curate your best work." },
-        "context": { "title": "Lack of context", "desc": "Don’t just show the final result—explain your process and the impact." },
-        "outdated": { "title": "Outdated work", "desc": "Remove old or irrelevant projects to keep your portfolio fresh." },
-        "cta": { "title": "No clear call-to-action", "desc": "Make it easy for clients to contact you or start a project." }
+        "overload": {
+          "title": "Overloading with projects",
+          "desc": "Too many items can overwhelm visitors. Curate your best work."
+        },
+        "context": {
+          "title": "Lack of context",
+          "desc": "Don’t just show the final result—explain your process and the impact."
+        },
+        "outdated": {
+          "title": "Outdated work",
+          "desc": "Remove old or irrelevant projects to keep your portfolio fresh."
+        },
+        "cta": {
+          "title": "No clear call-to-action",
+          "desc": "Make it easy for clients to contact you or start a project."
+        }
       },
       "visualTitle": "Tips for Visual Storytelling",
       "visual": {
@@ -403,6 +429,81 @@
       "inspirationTitle": "Inspiration: Portfolios That Shine",
       "inspirationDesc": "Explore portfolios from top freelancers in your field and let their creativity inspire your own approach.",
       "inspirationQuote": "A great portfolio is not just a gallery—it's a journey through your creative mind."
+    }
+  },
+  "clientOutreach": {
+    "title": "Winning Clients: Outreach Strategies for 2025 | Blog",
+    "metaDescription": "Discover the most effective outreach strategies for freelancers in 2025. Learn how to win clients with modern, creative, and data-driven approaches.",
+    "heroTitle": "Winning Clients: Outreach Strategies for 2025",
+    "by": "By",
+    "author": "Jordan Outreach",
+    "tags": "Outreach, Clients, Freelancing",
+    "heroDesc": "Discover the latest outreach strategies to win clients in 2025. Stand out, connect authentically, and grow your freelance business with proven, creative approaches.",
+    "section": {
+      "title": "The New Rules of Client Outreach",
+      "intro": "In 2025, client outreach is more creative, data-driven, and personal than ever. Winning clients means going beyond cold emails—it's about building real relationships, leveraging technology, and showing your unique value.",
+      "p1": {
+        "title": "1. Personalization at Scale",
+        "desc": "Use smart tools to research prospects and tailor every message. Personalized video intros and voice notes break through the noise."
+      },
+      "p2": {
+        "title": "2. Multi-Channel Approach",
+        "desc": "Combine email, LinkedIn, Twitter, and even voice or video DMs. Consistent, value-driven touchpoints build familiarity and trust."
+      },
+      "p3": {
+        "title": "3. Value-First Messaging",
+        "desc": "Lead with value. Share a quick audit, a relevant resource, or a creative idea tailored to their business."
+      },
+      "p4": {
+        "title": "4. Leverage Social Proof",
+        "desc": "Highlight recent wins, testimonials, and case studies to build credibility."
+      },
+      "p5": {
+        "title": "5. Automate, But Stay Human",
+        "desc": "Use automation for research and follow-ups, but keep your core messages human and authentic."
+      },
+      "quote": "The best outreach feels like a conversation, not a pitch.",
+      "creativeTitle": "Creative Outreach Ideas for 2025",
+      "idea1": {
+        "title": "Send a personalized video pitch",
+        "desc": "introducing yourself and your ideas."
+      },
+      "idea2": {
+        "title": "Create a mini audit or teardown",
+        "desc": "of their website or brand, and share actionable tips."
+      },
+      "idea3": {
+        "title": "Design a custom sample",
+        "desc": "(like a logo, landing page, or content snippet) to show your skills."
+      },
+      "idea4": {
+        "title": "Host a micro-webinar",
+        "desc": "or Q&A session for prospects in your niche."
+      },
+      "idea5": {
+        "title": "Send a voice note",
+        "desc": "via LinkedIn or Twitter for a more personal touch."
+      },
+      "metricsTitle": "Metrics That Matter",
+      "metric1": {
+        "title": "Response rate",
+        "desc": "How many prospects reply to your outreach?"
+      },
+      "metric2": {
+        "title": "Meeting booked rate",
+        "desc": "How many conversations turn into calls?"
+      },
+      "metric3": {
+        "title": "Conversion rate",
+        "desc": "How many leads become clients?"
+      },
+      "metric4": {
+        "title": "Referral rate",
+        "desc": "How many clients refer you to others?"
+      },
+      "finalTitle": "Final Thoughts: Outreach That Wins",
+      "finalDesc": "The most successful freelancers in 2025 combine creativity, empathy, and smart tools. Make every outreach message count—build relationships, not just close deals.",
+      "finalQuote": "Clients remember how you made them feel, not just what you offered."
     }
   }
 }
