@@ -236,12 +236,12 @@ const SiteHeader = () => {
               >
                 <span className="hidden lg:inline">
                   {user && (user.firstname || user.lastname)
-                    ? `$${
+                    ? `${
                         user.firstname && user.firstname.charAt(0).toUpperCase()
                       }${
                         user.lastname && user.lastname.charAt(0).toUpperCase()
                       }`.trim()
-                    : user && user.email && "AD"}
+                    : "AD"}
                 </span>
                 <svg
                   className="w-4 h-4 ml-1"
