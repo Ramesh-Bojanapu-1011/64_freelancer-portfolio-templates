@@ -1,25 +1,24 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 
 const services = [
-  { label: "Web Design", href: "/services/web-design" },
-  { label: "UI/UX Design", href: "/services/ui-ux" },
-  { label: "Branding", href: "/services/branding" },
-  { label: "SEO", href: "/services/seo" },
-  { label: "Content Writing", href: "/services/content-writing" },
-  { label: "Digital Marketing", href: "/services/marketing" },
+  { label: "nav.webDesign", href: "/services/web-design" },
+  { label: "nav.uiux", href: "/services/ui-ux" },
+  { label: "nav.branding", href: "/services/branding" },
+  { label: "nav.seo", href: "/services/seo" },
+  { label: "nav.contentWriting", href: "/services/content-writing" },
+  { label: "nav.digitalMarketing", href: "/services/marketing" },
 ];
 
 const quickLinks = [
-  { label: "Home1", href: "/home1" },
-  {
-    label: "Home2",
-    href: "/home2",
-  },
-  { label: "About Us", href: "/about-us" },
-  { label: "Blog", href: "/blog" },
-  { label: "Contact Us", href: "/contact-us" },
+  { label: "nav.home1", href: "/home1" },
+  { label: "nav.home2", href: "/home2" },
+  { label: "nav.about", href: "/about-us" },
+  { label: "nav.services", href: "/services" },
+  { label: "nav.blog", href: "/blog" },
+  { label: "nav.contact", href: "/contact-us" },
 ];
 
 const socialLinks = [
@@ -85,6 +84,7 @@ const socialLinks = [
 ];
 
 const SiteFooter = () => {
+  const { t } = useTranslation();
   return (
     <footer className="bg-gradient-to-r from-cyan-600 via-sky-500 to-blue-700 dark:from-gray-950 dark:via-gray-900 dark:to-blue-950 text-blue-50 dark:text-blue-100 pt-12 pb-6 px-4 sm:px-6 lg:px-8 caret-transparent">
       <div className="  mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
@@ -99,9 +99,10 @@ const SiteFooter = () => {
             />
           </div>
           <p className="mb-4 text-blue-100/80 text-sm">
-            Elevate your freelance business with our modern portfolio templates.
-            Showcase your skills, attract clients, and grow your brand with
-            style and confidence.
+            {t(
+              "footer.about",
+              "Elevate your freelance business with our modern portfolio templates. Showcase your skills, attract clients, and grow your brand with style and confidence.",
+            )}
           </p>
           <div className="flex gap-3">
             {socialLinks.map((s) => (
@@ -122,7 +123,7 @@ const SiteFooter = () => {
         {/* Quick Links */}
         <div>
           <h3 className="text-yellow-300 font-bold text-lg mb-4">
-            Quick Links
+            {t("footer.quickLinks", "Quick Links")}
           </h3>
           <ul className="space-y-2">
             {quickLinks.map((link) => (
@@ -131,7 +132,7 @@ const SiteFooter = () => {
                   href={link.href}
                   className="hover:text-yellow-200 transition-colors duration-100"
                 >
-                  {link.label}
+                  {t(link.label)}
                 </a>
               </li>
             ))}
@@ -140,7 +141,9 @@ const SiteFooter = () => {
 
         {/* Services */}
         <div>
-          <h3 className="text-yellow-300 font-bold text-lg mb-4">Services</h3>
+          <h3 className="text-yellow-300 font-bold text-lg mb-4">
+            {t("footer.services", "Services")}
+          </h3>
           <ul className="space-y-2">
             {services.map((service) => (
               <li key={service.label}>
@@ -148,7 +151,7 @@ const SiteFooter = () => {
                   href={service.href}
                   className="hover:text-yellow-200 transition-colors duration-100"
                 >
-                  {service.label}
+                  {t(service.label)}
                 </a>
               </li>
             ))}
@@ -157,24 +160,37 @@ const SiteFooter = () => {
 
         {/* Contact Us */}
         <div>
-          <h3 className="text-yellow-300 font-bold text-lg mb-4">Contact Us</h3>
+          <h3 className="text-yellow-300 font-bold text-lg mb-4">
+            {t("footer.contactUs", "Contact Us")}
+          </h3>
           <ul className="space-y-2 text-blue-100/80 text-sm">
             <li>
-              <span className="font-semibold">Email:</span> info@freelancer.com
+              <span className="font-semibold">
+                {t("footer.email", "Email:")}
+              </span>{" "}
+              info@freelancer.com
             </li>
             <li>
-              <span className="font-semibold">Phone:</span> +1 234 567 890
+              <span className="font-semibold">
+                {t("footer.phone", "Phone:")}
+              </span>{" "}
+              +1 234 567 890
             </li>
             <li>
-              <span className="font-semibold">Address:</span> 123 Freelancer
-              Ave, Remote City
+              <span className="font-semibold">
+                {t("footer.address", "Address:")}
+              </span>{" "}
+              123 Freelancer Ave, Remote City
             </li>
           </ul>
         </div>
       </div>
       <div className="mt-10 border-t border-blue-200 dark:border-blue-900 pt-6 text-center text-xs text-blue-100/60">
-        &copy; {new Date().getFullYear()} Freelancer Portfolio Templates. All
-        rights reserved.
+        &copy; {new Date().getFullYear()}{" "}
+        {t(
+          "footer.copyright",
+          "Freelancer Portfolio Templates. All rights reserved.",
+        )}
       </div>
     </footer>
   );

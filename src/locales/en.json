@@ -18,5 +18,15 @@
     "profile": "Profile",
     "logout": "Logout",
     "adminDashboard": "Admin Dashboard"
+  },
+  "footer": {
+    "about": "Elevate your freelance business with our modern portfolio templates. Showcase your skills, attract clients, and grow your brand with style and confidence.",
+    "quickLinks": "Quick Links",
+    "services": "Services",
+    "contactUs": "Contact Us",
+    "email": "Email:",
+    "phone": "Phone:",
+    "address": "Address:",
+    "copyright": "Freelancer Portfolio Templates. All rights reserved."
   }
 }
