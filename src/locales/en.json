@@ -667,13 +667,11 @@
         "img": "/web-project-1.png",
         "title": "Portfolio Website",
         "desc": "A modern, responsive portfolio for a creative professional, featuring unique layouts and smooth animations."
-        
       },
       {
         "img": "/web-project-2.png",
         "title": "E-Commerce Landing",
         "desc": "A vibrant landing page for an online shop, optimized for conversions and mobile-first experiences."
-        
       },
       {
         "img": "/web-project-3.png",
@@ -725,6 +723,87 @@
       "title": "Ready to Elevate Your Brand?",
       "desc": "Let’s build something amazing together. Start your project today and make your vision a reality with a modern, high-impact portfolio.",
       "button": "Start Your Project"
+    }
+  },
+  "uiUx": {
+    "metaTitle": "UI/UX Design Services - Freelancer Portfolio",
+    "metaDescription": "User-centered UI/UX design for web and mobile. Usability, delightful interactions, and conversion-focused interfaces.",
+    "heroTitle": "UI/UX Design That Delights",
+    "heroDesc": "Elevate your product with intuitive, beautiful, and user-centered UI/UX design for web, mobile, and SaaS.",
+    "heroButton": "Get a Free Consultation",
+    "philosophyTitle": "Our UI/UX Design Philosophy",
+    "philosophyDesc": "We believe in clarity, delight, and purpose. Every interface is crafted to be intuitive, visually engaging, and aligned with user needs.",
+    "philosophyPoints": [
+      "Human-centered, accessible design for all users",
+      "Pixel-perfect, scalable interfaces for any device",
+      "Seamless, delightful user journeys",
+      "Collaboration at every step"
+    ],
+    "featuredTitle": "Featured UI/UX Projects",
+    "projects": [
+      {
+        "img": "/uiux-project-1.png",
+        "title": "SaaS Dashboard Redesign",
+        "desc": "A data-rich SaaS dashboard reimagined for clarity, speed, and delight across all devices.",
+        "accent": "-top-8 -left-8 bg-gradient-to-br from-cyan-200 via-blue-200 to-yellow-100"
+      },
+      {
+        "img": "/uiux-project-2.png",
+        "title": "Mobile App Experience",
+        "desc": "A mobile-first app with intuitive navigation, playful microinteractions, and bold visuals.",
+        "accent": "-top-8 -right-8 bg-gradient-to-br from-yellow-100 via-cyan-200 to-blue-100"
+      },
+      {
+        "img": "/uiux-project-3.png",
+        "title": "E-Commerce UX Overhaul",
+        "desc": "A seamless shopping journey with frictionless checkout and conversion-optimized flows.",
+        "accent": "-bottom-8 -left-8 bg-gradient-to-br from-blue-100 via-cyan-200 to-yellow-100"
+      }
+    ],
+    "processTitle": "Our UI/UX Design Process",
+    "processSteps": [
+      {
+        "title": "Research & Discovery",
+        "desc": "We dive deep into your users, goals, and market to uncover insights that drive design decisions."
+      },
+      {
+        "title": "Wireframing & Prototyping",
+        "desc": "We sketch, wireframe, and prototype to explore ideas and validate flows before visual design."
+      },
+      {
+        "title": "Visual Design & Handoff",
+        "desc": "We create stunning, on-brand visuals and hand off pixel-perfect assets to development."
+      },
+      {
+        "title": "Testing & Iteration",
+        "desc": "We test with real users, gather feedback, and iterate for continuous improvement."
+      }
+    ],
+    "whyTitle": "Why Choose Us for UI/UX Design?",
+    "whyFeatures": {
+      "items": [
+        {
+          "title": "Award-Winning UX",
+          "desc": "Our work is recognized for innovation, usability, and impact."
+        },
+        {
+          "title": "User-First Approach",
+          "desc": "We design for real people, not just pixels or trends."
+        },
+        {
+          "title": "Modern, Scalable Systems",
+          "desc": "We create design systems that grow with your business."
+        },
+        {
+          "title": "Ongoing Partnership",
+          "desc": "We support you after launch with insights, updates, and care."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ready to Transform Your Experience?",
+      "desc": "Let’s create something users love. Start your UI/UX project today.",
+      "button": "Start Your UI/UX Project"
     }
   }
 }

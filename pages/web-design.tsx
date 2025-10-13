@@ -264,12 +264,82 @@ const WebDesign = () => {
                   className="bg-white/90 dark:bg-gray-900/90 rounded-3xl p-8 border border-cyan-100 dark:border-cyan-900 shadow-xl flex flex-col items-center text-center group hover:scale-[1.03] transition-transform duration-300 relative overflow-hidden"
                 >
                   <div className="w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-br from-cyan-200 via-blue-200 to-yellow-100 dark:from-cyan-900 dark:via-blue-950 dark:to-yellow-900 shadow-lg border-4 border-cyan-200 dark:border-cyan-800">
-                    <svg width="32" height="32" fill="none" viewBox="0 0 24 24">
-                      <path
-                        d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01z"
-                        fill="#facc15"
-                      />
-                    </svg>
+                    {idx === 0 && (
+                      <>
+                        <svg
+                          width="32"
+                          height="32"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01z"
+                            fill="#facc15"
+                          />
+                        </svg>
+                      </>
+                    )}
+                    {idx === 1 && (
+                      <>
+                        <svg
+                          width="32"
+                          height="32"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                        >
+                          <circle cx="12" cy="12" r="10" fill="#bae6fd" />
+                          <path
+                            d="M8 12l2 2 4-4"
+                            stroke="#0891b2"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </>
+                    )}
+                    {idx === 2 && (
+                      <>
+                        <svg
+                          width="32"
+                          height="32"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                        >
+                          <rect
+                            x="5"
+                            y="5"
+                            width="14"
+                            height="14"
+                            rx="3"
+                            fill="#a7f3d0"
+                          />
+                          <path
+                            d="M9 9h6v6H9z"
+                            stroke="#0891b2"
+                            strokeWidth="2"
+                          />
+                        </svg>
+                      </>
+                    )}
+                    {idx === 3 && (
+                      <>
+                        <svg
+                          width="32"
+                          height="32"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M12 19V5M5 12l7-7 7 7"
+                            stroke="#10b981"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </>
+                    )}
                   </div>
                   <div className="font-bold text-cyan-700 dark:text-yellow-300 text-lg mt-4 mb-2">
                     {item.title}

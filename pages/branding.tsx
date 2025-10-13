@@ -285,7 +285,7 @@ const Branding = () => {
                   </p>
                   {/* Connector line for all but last */}
                   {idx < arr.length - 1 && (
-                     <span
+                    <span
                       className={`hidden min-[769px]:block absolute top-7 ${
                         i18n.language == "en" ? "right-[-50%]" : "left-[-50%]"
                       }    w-[100%] h-1 bg-gradient-to-r from-cyan-200 via-yellow-100 to-blue-200 dark:from-cyan-900 dark:via-yellow-900 dark:to-blue-950 opacity-40 z-0`}
