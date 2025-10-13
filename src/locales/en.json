@@ -646,5 +646,86 @@
         "img": "https://randomuser.me/api/portraits/men/68.jpg"
       }
     ]
+  },
+  "webDesign": {
+    "metaTitle": "Web Design Services - Freelancer Portfolio",
+    "metaDescription": "Creative, modern web design services for freelancers and businesses. Unique layouts, responsive design, and beautiful user experiences.",
+    "heroTitle": "Web Design That Inspires",
+    "heroDesc": "Elevate your brand with creative, modern, and responsive web design tailored for freelancers and businesses.",
+    "heroButton": "Get Started",
+    "approachTitle": "Our Web Design Approach",
+    "approachDesc": "We blend creativity, usability, and the latest technology to craft websites that are both beautiful and effective.",
+    "approachPoints": [
+      "Custom, responsive layouts for every device",
+      "User-focused design for better engagement",
+      "Fast, accessible, and SEO-friendly code",
+      "Collaboration at every step"
+    ],
+    "featuredTitle": "Featured Web Design Projects",
+    "projects": [
+      {
+        "img": "/web-project-1.png",
+        "title": "Portfolio Website",
+        "desc": "A modern, responsive portfolio for a creative professional, featuring unique layouts and smooth animations.",
+        "accent": "-top-8 -left-8"
+      },
+      {
+        "img": "/web-project-2.png",
+        "title": "E-Commerce Landing",
+        "desc": "A vibrant landing page for an online shop, optimized for conversions and mobile-first experiences.",
+        "accent": "-top-8 -right-8"
+      },
+      {
+        "img": "/web-project-3.png",
+        "title": "Business Homepage",
+        "desc": "A clean, professional homepage for a growing business, with custom graphics and interactive features.",
+        "accent": "-bottom-8 -left-8"
+      }
+    ],
+    "processTitle": "Our Web Design Process",
+    "processSteps": [
+      {
+        "title": "Discovery",
+        "desc": "We start by understanding your goals, audience, and vision to set a strong foundation."
+      },
+      {
+        "title": "Design & Prototype",
+        "desc": "We craft wireframes and high-fidelity designs, focusing on creativity, usability, and your brand."
+      },
+      {
+        "title": "Development",
+        "desc": "We build your site with modern code, ensuring speed, accessibility, and responsiveness."
+      },
+      {
+        "title": "Launch & Support",
+        "desc": "We launch your site and provide ongoing support, so you can focus on your business."
+      }
+    ],
+    "whyTitle": "Why Choose Us for Web Design?",
+    "whyFeatures": {
+      "items": [
+        {
+          "title": "Award-Winning Creativity",
+          "desc": "Our designs have been recognized for their originality and impact."
+        },
+        {
+          "title": "Proven Results",
+          "desc": "We deliver sites that drive engagement, conversions, and growth."
+        },
+        {
+          "title": "Modern, Clean Code",
+          "desc": "We use the latest tech for fast, accessible, and maintainable websites."
+        },
+        {
+          "title": "Ongoing Support",
+          "desc": "We’re here for you after launch, with updates and expert help."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ready to Elevate Your Brand?",
+      "desc": "Let’s build something amazing together. Start your project today and make your vision a reality with a modern, high-impact portfolio.",
+      "button": "Start Your Project"
+    }
   }
 }
