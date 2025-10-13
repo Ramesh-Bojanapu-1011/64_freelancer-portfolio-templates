@@ -289,5 +289,77 @@
         }
       ]
     }
+  },
+  "blog": {
+    "pageTitle": "Blog - Freelancer Portfolio",
+    "metaDescription": "Insights, tips, and stories for creative freelancers and agencies.",
+    "heroTitle": "Insights & Inspiration",
+    "heroDesc": "Tips, stories, and resources for creative freelancers and agencies.",
+    "latest": "Latest from the Blog",
+    "readMore": "Read More",
+    "clientTitle": "Client",
+    "clientHighlight": "Success Stories",
+    "story1": {
+      "title": "From Zero to Booked Out",
+      "desc": "A designer revamped their portfolio and landed 5 new clients in a month."
+    },
+    "story2": {
+      "title": "Remote Work, Real Results",
+      "desc": "A freelancer used productivity tools to double their project output remotely."
+    },
+    "story3": {
+      "title": "Branding That Wins",
+      "desc": "A creative’s new personal brand led to a feature in a top industry blog."
+    },
+    "howWeCurateTitle": "How We Curate Content",
+    "stepLabel": "Step",
+    "step1": {
+      "title": "Research",
+      "desc": "We track trends, interview experts, and listen to our community."
+    },
+    "step2": {
+      "title": "Write & Design",
+      "desc": "Our team crafts engaging articles and visuals for every post."
+    },
+    "step3": {
+      "title": "Publish & Share",
+      "desc": "We launch new content and promote it across our channels."
+    },
+    "testimonialsTitle": "What Readers Say",
+    "testimonials": {
+      "t1": {
+        "name": "Priya S.",
+        "text": "The blog is my go-to for fresh ideas and practical advice. Love the design!"
+      },
+      "t2": {
+        "name": "David L.",
+        "text": "Every post is packed with value. It’s helped me grow my freelance business."
+      },
+      "t3": {
+        "name": "Sara K.",
+        "text": "I always find something inspiring and actionable. Highly recommended!"
+      }
+    },
+    "newsletterTitle": "Stay Inspired",
+    "newsletterDesc": "Subscribe to our newsletter for the latest blog updates, tips, and exclusive resources.",
+    "emailPlaceholder": "Your email address",
+    "subscribe": "Subscribe",
+    "readings": {
+      "blog.1": {
+        "title": "Building a Standout Freelancer Portfolio",
+        "desc": "Discover how to craft a portfolio that attracts clients and showcases your unique skills as a freelancer.",
+        "date": "Oct 1, 2025"
+      },
+      "blog.2": {
+        "title": "Winning Clients: Outreach Strategies for 2025",
+        "desc": "Learn proven methods for connecting with clients and landing more freelance projects in a competitive market.",
+        "date": "Sep 20, 2025"
+      },
+      "blog.3": {
+        "title": "Remote Work Success: Tips for Freelancers",
+        "desc": "Master the art of remote work with productivity hacks, workspace ideas, and communication tips for freelancers.",
+        "date": "Sep 10, 2025"
+      }
+    }
   }
 }

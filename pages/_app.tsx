@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import i18n from "@/i18n";
 import "aos/dist/aos.css";
@@ -11,16 +10,21 @@ export default function App({ Component, pageProps }: AppProps) {
   const [langReady, setLangReady] = React.useState(false);
   React.useEffect(() => {
     if (typeof window !== "undefined") {
-      const savedLang = localStorage.getItem("selectedLanguage");
-      if (savedLang === "English" && i18n.language !== "en")
-        i18n.changeLanguage("en");
-      else if (savedLang === "Arabic" && i18n.language !== "ar")
-        i18n.changeLanguage("ar");
-      else if (savedLang === "Hebrew" && i18n.language !== "he")
-        i18n.changeLanguage("he");
+      // Use the same key as SiteHeader: selectedLanguageCode
+      const savedLangCode =
+        localStorage.getItem("selectedLanguageCode") || "en";
+      if (i18n.language !== savedLangCode) i18n.changeLanguage(savedLangCode);
+      // set dir attribute
+      if (savedLangCode !== "en") {
+        document.documentElement.setAttribute("dir", "rtl");
+        document.body.classList.add("rtl");
+      } else {
+        document.documentElement.setAttribute("dir", "ltr");
+        document.body.classList.remove("rtl");
+      }
       setLangReady(true);
     }
-  }, [i18n.language]);
+  }, []);
   if (!langReady) return null;
   return (
     <ThemeProvider>
