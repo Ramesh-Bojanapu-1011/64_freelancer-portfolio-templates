@@ -194,5 +194,100 @@
     "ctaTitle": "Ready to Start Your Project?",
     "ctaDesc": "Let’s work together to create something amazing. Reach out and let’s make your vision a reality!",
     "ctaButton": "Contact Us"
+  },
+  "services": {
+    "metaTitle": "Our Services - Freelancer Portfolio",
+    "metaDescription": "Explore our creative services for freelancers and businesses.",
+    "title": "Our Services",
+    "heroDesc": "Discover the creative solutions we offer to help you shine online.",
+    "whatWeOffer": "What We Offer",
+    "learnMore": "Learn More",
+    "webDesign": {
+      "title": "Web Design",
+      "desc": "Modern, responsive websites tailored to your brand."
+    },
+    "uiux": {
+      "title": "UI/UX Design",
+      "desc": "Intuitive interfaces and seamless user experiences."
+    },
+    "branding": {
+      "title": "Branding",
+      "desc": "Distinctive visual identities that stand out."
+    },
+    "development": {
+      "title": "Development",
+      "desc": "Robust, scalable web and app development."
+    },
+    "seoMarketing": {
+      "title": "SEO & Marketing",
+      "desc": "Grow your reach with smart SEO and digital marketing."
+    },
+    "contentCreation": {
+      "title": "Content Creation",
+      "desc": "Engaging copy, visuals, and media for your brand."
+    },
+    "successStories": {
+      "title": "Success Stories",
+      "desc": "See how we’ve helped clients achieve their goals with creative, impactful solutions.",
+      "stories": [
+        {
+          "title": "Brand Transformation for NovaTech",
+          "desc": "We reimagined NovaTech’s digital presence, resulting in a 60% increase in engagement and a fresh, modern brand identity."
+        },
+        {
+          "title": "E-Commerce Growth for UrbanStyle",
+          "desc": "A new e-commerce platform and marketing strategy led to a 2x boost in sales and a loyal customer base."
+        },
+        {
+          "title": "App Launch for FitTrackr",
+          "desc": "From concept to launch, we delivered a top-rated fitness app, praised for its design and usability."
+        }
+      ]
+    },
+    "process": {
+      "title": "Our Creative Process",
+      "desc": "Every project is a journey. Here’s how we turn your ideas into impactful digital experiences:",
+      "stepLabel": "Step",
+      "steps": [
+        {
+          "title": "Discovery",
+          "desc": "We listen, research, and understand your goals, audience, and vision."
+        },
+        {
+          "title": "Design & Ideation",
+          "desc": "We craft wireframes, moodboards, and creative concepts tailored to your brand."
+        },
+        {
+          "title": "Development",
+          "desc": "We build robust, scalable, and beautiful digital products using the latest tech."
+        },
+        {
+          "title": "Launch & Support",
+          "desc": "We launch, monitor, and support your project for ongoing success."
+        }
+      ]
+    },
+    "whyChooseUs": {
+      "title": "Why Choose Us?",
+      "desc": "We’re not just another agency. Here’s what makes us the perfect partner for your next project:",
+      "items": [
+        {
+          "title": "Creative Excellence",
+          "desc": "Award-winning designs and innovative solutions that set you apart."
+        },
+        {
+          "title": "Client-Centric",
+          "desc": "We listen, adapt, and deliver personalized experiences every time."
+        },
+        {
+          "title": "Full-Service Team",
+          "desc": "From strategy to launch, our experts cover every aspect of your project."
+        },
+        {
+          "title": "Ongoing Support",
+          "desc": "We’re here for you after launch, ensuring your continued success."
+        }
+      ]
+    }
   }
 }

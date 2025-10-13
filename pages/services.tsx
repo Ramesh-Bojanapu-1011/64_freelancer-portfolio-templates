@@ -4,11 +4,17 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import React from "react";
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
 
-const services = [
+import type { TFunction } from "i18next";
+
+const useServices = (t: TFunction) => [
   {
-    name: "Web Design",
-    desc: "Modern, responsive websites tailored to your brand.",
+    name: t("services.webDesign.title", t("nav.webDesign")),
+    desc: t(
+      "services.webDesign.desc",
+      "Modern, responsive websites tailored to your brand.",
+    ),
     icon: (
       <svg
         className="w-10 h-10 text-cyan-500"
@@ -24,8 +30,11 @@ const services = [
     href: "/services/web-design",
   },
   {
-    name: "UI/UX Design",
-    desc: "Intuitive interfaces and seamless user experiences.",
+    name: t("services.uiux.title", t("nav.uiux")),
+    desc: t(
+      "services.uiux.desc",
+      "Intuitive interfaces and seamless user experiences.",
+    ),
     icon: (
       <svg
         className="w-10 h-10 text-yellow-500"
@@ -42,8 +51,11 @@ const services = [
     href: "/services/ui-ux-design",
   },
   {
-    name: "Branding",
-    desc: "Distinctive visual identities that stand out.",
+    name: t("services.branding.title", t("nav.branding")),
+    desc: t(
+      "services.branding.desc",
+      "Distinctive visual identities that stand out.",
+    ),
     icon: (
       <svg
         className="w-10 h-10 text-pink-500"
@@ -59,8 +71,11 @@ const services = [
     href: "/services/branding",
   },
   {
-    name: "Development",
-    desc: "Robust, scalable web and app development.",
+    name: t("services.development.title", "Development"),
+    desc: t(
+      "services.development.desc",
+      "Robust, scalable web and app development.",
+    ),
     icon: (
       <svg
         className="w-10 h-10 text-blue-500"
@@ -76,8 +91,11 @@ const services = [
     href: "/services/development",
   },
   {
-    name: "SEO & Marketing",
-    desc: "Grow your reach with smart SEO and digital marketing.",
+    name: t("services.seoMarketing.title", "SEO & Marketing"),
+    desc: t(
+      "services.seoMarketing.desc",
+      "Grow your reach with smart SEO and digital marketing.",
+    ),
     icon: (
       <svg
         className="w-10 h-10 text-green-500"
@@ -93,8 +111,11 @@ const services = [
     href: "/services/seo-marketing",
   },
   {
-    name: "Content Creation",
-    desc: "Engaging copy, visuals, and media for your brand.",
+    name: t("services.contentCreation.title", "Content Creation"),
+    desc: t(
+      "services.contentCreation.desc",
+      "Engaging copy, visuals, and media for your brand.",
+    ),
     icon: (
       <svg
         className="w-10 h-10 text-purple-500"
@@ -112,13 +133,20 @@ const services = [
 ];
 
 const ServicesPage = () => {
+  const { t } = useTranslation();
+  const services = useServices(t);
   return (
     <>
       <Head>
-        <title>Our Services - Freelancer Portfolio</title>
+        <title>
+          {t("services.metaTitle", "Our Services - Freelancer Portfolio")}
+        </title>
         <meta
           name="description"
-          content="Explore our creative services for freelancers and businesses."
+          content={t(
+            "services.metaDescription",
+            "Explore our creative services for freelancers and businesses.",
+          )}
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
@@ -128,10 +156,13 @@ const ServicesPage = () => {
         <section className="relative flex flex-col items-center justify-center  py-20 px-4 text-center bg-gradient-to-br from-cyan-50 via-blue-100 to-yellow-50 dark:from-cyan-950 dark:via-gray-950 dark:to-blue-950/80 border-b border-cyan-100 dark:border-cyan-900 min-h-screen overflow-hidden">
           <div className="absolute -top-24 -left-24 w-80 h-80 bg-gradient-to-br from-cyan-200 via-blue-200 to-yellow-100 dark:from-cyan-900 dark:via-blue-950 dark:to-yellow-900 rounded-full blur-3xl opacity-20 pointer-events-none animate-pulse"></div>
           <h1 className="text-5xl md:text-6xl font-extrabold text-blue-900 dark:text-blue-100 mb-4 drop-shadow-lg">
-            Our Services
+            {t("services.title", "Our Services")}
           </h1>
           <p className="text-xl md:text-2xl text-blue-800 dark:text-blue-200 mb-8 max-w-2xl mx-auto">
-            Discover the creative solutions we offer to help you shine online.
+            {t(
+              "services.heroDesc",
+              "Discover the creative solutions we offer to help you shine online.",
+            )}
           </p>
         </section>
 
@@ -139,7 +170,7 @@ const ServicesPage = () => {
         <section className="relative py-24 px-4 bg-gradient-to-tr from-white via-cyan-50 to-yellow-50 dark:from-gray-900 dark:via-cyan-950 dark:to-yellow-900 border-b border-cyan-100 dark:border-cyan-900 overflow-hidden">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl font-extrabold text-cyan-700 dark:text-cyan-300 mb-12 text-center">
-              What We Offer
+              {t("services.whatWeOffer", "What We Offer")}
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
               {services.map((service) => (
@@ -153,7 +184,7 @@ const ServicesPage = () => {
                       {service.desc}
                     </p>
                     <span className="inline-block mt-4 px-5 py-2 rounded-full bg-gradient-to-r from-cyan-600 via-sky-500 to-blue-700 text-yellow-200 font-bold text-sm shadow group-hover:from-yellow-300 group-hover:to-yellow-400 group-hover:text-blue-900 transition-all duration-200">
-                      Learn More
+                      {t("services.learnMore", "Learn More")}
                     </span>
                   </div>
                 </Link>
@@ -166,32 +197,52 @@ const ServicesPage = () => {
         <section className="relative py-24 px-4 bg-gradient-to-br from-yellow-50 via-cyan-50 to-blue-100 dark:from-gray-950 dark:via-gray-900 dark:to-blue-950 overflow-hidden">
           <div className="max-w-5xl mx-auto text-center relative z-10">
             <h2 className="text-3xl font-extrabold text-blue-900 dark:text-yellow-200 mb-8 drop-shadow-lg">
-              Success Stories
+              {t("services.successStories.title", "Success Stories")}
             </h2>
             <p className="text-lg text-blue-800 dark:text-blue-200 mb-16 max-w-2xl mx-auto">
-              See how we’ve helped clients achieve their goals with creative,
-              impactful solutions.
+              {t(
+                "services.successStories.desc",
+                "See how we’ve helped clients achieve their goals with creative, impactful solutions.",
+              )}
             </p>
             <div className="relative flex flex-col gap-16 before:absolute before:left-1/2 before:top-0 before:bottom-0 before:w-1 before:bg-gradient-to-b before:from-cyan-200 before:via-blue-200 before:to-yellow-200 dark:before:from-cyan-900 dark:before:via-blue-950 dark:before:to-yellow-900 before:-translate-x-1/2">
               {[
                 {
                   year: "2023",
-                  title: "Brand Transformation for NovaTech",
-                  desc: "We reimagined NovaTech’s digital presence, resulting in a 60% increase in engagement and a fresh, modern brand identity.",
+                  title: t(
+                    "services.successStories.stories.0.title",
+                    "Brand Transformation for NovaTech",
+                  ),
+                  desc: t(
+                    "services.successStories.stories.0.desc",
+                    "We reimagined NovaTech’s digital presence, resulting in a 60% increase in engagement and a fresh, modern brand identity.",
+                  ),
                   img: "/success/novatech.jpg",
                   align: "left",
                 },
                 {
                   year: "2024",
-                  title: "E-Commerce Growth for UrbanStyle",
-                  desc: "A new e-commerce platform and marketing strategy led to a 2x boost in sales and a loyal customer base.",
+                  title: t(
+                    "services.successStories.stories.1.title",
+                    "E-Commerce Growth for UrbanStyle",
+                  ),
+                  desc: t(
+                    "services.successStories.stories.1.desc",
+                    "A new e-commerce platform and marketing strategy led to a 2x boost in sales and a loyal customer base.",
+                  ),
                   img: "/success/urbanstyle.jpg",
                   align: "right",
                 },
                 {
                   year: "2025",
-                  title: "App Launch for FitTrackr",
-                  desc: "From concept to launch, we delivered a top-rated fitness app, praised for its design and usability.",
+                  title: t(
+                    "services.successStories.stories.2.title",
+                    "App Launch for FitTrackr",
+                  ),
+                  desc: t(
+                    "services.successStories.stories.2.desc",
+                    "From concept to launch, we delivered a top-rated fitness app, praised for its design and usability.",
+                  ),
                   img: "/success/fittrackr.jpg",
                   align: "left",
                 },
@@ -235,20 +286,25 @@ const ServicesPage = () => {
 
         {/* Our Creative Process Section */}
         <section className="relative py-20 px-4 bg-gradient-to-br from-yellow-50 via-cyan-50 to-blue-100 dark:from-gray-950 dark:via-gray-900 dark:to-blue-950 overflow-hidden">
-          <div className="max-w-5xl mx-auto text-center relative z-10">
+          <div className=" mx-auto text-center relative z-10">
             <h2 className="text-3xl font-extrabold text-blue-900 dark:text-yellow-200 mb-8 drop-shadow-lg">
-              Our Creative Process
+              {t("services.process.title", "Our Creative Process")}
             </h2>
             <p className="text-lg text-blue-800 dark:text-blue-200 mb-12 max-w-2xl mx-auto">
-              Every project is a journey. Here’s how we turn your ideas into
-              impactful digital experiences:
+              {t(
+                "services.process.desc",
+                "Every project is a journey. Here’s how we turn your ideas into impactful digital experiences:",
+              )}
             </p>
-            <div className="flex flex-col md:flex-row gap-10 justify-center items-stretch">
+            <div className="flex flex-col flex-wrap md:flex-row gap-10 justify-center items-stretch">
               {[
                 {
                   step: 1,
-                  title: "Discovery",
-                  desc: "We listen, research, and understand your goals, audience, and vision.",
+                  title: t("services.process.steps.0.title", "Discovery"),
+                  desc: t(
+                    "services.process.steps.0.desc",
+                    "We listen, research, and understand your goals, audience, and vision.",
+                  ),
                   icon: (
                     <span className="w-14 h-14 flex items-center justify-center bg-cyan-100 dark:bg-cyan-900 rounded-full shadow-lg mb-4 mx-auto">
                       <svg
@@ -268,8 +324,14 @@ const ServicesPage = () => {
                 },
                 {
                   step: 2,
-                  title: "Design & Ideation",
-                  desc: "We craft wireframes, moodboards, and creative concepts tailored to your brand.",
+                  title: t(
+                    "services.process.steps.1.title",
+                    "Design & Ideation",
+                  ),
+                  desc: t(
+                    "services.process.steps.1.desc",
+                    "We craft wireframes, moodboards, and creative concepts tailored to your brand.",
+                  ),
                   icon: (
                     <span className="w-14 h-14 flex items-center justify-center bg-yellow-100 dark:bg-yellow-900 rounded-full shadow-lg mb-4 mx-auto">
                       <svg
@@ -289,8 +351,11 @@ const ServicesPage = () => {
                 },
                 {
                   step: 3,
-                  title: "Development",
-                  desc: "We build robust, scalable, and beautiful digital products using the latest tech.",
+                  title: t("services.process.steps.2.title", "Development"),
+                  desc: t(
+                    "services.process.steps.2.desc",
+                    "We build robust, scalable, and beautiful digital products using the latest tech.",
+                  ),
                   icon: (
                     <span className="w-14 h-14 flex items-center justify-center bg-blue-100 dark:bg-blue-900 rounded-full shadow-lg mb-4 mx-auto">
                       <svg
@@ -310,8 +375,14 @@ const ServicesPage = () => {
                 },
                 {
                   step: 4,
-                  title: "Launch & Support",
-                  desc: "We launch, monitor, and support your project for ongoing success.",
+                  title: t(
+                    "services.process.steps.3.title",
+                    "Launch & Support",
+                  ),
+                  desc: t(
+                    "services.process.steps.3.desc",
+                    "We launch, monitor, and support your project for ongoing success.",
+                  ),
                   icon: (
                     <span className="w-14 h-14 flex items-center justify-center bg-green-100 dark:bg-green-900 rounded-full shadow-lg mb-4 mx-auto">
                       <svg
@@ -332,13 +403,13 @@ const ServicesPage = () => {
               ].map((step, idx) => (
                 <div
                   key={step.title}
-                  className="relative bg-white/80 dark:bg-gray-900/80 rounded-3xl border border-cyan-100 dark:border-cyan-900 p-8 flex-1 flex flex-col items-center shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl min-w-[220px] max-w-[300px] mx-auto"
+                  className="relative bg-white/80 dark:bg-gray-900/80 rounded-3xl border border-cyan-100 dark:border-cyan-900 p-8 flex-1 flex flex-col items-center shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl min-w-[300px] max-w-[350px] mx-auto"
                   style={{ zIndex: 10 + idx }}
                 >
                   <span className="absolute -top-8 left-1/2 -translate-x-1/2 w-16 h-16 bg-gradient-to-br from-cyan-200 via-blue-200 to-yellow-100 dark:from-cyan-900 dark:via-blue-950 dark:to-yellow-900 rounded-full blur-2xl opacity-20 pointer-events-none"></span>
                   {step.icon}
                   <div className="text-2xl font-bold text-cyan-700 dark:text-yellow-300 mb-2">
-                    Step {step.step}
+                    {t("services.process.stepLabel", "Step")} {step.step}
                   </div>
                   <div className="font-bold text-blue-900 dark:text-yellow-200 text-xl mb-2">
                     {step.title}
@@ -640,17 +711,25 @@ const ServicesPage = () => {
         <section className="relative py-20 px-4 bg-gradient-to-br from-blue-50 via-cyan-100 to-yellow-50 dark:from-gray-950 dark:via-gray-900 dark:to-blue-950 border-b border-cyan-100 dark:border-cyan-900 overflow-hidden">
           <div className="max-w-6xl mx-auto text-center relative z-10">
             <h2 className="text-3xl font-extrabold text-cyan-700 dark:text-cyan-300 mb-8 drop-shadow-lg">
-              Why Choose Us?
+              {t("services.whyChooseUs.title", "Why Choose Us?")}
             </h2>
             <p className="text-lg text-blue-800 dark:text-blue-200 mb-12 max-w-2xl mx-auto">
-              We’re not just another agency. Here’s what makes us the perfect
-              partner for your next project:
+              {t(
+                "services.whyChooseUs.desc",
+                "We’re not just another agency. Here’s what makes us the perfect partner for your next project:",
+              )}
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
               {[
                 {
-                  title: "Creative Excellence",
-                  desc: "Award-winning designs and innovative solutions that set you apart.",
+                  title: t(
+                    "services.whyChooseUs.items.0.title",
+                    "Creative Excellence",
+                  ),
+                  desc: t(
+                    "services.whyChooseUs.items.0.desc",
+                    "Award-winning designs and innovative solutions that set you apart.",
+                  ),
                   icon: (
                     <span className="w-14 h-14 flex items-center justify-center bg-yellow-100 dark:bg-yellow-900 rounded-full shadow-lg mb-4 mx-auto">
                       <svg
@@ -669,8 +748,14 @@ const ServicesPage = () => {
                   ),
                 },
                 {
-                  title: "Client-Centric",
-                  desc: "We listen, adapt, and deliver personalized experiences every time.",
+                  title: t(
+                    "services.whyChooseUs.items.1.title",
+                    "Client-Centric",
+                  ),
+                  desc: t(
+                    "services.whyChooseUs.items.1.desc",
+                    "We listen, adapt, and deliver personalized experiences every time.",
+                  ),
                   icon: (
                     <span className="w-14 h-14 flex items-center justify-center bg-cyan-100 dark:bg-cyan-900 rounded-full shadow-lg mb-4 mx-auto">
                       <svg
@@ -696,8 +781,14 @@ const ServicesPage = () => {
                   ),
                 },
                 {
-                  title: "Full-Service Team",
-                  desc: "From strategy to launch, our experts cover every aspect of your project.",
+                  title: t(
+                    "services.whyChooseUs.items.2.title",
+                    "Full-Service Team",
+                  ),
+                  desc: t(
+                    "services.whyChooseUs.items.2.desc",
+                    "From strategy to launch, our experts cover every aspect of your project.",
+                  ),
                   icon: (
                     <span className="w-14 h-14 flex items-center justify-center bg-blue-100 dark:bg-blue-900 rounded-full shadow-lg mb-4 mx-auto">
                       <svg
@@ -716,8 +807,14 @@ const ServicesPage = () => {
                   ),
                 },
                 {
-                  title: "Ongoing Support",
-                  desc: "We’re here for you after launch, ensuring your continued success.",
+                  title: t(
+                    "services.whyChooseUs.items.3.title",
+                    "Ongoing Support",
+                  ),
+                  desc: t(
+                    "services.whyChooseUs.items.3.desc",
+                    "We’re here for you after launch, ensuring your continued success.",
+                  ),
                   icon: (
                     <span className="w-14 h-14 flex items-center justify-center bg-green-100 dark:bg-green-900 rounded-full shadow-lg mb-4 mx-auto">
                       <svg
