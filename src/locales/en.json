@@ -129,5 +129,70 @@
     "contactFormTitle": "Project Inquiry",
     "contactFormDesc": "Tell me about your goals, timeline, and vision. I'll get back to you with ideas and a plan to make your project a success.",
     "contactButton": "Contact Us"
+  },
+  "about": {
+    "title": "About Us - Freelancer Portfolio",
+    "metaDescription": "About Us - Freelancer Portfolio",
+    "heroTitle": "About Us",
+    "heroDesc": "Learn more about our journey, mission, and the creative minds behind the Freelancer Portfolio.",
+    "storyTitle": "Our Story",
+    "timeline": {
+      "2018": {
+        "title": "Founded",
+        "desc": "Our journey began with a vision to empower creative professionals and freelancers worldwide."
+      },
+      "2020": {
+        "title": "Community Grows",
+        "desc": "We grew into a thriving community, collaborating with talented clients and creatives across the globe."
+      },
+      "2023": {
+        "title": "Innovation & Impact",
+        "desc": "We continue to innovate, delivering impactful solutions and helping clients achieve their dreams."
+      }
+    },
+    "teamTitle": "Meet the Team",
+    "teamDesc": "Our diverse team blends creativity, strategy, and technology to deliver exceptional results. Get to know the people who make it all possible!",
+    "team": [
+      { "name": "Alex Morgan", "role": "Lead Designer" },
+      { "name": "Sophie Lee", "role": "Brand Strategist" },
+      { "name": "Chris Patel", "role": "Web Developer" }
+    ],
+    "valuesTitle": "Our Values",
+    "values": [
+      {
+        "title": "Creativity",
+        "desc": "Bold ideas, unique solutions, and pushing creative boundaries."
+      },
+      {
+        "title": "Collaboration",
+        "desc": "Working closely with clients and each other for the best results."
+      },
+      {
+        "title": "Excellence",
+        "desc": "Delivering top-quality work and exceeding expectations."
+      }
+    ],
+    "testimonialsTitle": "What Our Clients Say 💬",
+    "testimonialsDesc": "Real experiences. Real transformations. See how we’ve helped freelancers, startups, and creators shine online.",
+    "testimonials": [
+      {
+        "name": "Priya Sharma",
+        "quote": "Absolutely amazing work! The design perfectly matched my brand. The team listened to my ideas and delivered beyond my expectations.",
+        "company": "Freelance Designer, India"
+      },
+      {
+        "name": "Liam O'Connor",
+        "quote": "Professional, creative, and reliable. The final product helped me attract new clients and boosted my online presence significantly.",
+        "company": "Web Developer, Ireland"
+      },
+      {
+        "name": "Sara Kim",
+        "quote": "Their attention to detail is unmatched. My portfolio now looks clean, elegant, and super fast. Truly impressed with the results!",
+        "company": "Photographer, USA"
+      }
+    ],
+    "ctaTitle": "Ready to Start Your Project?",
+    "ctaDesc": "Let’s work together to create something amazing. Reach out and let’s make your vision a reality!",
+    "ctaButton": "Contact Us"
   }
 }

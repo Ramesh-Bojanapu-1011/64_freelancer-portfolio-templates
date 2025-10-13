@@ -4,13 +4,15 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import React from "react";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 
 const AboutUs = () => {
+  const { t } = useTranslation();
   return (
     <>
       <Head>
-        <title>About Us - Freelancer Portfolio</title>
-        <meta name="description" content="About Us - Freelancer Portfolio" />
+        <title>{t("about.title")}</title>
+        <meta name="description" content={t("about.metaDescription")} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <SiteHeader />
@@ -18,11 +20,10 @@ const AboutUs = () => {
         {/* Hero Section */}
         <section className="flex flex-col items-center justify-center min-h-[100vh] py-20 px-4 text-center bg-gradient-to-br from-cyan-50 via-blue-100 to-yellow-50 dark:from-cyan-950 dark:via-gray-950 dark:to-blue-950/80 border-b border-cyan-100 dark:border-cyan-900">
           <h1 className="text-5xl md:text-6xl font-extrabold text-blue-900 dark:text-blue-100 mb-4 drop-shadow-lg">
-            About Us
+            {t("about.heroTitle")}
           </h1>
           <p className="text-xl md:text-2xl text-blue-800 dark:text-blue-200 mb-8 max-w-2xl mx-auto">
-            Learn more about our journey, mission, and the creative minds behind
-            the Freelancer Portfolio.
+            {t("about.heroDesc")}
           </p>
         </section>
 
@@ -33,7 +34,7 @@ const AboutUs = () => {
           <div className="absolute -bottom-24 -right-24 w-80 h-80 bg-gradient-to-tl from-yellow-100 via-cyan-100 to-blue-100 dark:from-yellow-900 dark:via-cyan-900 dark:to-blue-900 rounded-full blur-3xl opacity-20 pointer-events-none animate-pulse"></div>
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl font-extrabold text-cyan-700 dark:text-cyan-300 mb-16 text-center tracking-tight drop-shadow-lg">
-              Our Story
+              {t("about.storyTitle")}
             </h2>
             {/* Timeline */}
             <div className="relative flex flex-col items-center">
@@ -47,7 +48,7 @@ const AboutUs = () => {
                     badge:
                       "bg-gradient-to-br from-cyan-400 via-blue-400 to-yellow-200 dark:from-cyan-700 dark:via-blue-800 dark:to-yellow-900",
                     dot: "bg-gradient-to-br from-cyan-400 via-blue-400 to-yellow-200 dark:from-cyan-700 dark:via-blue-800 dark:to-yellow-900",
-                    title: "Founded",
+                    title: t("about.timeline.2018.title"),
                     titleColor: "text-cyan-700 dark:text-cyan-300",
                     icon: (
                       <svg
@@ -64,7 +65,7 @@ const AboutUs = () => {
                         />
                       </svg>
                     ),
-                    desc: "Our journey began with a vision to empower creative professionals and freelancers worldwide.",
+                    desc: t("about.timeline.2018.desc"),
                   },
                   {
                     year: "2020",
@@ -72,7 +73,7 @@ const AboutUs = () => {
                     badge:
                       "bg-gradient-to-br from-yellow-300 via-cyan-300 to-blue-200 dark:from-yellow-700 dark:via-cyan-800 dark:to-blue-900",
                     dot: "bg-gradient-to-br from-yellow-300 via-cyan-300 to-blue-200 dark:from-yellow-700 dark:via-cyan-800 dark:to-blue-900",
-                    title: "Community Grows",
+                    title: t("about.timeline.2020.title"),
                     titleColor: "text-yellow-600 dark:text-yellow-300",
                     icon: (
                       <svg
@@ -90,7 +91,7 @@ const AboutUs = () => {
                         <circle cx="12" cy="7" r="4" />
                       </svg>
                     ),
-                    desc: "We grew into a thriving community, collaborating with talented clients and creatives across the globe.",
+                    desc: t("about.timeline.2020.desc"),
                   },
                   {
                     year: "2023",
@@ -98,7 +99,7 @@ const AboutUs = () => {
                     badge:
                       "bg-gradient-to-br from-blue-400 via-cyan-400 to-yellow-200 dark:from-blue-700 dark:via-cyan-800 dark:to-yellow-900",
                     dot: "bg-gradient-to-br from-blue-400 via-cyan-400 to-yellow-200 dark:from-blue-700 dark:via-cyan-800 dark:to-yellow-900",
-                    title: "Innovation & Impact",
+                    title: t("about.timeline.2023.title"),
                     titleColor: "text-blue-600 dark:text-blue-300",
                     icon: (
                       <svg
@@ -115,7 +116,7 @@ const AboutUs = () => {
                         />
                       </svg>
                     ),
-                    desc: "We continue to innovate, delivering impactful solutions and helping clients achieve their dreams.",
+                    desc: t("about.timeline.2023.desc"),
                   },
                 ].map((event, idx) => {
                   const isRight = idx % 2 === 0;
@@ -178,34 +179,32 @@ const AboutUs = () => {
 
           <div className="mx-auto text-center  z-10">
             <h2 className="text-3xl font-extrabold text-cyan-700 dark:text-cyan-300 mb-4 drop-shadow-lg">
-              Meet the Team
+              {t("about.teamTitle")}
             </h2>
             <p className="text-lg text-blue-800 dark:text-blue-200 mb-14 max-w-2xl mx-auto">
-              Our diverse team blends creativity, strategy, and technology to
-              deliver exceptional results. Get to know the people who make it
-              all possible!
+              {t("about.teamDesc")}
             </p>
             <div className="flex flex-col md:flex-row items-center justify-center gap-6 relative">
               {[
                 {
-                  name: "Alex Morgan",
-                  role: "Lead Designer",
+                  name: t("about.team.0.name"),
+                  role: t("about.team.0.role"),
                   avatar: "https://randomuser.me/api/portraits/men/32.jpg",
                   accent:
                     "from-cyan-300 via-blue-200 to-yellow-100 dark:from-cyan-800 dark:via-blue-900 dark:to-yellow-900",
                   shadow: "shadow-cyan-200 dark:shadow-cyan-900/40",
                 },
                 {
-                  name: "Sophie Lee",
-                  role: "Brand Strategist",
+                  name: t("about.team.1.name"),
+                  role: t("about.team.1.role"),
                   avatar: "https://randomuser.me/api/portraits/women/44.jpg",
                   accent:
                     "from-yellow-200 via-cyan-200 to-blue-100 dark:from-yellow-900 dark:via-cyan-900 dark:to-blue-900",
                   shadow: "shadow-yellow-200 dark:shadow-yellow-900/40",
                 },
                 {
-                  name: "Chris Patel",
-                  role: "Web Developer",
+                  name: t("about.team.2.name"),
+                  role: t("about.team.2.role"),
                   avatar: "https://randomuser.me/api/portraits/men/65.jpg",
                   accent:
                     "from-blue-200 via-cyan-200 to-yellow-100 dark:from-blue-900 dark:via-cyan-900 dark:to-yellow-900",
@@ -254,13 +253,13 @@ const AboutUs = () => {
           <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-40 bg-gradient-to-r from-cyan-200 via-blue-200 to-yellow-100 dark:from-cyan-900 dark:via-blue-950 dark:to-yellow-900 rounded-full blur-3xl opacity-20 pointer-events-none animate-pulse"></div>
           <div className="max-w-5xl mx-auto text-center relative z-10">
             <h2 className="text-3xl font-extrabold text-cyan-700 dark:text-cyan-300 mb-10 drop-shadow-lg">
-              Our Values
+              {t("about.valuesTitle")}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10 justify-center items-center md:gap-16">
               {[
                 {
-                  title: "Creativity",
-                  desc: "Bold ideas, unique solutions, and pushing creative boundaries.",
+                  title: t("about.values.0.title"),
+                  desc: t("about.values.0.desc"),
                   icon: (
                     <svg
                       className="w-16 h-16 mx-auto text-cyan-400 drop-shadow-lg"
@@ -287,8 +286,8 @@ const AboutUs = () => {
                   anim: "animate-float-slow",
                 },
                 {
-                  title: "Collaboration",
-                  desc: "Working closely with clients and each other for the best results.",
+                  title: t("about.values.1.title"),
+                  desc: t("about.values.1.desc"),
                   icon: (
                     <svg
                       className="w-16 h-16 mx-auto text-yellow-400 drop-shadow-lg"
@@ -316,8 +315,8 @@ const AboutUs = () => {
                   anim: "animate-float-medium",
                 },
                 {
-                  title: "Excellence",
-                  desc: "Delivering top-quality work and exceeding expectations.",
+                  title: t("about.values.2.title"),
+                  desc: t("about.values.2.desc"),
                   icon: (
                     <svg
                       className="w-16 h-16 mx-auto text-blue-400 drop-shadow-lg"
@@ -414,38 +413,34 @@ const AboutUs = () => {
 
           <div className="max-w-6xl mx-auto text-center relative z-10">
             <h2 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-cyan-600 via-blue-600 to-yellow-600 bg-clip-text text-transparent drop-shadow-lg mb-6 tracking-tight">
-              What Our Clients Say 💬
+              {t("about.testimonialsTitle")}
             </h2>
             <p className="text-lg md:text-xl text-blue-800 dark:text-blue-200 mb-16 max-w-2xl mx-auto leading-relaxed">
-              Real experiences. Real transformations. See how we’ve helped
-              freelancers, startups, and creators shine online.
+              {t("about.testimonialsDesc")}
             </p>
 
             {/* Testimonials Grid */}
             <div className="grid md:grid-cols-3 gap-10">
               {[
                 {
-                  name: "Priya Sharma",
+                  name: t("about.testimonials.0.name"),
                   avatar: "https://randomuser.me/api/portraits/women/68.jpg",
-                  quote:
-                    "Absolutely amazing work! The design perfectly matched my brand. The team listened to my ideas and delivered beyond my expectations.",
-                  company: "Freelance Designer, India",
+                  quote: t("about.testimonials.0.quote"),
+                  company: t("about.testimonials.0.company"),
                 },
                 {
-                  name: "Liam O'Connor",
+                  name: t("about.testimonials.1.name"),
                   avatar: "https://randomuser.me/api/portraits/men/51.jpg",
-                  quote:
-                    "Professional, creative, and reliable. The final product helped me attract new clients and boosted my online presence significantly.",
-                  company: "Web Developer, Ireland",
+                  quote: t("about.testimonials.1.quote"),
+                  company: t("about.testimonials.1.company"),
                 },
                 {
-                  name: "Sara Kim",
+                  name: t("about.testimonials.2.name"),
                   avatar: "https://randomuser.me/api/portraits/women/85.jpg",
-                  quote:
-                    "Their attention to detail is unmatched. My portfolio now looks clean, elegant, and super fast. Truly impressed with the results!",
-                  company: "Photographer, USA",
+                  quote: t("about.testimonials.2.quote"),
+                  company: t("about.testimonials.2.company"),
                 },
-              ].map((t, i) => (
+              ].map((tst, i) => (
                 <div
                   key={i}
                   className="group relative bg-white/70 dark:bg-gray-900/60 backdrop-blur-xl rounded-3xl border border-cyan-100 dark:border-cyan-800 shadow-2xl p-8 flex flex-col items-center text-center hover:-translate-y-2 transition-all duration-500 hover:shadow-cyan-400/40"
@@ -467,8 +462,8 @@ const AboutUs = () => {
                   {/* Avatar */}
                   <div className="mt-8 mb-4">
                     <Image
-                      src={t.avatar}
-                      alt={t.name}
+                      src={tst.avatar}
+                      alt={tst.name}
                       width={90}
                       height={90}
                       className="rounded-full border-4 border-cyan-300 shadow-md object-cover transition-transform duration-500 group-hover:scale-110 bg-white dark:bg-gray-800"
@@ -477,15 +472,15 @@ const AboutUs = () => {
 
                   {/* Quote */}
                   <p className="text-lg italic text-blue-900 dark:text-blue-100 mb-6 leading-relaxed">
-                    “{t.quote}”
+                    “{tst.quote}”
                   </p>
 
                   {/* Name */}
                   <h3 className="font-semibold text-cyan-700 dark:text-cyan-300 text-lg">
-                    {t.name}
+                    {tst.name}
                   </h3>
                   <span className="text-blue-700 dark:text-blue-300 text-sm mt-1">
-                    {t.company}
+                    {tst.company}
                   </span>
 
                   {/* Bottom Accent */}
@@ -500,17 +495,16 @@ const AboutUs = () => {
         <section className="py-20 px-4 bg-gradient-to-br from-cyan-50 via-blue-100 to-yellow-50 dark:from-cyan-950 dark:via-gray-950 dark:to-blue-950/80">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-3xl font-extrabold text-cyan-700 dark:text-cyan-300 mb-6">
-              Ready to Start Your Project?
+              {t("about.ctaTitle")}
             </h2>
             <p className="text-lg text-blue-900 dark:text-blue-100 mb-8">
-              Let’s work together to create something amazing. Reach out and
-              let’s make your vision a reality!
+              {t("about.ctaDesc")}
             </p>
             <Link
               href="/contact-us"
               className="inline-block px-8 py-3 rounded-full bg-gradient-to-r from-cyan-600 via-sky-500 to-blue-700 text-yellow-200 font-bold text-lg shadow-lg hover:from-yellow-300 hover:to-yellow-400 hover:text-blue-900 transition-all duration-200"
             >
-              Contact Us
+              {t("about.ctaButton")}
             </Link>
           </div>
         </section>
