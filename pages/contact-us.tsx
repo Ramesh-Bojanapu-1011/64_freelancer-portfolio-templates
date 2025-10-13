@@ -4,56 +4,23 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
-// FAQ Accordion Component (top-level, valid .tsx syntax)
-
-const faqs = [
-  {
-    q: "How quickly do you respond to inquiries?",
-    a: "We aim to reply to all messages within 24 hours on business days.",
-  },
-  {
-    q: "Can I book a discovery call?",
-    a: "Absolutely! Use the form or email us to schedule a free consultation.",
-  },
-  {
-    q: "What info should I include?",
-    a: "Tell us about your project, goals, and any deadlines you have in mind.",
-  },
-];
-
-const testimonials = [
-  {
-    name: "Alex P.",
-    text: "The team was responsive, creative, and delivered beyond expectations!",
-    img: "https://randomuser.me/api/portraits/men/45.jpg",
-  },
-  {
-    name: "Maya R.",
-    text: "Excellent communication and beautiful results. Highly recommend!",
-    img: "https://randomuser.me/api/portraits/women/65.jpg",
-  },
-  {
-    name: "Samuel T.",
-    text: "Their attention to detail and ability to bring my vision to life was incredible. I loved the collaborative process!",
-    img: "https://randomuser.me/api/portraits/men/32.jpg",
-  },
-  {
-    name: "Priya S.",
-    text: "A seamless experience from start to finish. The site looks stunning and works perfectly on all devices.",
-    img: "https://randomuser.me/api/portraits/women/44.jpg",
-  },
-  {
-    name: "Liam W.",
-    text: "Creative, professional, and always on time. I couldn’t ask for a better partner for my freelance projects!",
-    img: "https://randomuser.me/api/portraits/men/68.jpg",
-  },
-];
+// FAQ and testimonial data are loaded from i18n inside the component so content is fully translatable.
 
 const ContactUs = () => {
+  const { t } = useTranslation();
   const [form, setForm] = React.useState({ name: "", email: "", message: "" });
   const [success, setSuccess] = React.useState(false);
   const formRef = React.useRef<HTMLFormElement | null>(null);
+  // Load translatable arrays from i18n resource files
+  const faqs = t("contact.faqs", { returnObjects: true }) as Array<{
+    q: string;
+    a: string;
+  }>;
+  const testimonials = t("contact.testimonials", {
+    returnObjects: true,
+  }) as Testimonial[];
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -71,7 +38,7 @@ const ContactUs = () => {
     const action = form.getAttribute("action");
 
     if (!action) {
-      alert("ContactUs.Form.error");
+      alert(t("contact.form.error"));
       return;
     }
 
@@ -88,21 +55,18 @@ const ContactUs = () => {
         setForm({ name: "", email: "", message: "" });
         setSuccess(true);
       } else {
-        alert("ContactUs.Form.error");
+        alert(t("contact.form.error"));
       }
     } catch (error) {
       console.error("Submission error:", error);
-      alert("ContactUs.Form.error");
+      alert(t("contact.form.error"));
     }
   };
   return (
     <>
       <Head>
-        <title>Contact Us - Freelancer Portfolio</title>
-        <meta
-          name="description"
-          content="Get in touch for freelance projects, collaborations, or questions."
-        />
+        <title>{t("contact.title")}</title>
+        <meta name="description" content={t("contact.metaDescription")} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <SiteHeader />
@@ -111,11 +75,10 @@ const ContactUs = () => {
         <section className="relative flex flex-col items-center justify-center min-h-[100vh] py-20 px-4 text-center bg-gradient-to-br from-cyan-50 via-blue-100 to-yellow-50 dark:from-cyan-950 dark:via-gray-950 dark:to-blue-950/80 border-b border-cyan-100 dark:border-cyan-900 overflow-hidden">
           <div className="absolute -top-24 -left-24 w-80 h-80 bg-gradient-to-br from-cyan-200 via-blue-200 to-yellow-100 dark:from-cyan-900 dark:via-blue-950 dark:to-yellow-900 rounded-full blur-3xl opacity-20 pointer-events-none animate-pulse"></div>
           <h1 className="text-5xl md:text-6xl font-extrabold text-blue-900 dark:text-blue-100 mb-4 drop-shadow-lg">
-            Let&apos;s Connect
+            {t("contact.heroTitle")}
           </h1>
           <p className="text-xl md:text-2xl text-blue-800 dark:text-blue-200 mb-8 max-w-2xl mx-auto">
-            Ready to start your next project or have a question? Reach out
-            below!
+            {t("contact.heroDesc")}
           </p>
         </section>
 
@@ -123,7 +86,7 @@ const ContactUs = () => {
         <section className="relative py-20 px-4 bg-gradient-to-tr from-white via-cyan-50 to-yellow-50 dark:from-gray-900 dark:via-cyan-950 dark:to-yellow-900 border-b border-cyan-100 dark:border-cyan-900 overflow-hidden">
           <div className="max-w-2xl mx-auto bg-white/80 dark:bg-gray-900/80 rounded-3xl shadow-xl p-10 border border-cyan-100 dark:border-cyan-900">
             <h2 className="text-3xl font-extrabold text-cyan-700 dark:text-cyan-300 mb-8 text-center">
-              Contact Form
+              {t("contact.form.title")}
             </h2>
             {success && (
               <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm animate-fade-in">
@@ -148,10 +111,10 @@ const ContactUs = () => {
                     </svg>
                   </span>
                   <span className="text-lg md:text-xl font-semibold tracking-tight">
-                    Thank you! Your message has been sent.
+                    {t("contact.form.successTitle")}
                   </span>
                   <span className="text-white/80 text-sm font-normal">
-                    We appreciate your interest and will get back to you soon.
+                    {t("contact.form.successDesc")}
                   </span>
                 </div>
               </div>
@@ -167,7 +130,7 @@ const ContactUs = () => {
                 type="text"
                 name="name"
                 value={form.name}
-                placeholder="Your Name"
+                placeholder={t("contact.form.placeholderName")}
                 onChange={handleChange}
                 className="px-6 py-3 rounded-full border border-cyan-200 dark:border-cyan-800 bg-white/80 dark:bg-gray-900/80 text-blue-900 dark:text-blue-100 focus:outline-none focus:ring-2 focus:ring-cyan-400"
                 required
@@ -177,12 +140,12 @@ const ContactUs = () => {
                 name="email"
                 value={form.email}
                 onChange={handleChange}
-                placeholder="Your Email"
+                placeholder={t("contact.form.placeholderEmail")}
                 className="px-6 py-3 rounded-full border border-cyan-200 dark:border-cyan-800 bg-white/80 dark:bg-gray-900/80 text-blue-900 dark:text-blue-100 focus:outline-none focus:ring-2 focus:ring-cyan-400"
                 required
               />
               <textarea
-                placeholder="Your Message"
+                placeholder={t("contact.form.placeholderMessage")}
                 name="message"
                 value={form.message}
                 onChange={handleChange}
@@ -194,7 +157,7 @@ const ContactUs = () => {
                 type="submit"
                 className="px-8 py-3 rounded-full bg-gradient-to-r from-cyan-600 via-sky-500 to-blue-700 text-yellow-200 font-bold text-lg shadow hover:from-yellow-300 hover:to-yellow-400 hover:text-blue-900 transition-all duration-200"
               >
-                Send Message
+                {t("contact.form.submit")}
               </button>
             </form>
           </div>
@@ -207,7 +170,7 @@ const ContactUs = () => {
           <div className="absolute -bottom-16 right-1/4 w-40 h-40 bg-gradient-to-br from-yellow-100 via-cyan-200 to-blue-100 dark:from-yellow-900 dark:via-cyan-900 dark:to-blue-950 rounded-full blur-3xl opacity-20 pointer-events-none animate-pulse"></div>
           <div className="max-w-4xl mx-auto text-center relative z-10">
             <h2 className="text-2xl font-extrabold text-cyan-700 dark:text-cyan-300 mb-6 drop-shadow-lg">
-              Contact Information
+              {t("contact.info.title")}
             </h2>
             <div className="flex flex-col md:flex-row gap-8 justify-center items-center md:items-stretch">
               {/* Email Block */}
@@ -223,13 +186,13 @@ const ContactUs = () => {
                   </svg>
                 </span>
                 <div className="font-bold text-blue-900 dark:text-yellow-200 mb-2 text-lg">
-                  Email
+                  {t("contact.info.email")}
                 </div>
                 <a
                   href="mailto:hello@yourportfolio.com"
                   className="text-cyan-700 dark:text-cyan-300 underline break-all font-semibold"
                 >
-                  hello@yourportfolio.com
+                  {t("contact.info.emailValue")}
                 </a>
               </div>
               {/* Location Block */}
@@ -245,10 +208,10 @@ const ContactUs = () => {
                   </svg>
                 </span>
                 <div className="font-bold text-blue-900 dark:text-yellow-200 mb-2 text-lg">
-                  Location
+                  {t("contact.info.location")}
                 </div>
                 <div className="text-cyan-700 dark:text-cyan-300 font-semibold">
-                  Remote / Worldwide
+                  {t("contact.info.locationValue")}
                 </div>
               </div>
               {/* Social Block */}
@@ -264,7 +227,7 @@ const ContactUs = () => {
                   </svg>
                 </span>
                 <div className="font-bold text-blue-900 dark:text-yellow-200 mb-2 text-lg">
-                  Social
+                  {t("contact.info.social")}
                 </div>
                 <div className="flex gap-4 justify-center">
                   <Link
@@ -398,7 +361,7 @@ const ContactUs = () => {
         <section className="relative py-16 px-4 bg-gradient-to-br from-yellow-50 via-cyan-50 to-blue-100 dark:from-gray-950 dark:via-gray-900 dark:to-blue-950 border-b border-cyan-100 dark:border-cyan-900 overflow-hidden">
           <div className="max-w-3xl mx-auto text-center relative z-10">
             <h2 className="text-2xl font-extrabold text-blue-900 dark:text-yellow-200 mb-8 drop-shadow-lg">
-              Frequently Asked Questions
+              {t("contact.faq.title")}
             </h2>
             {/* Animated Accent */}
             <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-40 h-16 bg-gradient-to-r from-cyan-200 via-yellow-100 to-blue-200 dark:from-cyan-900 dark:via-yellow-900 dark:to-blue-950 rounded-full blur-2xl opacity-30 pointer-events-none animate-pulse"></div>
@@ -439,7 +402,7 @@ const ContactUs = () => {
           </svg>
           <div className="  mx-auto text-center relative z-10">
             <h2 className="text-3xl font-extrabold text-cyan-700 dark:text-cyan-300 mb-10 drop-shadow-lg tracking-tight">
-              What Clients Say
+              {t("contact.testimonialsTitle")}
             </h2>
             <TestimonialCarousel testimonials={testimonials} />
           </div>
@@ -449,17 +412,16 @@ const ContactUs = () => {
         <section className="relative py-20 px-4 bg-gradient-to-br from-yellow-50 via-cyan-50 to-blue-100 dark:from-gray-950 dark:via-gray-900 dark:to-blue-950 overflow-hidden">
           <div className="max-w-xl mx-auto text-center relative z-10">
             <h2 className="text-3xl font-extrabold text-blue-900 dark:text-yellow-200 mb-8 drop-shadow-lg">
-              Ready to Start?
+              {t("contact.cta.title")}
             </h2>
             <p className="text-lg text-blue-800 dark:text-blue-200 mb-8 max-w-2xl mx-auto">
-              Let’s build something amazing together. Share your vision and
-              let’s make it happen!
+              {t("contact.cta.desc")}
             </p>
             <a
               href="#"
               className="inline-block px-8 py-4 rounded-full bg-gradient-to-r from-cyan-600 via-sky-500 to-blue-700 text-yellow-200 font-bold text-lg shadow hover:from-yellow-300 hover:to-yellow-400 hover:text-blue-900 transition-all duration-200"
             >
-              Get Started
+              {t("contact.cta.button")}
             </a>
           </div>
         </section>
@@ -510,13 +472,23 @@ function TestimonialCarousel({ testimonials }: TestimonialCarouselProps) {
               className="bg-white/90 dark:bg-gray-900/90 rounded-3xl p-10 border border-cyan-100 dark:border-cyan-900 shadow-xl flex flex-col items-center flex-1"
             >
               <span className="mb-6 w-24 h-24 flex items-center justify-center rounded-full bg-gradient-to-br from-cyan-200 via-blue-200 to-yellow-100 dark:from-cyan-900 dark:via-blue-950 dark:to-yellow-900 shadow-lg border-4 border-cyan-200 dark:border-cyan-800 overflow-hidden">
-                <Image
-                  src={t.img}
-                  width={96}
-                  height={96}
-                  alt={t.name}
-                  className="w-24 h-24 rounded-full object-cover"
-                />
+                {t.img ? (
+                  <Image
+                    src={t.img}
+                    width={96}
+                    height={96}
+                    alt={t.name}
+                    className="w-24 h-24 rounded-full object-cover"
+                  />
+                ) : (
+                  <div className="w-24 h-24 rounded-full bg-white/80 dark:bg-gray-800 flex items-center justify-center text-cyan-700 font-bold text-lg">
+                    {t.name
+                      .split(" ")
+                      .map((s) => s[0])
+                      .slice(0, 2)
+                      .join("")}
+                  </div>
+                )}
               </span>
               <blockquote className="italic text-2xl text-blue-900 dark:text-blue-100 mb-6 font-medium relative">
                 <svg
