@@ -805,5 +805,86 @@
       "desc": "Let’s create something users love. Start your UI/UX project today.",
       "button": "Start Your UI/UX Project"
     }
+  },
+  "branding": {
+    "metaTitle": "Branding Services - Freelancer Portfolio",
+    "metaDescription": "Create a memorable visual identity that connects with your audience and elevates your brand.",
+    "heroTitle": "Branding That Resonates",
+    "heroDesc": "We craft strategic, visually striking brand identities that tell your story and attract the right clients.",
+    "heroButton": "Get a Free Quote",
+    "philosophyTitle": "Our Branding Philosophy",
+    "philosophyDesc": "We blend strategy, design and storytelling to create brands that feel authentic, distinct and future-ready.",
+    "philosophyPoints": [
+      "Research-driven brand strategy",
+      "Distinctive visual identity systems",
+      "Clear messaging and tone of voice",
+      "Flexible assets for digital & print"
+    ],
+    "featuredTitle": "Featured Branding Projects",
+    "projects": [
+      {
+        "img": "/branding-project-1.png",
+        "title": "Startup Identity",
+        "desc": "A bold visual system and messaging to help a tech startup launch with confidence.",
+        "accent": "-top-6 -left-6 bg-gradient-to-br from-pink-200 via-red-200 to-yellow-100"
+      },
+      {
+        "img": "/branding-project-2.png",
+        "title": "Creative Agency Rebrand",
+        "desc": "A refreshed logo, color system and collateral to position the agency for growth.",
+        "accent": "-top-6 -right-6 bg-gradient-to-br from-yellow-100 via-indigo-200 to-cyan-100"
+      },
+      {
+        "img": "/branding-project-3.png",
+        "title": "Personal Brand",
+        "desc": "A clean, expressive personal brand for a freelancer focused on premium clients.",
+        "accent": "-bottom-6 -left-6 bg-gradient-to-br from-blue-100 via-cyan-200 to-purple-100"
+      }
+    ],
+    "processTitle": "Branding Process",
+    "processSteps": [
+      {
+        "title": "Discovery",
+        "desc": "We uncover audience needs, competitor landscape and your core positioning."
+      },
+      {
+        "title": "Strategy",
+        "desc": "We define brand pillars, messaging hierarchy and a visual direction."
+      },
+      {
+        "title": "Design",
+        "desc": "We craft logos, palettes, typography and asset systems for digital and print."
+      },
+      {
+        "title": "Launch",
+        "desc": "We prepare roll-out assets and guidelines so your brand launches consistently."
+      }
+    ],
+    "whyTitle": "Why Choose Our Branding?",
+    "whyFeatures": {
+      "items": [
+        {
+          "title": "Strategic Thinking",
+          "desc": "We build brands grounded in business goals and audience insight."
+        },
+        {
+          "title": "Built-for-scale",
+          "desc": "Systems that grow with your product, team and channels."
+        },
+        {
+          "title": "Craft & Detail",
+          "desc": "Pixel- and print-perfect assets with clear rules for use."
+        },
+        {
+          "title": "Support After Launch",
+          "desc": "Guidelines and additional assets as your needs evolve."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ready to Build Your Brand?",
+      "desc": "Let\u2019s craft a brand that tells your story and opens doors. Start with a short discovery call.",
+      "button": "Start Your Branding Project"
+    }
   }
 }

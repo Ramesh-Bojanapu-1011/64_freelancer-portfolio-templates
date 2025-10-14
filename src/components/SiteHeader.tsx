@@ -260,7 +260,7 @@ const SiteHeader = () => {
               <div
                 className={`absolute ${
                   i18n.language == "en" ? "right-0" : "left-0"
-                } mt-2 w-48 bg-blue-50 dark:bg-gray-900 rounded shadow-lg py-2 transition-all duration-150 z-20 border border-blue-200 dark:border-blue-900 ${
+                } mt-2   bg-blue-50 dark:bg-gray-900 rounded shadow-lg py-2 transition-all duration-150 z-20 border border-blue-200 dark:border-blue-900 ${
                   profileOpen ? "block" : "hidden"
                 }`}
               >
