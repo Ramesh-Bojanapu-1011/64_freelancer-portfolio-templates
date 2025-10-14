@@ -967,5 +967,86 @@
       "desc": "Let\u2019s boost your rankings and traffic. Start your SEO project today and unlock your business\u2019s full potential with modern, high-impact strategies.",
       "button": "Start Your SEO Project"
     }
+  },
+  "contentWriting": {
+    "hero": {
+      "title": "Words That Touch Hearts and Google",
+      "desc": "Boost your brand with content that connects, converts, and ranks. We craft words that tell your story and drive results.",
+      "cta": "Get a Free Content Audit"
+    },
+    "philosophy": {
+      "title": "Our Content Philosophy",
+      "desc": "We believe in clarity, creativity, and connection. Every word is chosen to attract, inform, and inspire your audience.",
+      "points": [
+        "Clear and persuasive storytelling",
+        "SEO-optimized and audience-focused writing",
+        "Content for every channel and format",
+        "Collaboration at every stage"
+      ]
+    },
+    "projects": {
+      "title": "Selected Content Projects",
+      "items": [
+        {
+          "title": "Brand Story",
+          "desc": "Developed a brand story and voice for a startup, resulting in increased engagement and loyalty."
+        },
+        {
+          "title": "SEO Blog Series",
+          "desc": "Created a high-performing blog series that ranked for competitive keywords and drove traffic growth."
+        },
+        {
+          "title": "Multichannel Campaign",
+          "desc": "Produced content for website, email, and social media—leading to a successful product launch."
+        }
+      ]
+    },
+    "process": {
+      "title": "Our Content Process",
+      "steps": [
+        {
+          "title": "Discovery & Briefing",
+          "desc": "We learn your goals, audience, and brand to lay the foundation for outstanding content."
+        },
+        {
+          "title": "Research & Ideation",
+          "desc": "We explore topics, keywords, and trends to develop a winning content strategy."
+        },
+        {
+          "title": "Writing & Editing",
+          "desc": "We write, edit, and polish content for clarity, creativity, and SEO impact."
+        },
+        {
+          "title": "Delivery & Optimization",
+          "desc": "We deliver, optimize, and support your content for maximum results."
+        }
+      ]
+    },
+    "why": {
+      "title": "Why Choose Us for Content Writing?",
+      "features": [
+        {
+          "title": "Award-Winning Copy",
+          "desc": "Our writing is recognized for creativity, clarity, and impact."
+        },
+        {
+          "title": "SEO & Conversion Focus",
+          "desc": "We blend creativity with strategy for content that ranks and sells."
+        },
+        {
+          "title": "Multi-Channel Expertise",
+          "desc": "We create content for web, email, social, and more."
+        },
+        {
+          "title": "Ongoing Partnership",
+          "desc": "We support your content needs with insights, updates, and care."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ready to Elevate Your Content?",
+      "desc": "Let’s tell your story and grow your brand. Start your writing project today and make your message unforgettable.",
+      "button": "Start Your Content Project"
+    }
   }
 }
