@@ -886,5 +886,86 @@
       "desc": "Let\u2019s craft a brand that tells your story and opens doors. Start with a short discovery call.",
       "button": "Start Your Branding Project"
     }
+  },
+  "seo": {
+    "hero": {
+      "title": "SEO That Gets You Found",
+      "desc": "Boost your visibility and grow your business. We deliver modern SEO strategies, technical expertise, and measurable results.",
+      "cta": "Get a Free SEO Audit"
+    },
+    "philosophy": {
+      "title": "Our SEO Philosophy",
+      "desc": "We believe in transparency, innovation, and results. Every SEO campaign is tailored to your goals and built for long-term growth.",
+      "points": [
+        "Transparent, data-driven strategies",
+        "Technical and on-page excellence",
+        "Content that ranks and converts",
+        "Partnership for ongoing growth"
+      ]
+    },
+    "projects": {
+      "title": "Featured SEO Projects",
+      "items": [
+        {
+          "title": "E-Commerce Growth",
+          "desc": "Doubled organic traffic for an online retailer with technical SEO and content strategy."
+        },
+        {
+          "title": "Local Business Domination",
+          "desc": "Ranked #1 for local keywords and increased leads for a service business."
+        },
+        {
+          "title": "Startup Launch Visibility",
+          "desc": "Launched a new SaaS with rapid indexation and high-converting landing pages."
+        }
+      ]
+    },
+    "process": {
+      "title": "Our SEO Process",
+      "steps": [
+        {
+          "title": "Audit & Research",
+          "desc": "We analyze your site, competitors, and keywords to uncover growth opportunities."
+        },
+        {
+          "title": "Technical & On-Page SEO",
+          "desc": "We optimize your site structure, speed, and content for search engines and users."
+        },
+        {
+          "title": "Content & Link Building",
+          "desc": "We create and promote content that attracts links, ranks, and converts."
+        },
+        {
+          "title": "Reporting & Growth",
+          "desc": "We track results, share insights, and refine your strategy for ongoing success."
+        }
+      ]
+    },
+    "why": {
+      "title": "Why Choose Us for SEO?",
+      "features": [
+        {
+          "title": "Proven Results",
+          "desc": "Our clients see real growth in rankings, traffic, and revenue."
+        },
+        {
+          "title": "Cutting-Edge Techniques",
+          "desc": "We use the latest SEO tools and methods for maximum impact."
+        },
+        {
+          "title": "Full-Service SEO",
+          "desc": "From audits to content, we handle every aspect of your SEO."
+        },
+        {
+          "title": "Long-Term Partnership",
+          "desc": "We support your growth with ongoing insights and optimization."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ready to Grow with SEO?",
+      "desc": "Let\u2019s boost your rankings and traffic. Start your SEO project today and unlock your business\u2019s full potential with modern, high-impact strategies.",
+      "button": "Start Your SEO Project"
+    }
   }
 }

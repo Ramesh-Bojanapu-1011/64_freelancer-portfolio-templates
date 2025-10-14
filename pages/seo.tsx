@@ -5,8 +5,11 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import i18n from "@/i18n";
+import { useTranslation } from "react-i18next";
 
 const SEO = () => {
+  const { t } = useTranslation();
+
   return (
     <>
       <Head>
@@ -23,17 +26,16 @@ const SEO = () => {
         <section className="relative flex flex-col items-center justify-center min-h-[90vh] py-20 px-4 text-center bg-gradient-to-br from-yellow-50 via-cyan-50 to-blue-100 dark:from-cyan-950 dark:via-gray-950 dark:to-blue-950/80 border-b border-cyan-100 dark:border-cyan-900 overflow-hidden">
           <div className="absolute -top-24 -left-24 w-80 h-80 bg-gradient-to-br from-yellow-200 via-cyan-200 to-blue-100 dark:from-yellow-900 dark:via-cyan-900 dark:to-blue-950 rounded-full blur-3xl opacity-20 pointer-events-none animate-pulse"></div>
           <h1 className="text-5xl md:text-6xl font-extrabold text-blue-900 dark:text-yellow-100 mb-4 drop-shadow-lg">
-            SEO That Gets You Found
+            {t("seo.hero.title")}
           </h1>
           <p className="text-xl md:text-2xl text-blue-800 dark:text-blue-200 mb-8 max-w-2xl mx-auto">
-            Boost your visibility and grow your business. We deliver modern SEO
-            strategies, technical expertise, and measurable results.
+            {t("seo.hero.desc")}
           </p>
           <Link
             href="#contact"
             className="inline-block px-8 py-4 rounded-full bg-gradient-to-r from-yellow-400 via-cyan-400 to-blue-500 text-blue-900 font-bold text-lg shadow hover:from-cyan-400 hover:to-yellow-400 hover:text-yellow-100 transition-all duration-200"
           >
-            Get a Free SEO Audit
+            {t("seo.hero.cta")}
           </Link>
         </section>
 
@@ -55,41 +57,23 @@ const SEO = () => {
             {/* Content */}
             <div className="flex-1 text-center md:text-left relative z-10">
               <h2 className="text-3xl md:text-4xl font-extrabold text-yellow-600 dark:text-yellow-300 mb-4 drop-shadow-lg">
-                Our SEO Philosophy
+                {t("seo.philosophy.title")}
               </h2>
               <p className="text-lg text-blue-800 dark:text-blue-200 mb-6 max-w-xl mx-auto md:mx-0 animate-fade-in">
-                We believe in{" "}
-                <span className="font-bold text-yellow-600 dark:text-yellow-300">
-                  transparency
-                </span>
-                ,{" "}
-                <span className="font-bold text-cyan-700 dark:text-cyan-200">
-                  innovation
-                </span>
-                , and{" "}
-                <span className="font-bold text-blue-700 dark:text-yellow-200">
-                  results
-                </span>
-                . Every SEO campaign is tailored to your goals and built for
-                long-term growth.
+                {t("seo.philosophy.desc")}
               </p>
               <ul className="flex flex-col gap-3 text-left text-blue-900 dark:text-blue-100 font-medium animate-fade-in-up">
-                <li className="flex items-center gap-3 group/item hover:scale-105 transition-transform">
-                  <span className="inline-block w-4 h-4 rounded-full bg-yellow-300 shadow-lg group-hover/item:scale-125 transition-transform"></span>
-                  <span>Transparent, data-driven strategies</span>
-                </li>
-                <li className="flex items-center gap-3 group/item hover:scale-105 transition-transform">
-                  <span className="inline-block w-4 h-4 rounded-full bg-cyan-300 shadow-lg group-hover/item:scale-125 transition-transform"></span>
-                  <span>Technical and on-page excellence</span>
-                </li>
-                <li className="flex items-center gap-3 group/item hover:scale-105 transition-transform">
-                  <span className="inline-block w-4 h-4 rounded-full bg-blue-300 shadow-lg group-hover/item:scale-125 transition-transform"></span>
-                  <span>Content that ranks and converts</span>
-                </li>
-                <li className="flex items-center gap-3 group/item hover:scale-105 transition-transform">
-                  <span className="inline-block w-4 h-4 rounded-full bg-emerald-400 shadow-lg group-hover/item:scale-125 transition-transform"></span>
-                  <span>Partnership for ongoing growth</span>
-                </li>
+                {[0, 1, 2, 3].map((i) => (
+                  <li
+                    key={i}
+                    className="flex items-center gap-3 group/item hover:scale-105 transition-transform"
+                  >
+                    <span
+                      className={`inline-block w-4 h-4 rounded-full shadow-lg group-hover/item:scale-125 transition-transform ${["bg-yellow-300", "bg-cyan-300", "bg-blue-300", "bg-emerald-400"][i]}`}
+                    ></span>
+                    <span>{t(`seo.philosophy.points.${i}`)}</span>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
@@ -99,29 +83,29 @@ const SEO = () => {
         <section className="relative py-20 px-4 bg-gradient-to-br from-blue-50 via-cyan-100 to-yellow-50 dark:from-gray-950 dark:via-gray-900 dark:to-blue-950 border-b border-cyan-100 dark:border-cyan-900 overflow-hidden">
           <div className="max-w-6xl mx-auto text-center relative z-10">
             <h2 className="text-3xl md:text-4xl font-extrabold text-purple-900 dark:text-green-200 mb-10 drop-shadow-lg tracking-tight">
-              Featured SEO Projects
+              {t("seo.projects.title")}
             </h2>
             {/* Array-driven project cards */}
             {(() => {
               const projects = [
                 {
                   img: "/seo-project-1.png",
-                  title: "E-Commerce Growth",
-                  desc: "Doubled organic traffic for an online retailer with technical SEO and content strategy.",
+                  titleKey: "seo.projects.items.0.title",
+                  descKey: "seo.projects.items.0.desc",
                   accent:
                     "-top-8 -left-8 bg-gradient-to-br from-green-200 via-blue-200 to-purple-100 dark:from-green-900 dark:via-blue-900 dark:to-purple-950",
                 },
                 {
                   img: "/seo-project-2.png",
-                  title: "Local Business Domination",
-                  desc: "Ranked #1 for local keywords and increased leads for a service business.",
+                  titleKey: "seo.projects.items.1.title",
+                  descKey: "seo.projects.items.1.desc",
                   accent:
                     "-top-8 -right-8 bg-gradient-to-br from-blue-100 via-green-200 to-purple-100 dark:from-blue-900 dark:via-green-900 dark:to-purple-950",
                 },
                 {
                   img: "/seo-project-3.png",
-                  title: "Startup Launch Visibility",
-                  desc: "Launched a new SaaS with rapid indexation and high-converting landing pages.",
+                  titleKey: "seo.projects.items.2.title",
+                  descKey: "seo.projects.items.2.desc",
                   accent:
                     "-bottom-8 -left-8 bg-gradient-to-br from-purple-100 via-green-200 to-blue-100 dark:from-purple-900 dark:via-green-900 dark:to-blue-900",
                 },
@@ -140,14 +124,14 @@ const SEO = () => {
                         src={p.img}
                         width={120}
                         height={120}
-                        alt={p.title}
+                        alt={t(p.titleKey)}
                         className="rounded-xl w-full mb-4 object-cover shadow-lg"
                       />
                       <div className="font-bold text-green-700 dark:text-green-300 text-lg mb-2">
-                        {p.title}
+                        {t(p.titleKey)}
                       </div>
                       <p className="text-blue-800 dark:text-blue-200 text-base mb-2">
-                        {p.desc}
+                        {t(p.descKey)}
                       </p>
                     </div>
                   ))}
@@ -161,13 +145,13 @@ const SEO = () => {
         <section className="relative py-20 px-4 bg-gradient-to-tr from-yellow-50 via-cyan-50 to-blue-100 dark:from-gray-950 dark:via-gray-900 dark:to-blue-950 border-b border-cyan-100 dark:border-cyan-900 overflow-hidden">
           <div className="max-w-5xl mx-auto text-center relative z-10">
             <h2 className="text-3xl md:text-4xl font-extrabold text-yellow-600 dark:text-yellow-300 mb-10 drop-shadow-lg tracking-tight">
-              Our SEO Process
+              {t("seo.process.title")}
             </h2>
             <div className="flex flex-col md:flex-row gap-10 md:gap-5 justify-between items-center md:items-stretch">
               {[
                 {
-                  title: "Audit & Research",
-                  desc: "We analyze your site, competitors, and keywords to uncover growth opportunities.",
+                  keyTitle: "seo.process.steps.0.title",
+                  keyDesc: "seo.process.steps.0.desc",
                   icon: (
                     <span className="w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-br from-green-200 via-blue-200 to-purple-100 dark:from-green-900 dark:via-blue-900 dark:to-purple-950 shadow-lg border-4 border-green-200 dark:border-blue-800">
                       <svg
@@ -189,8 +173,8 @@ const SEO = () => {
                   ),
                 },
                 {
-                  title: "Technical & On-Page SEO",
-                  desc: "We optimize your site structure, speed, and content for search engines and users.",
+                  keyTitle: "seo.process.steps.1.title",
+                  keyDesc: "seo.process.steps.1.desc",
                   icon: (
                     <span className="w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-br from-blue-100 via-green-200 to-purple-100 dark:from-blue-900 dark:via-green-900 dark:to-purple-950 shadow-lg border-4 border-blue-100 dark:border-green-900">
                       <svg
@@ -218,8 +202,8 @@ const SEO = () => {
                   ),
                 },
                 {
-                  title: "Content & Link Building",
-                  desc: "We create and promote content that attracts links, ranks, and converts.",
+                  keyTitle: "seo.process.steps.2.title",
+                  keyDesc: "seo.process.steps.2.desc",
                   icon: (
                     <span className="w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-br from-purple-100 via-green-200 to-blue-100 dark:from-purple-900 dark:via-green-900 dark:to-blue-900 shadow-lg border-4 border-purple-100 dark:border-green-900">
                       <svg
@@ -246,8 +230,8 @@ const SEO = () => {
                   ),
                 },
                 {
-                  title: "Reporting & Growth",
-                  desc: "We track results, share insights, and refine your strategy for ongoing success.",
+                  keyTitle: "seo.process.steps.3.title",
+                  keyDesc: "seo.process.steps.3.desc",
                   icon: (
                     <span className="w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-br from-emerald-200 via-blue-100 to-purple-100 dark:from-emerald-900 dark:via-blue-900 dark:to-purple-900 shadow-lg border-4 border-emerald-200 dark:border-blue-900">
                       <svg
@@ -269,17 +253,17 @@ const SEO = () => {
                 },
               ].map((step, idx, arr) => (
                 <div
-                  key={step.title}
+                  key={idx}
                   className="flex-1 flex flex-col items-center min-[769px]:items-start relative"
                 >
                   <div className="flex justify-center items-center w-full">
                     {step.icon}
                   </div>
                   <h3 className="mt-4 text-xl font-bold text-cyan-700 dark:text-yellow-300 mb-2 text-center min-[769px]:text-left text-nowrap">
-                    {step.title}
+                    {t(step.keyTitle)}
                   </h3>
                   <p className="text-blue-800 dark:text-blue-200 text-base mb-2 text-center min-[769px]:text-left">
-                    {step.desc}
+                    {t(step.keyDesc)}
                   </p>
                   {/* Connector line for all but last */}
                   {idx < arr.length - 1 && (
@@ -299,7 +283,7 @@ const SEO = () => {
         <section className="relative py-20 px-4 bg-gradient-to-br from-white via-cyan-50 to-yellow-50 dark:from-gray-900 dark:via-cyan-950 dark:to-yellow-900 border-b border-cyan-100 dark:border-cyan-900 overflow-hidden">
           <div className="max-w-6xl mx-auto text-center relative z-10">
             <h2 className="text-3xl md:text-4xl font-extrabold text-yellow-700 dark:text-yellow-200 mb-10 drop-shadow-lg tracking-tight">
-              Why Choose Us for SEO?
+              {t("seo.why.title")}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {[
@@ -319,8 +303,8 @@ const SEO = () => {
                       </svg>
                     </span>
                   ),
-                  title: "Proven Results",
-                  desc: "Our clients see real growth in rankings, traffic, and revenue.",
+                  titleKey: "seo.why.features.0.title",
+                  descKey: "seo.why.features.0.desc",
                 },
                 {
                   icon: (
@@ -342,8 +326,8 @@ const SEO = () => {
                       </svg>
                     </span>
                   ),
-                  title: "Cutting-Edge Techniques",
-                  desc: "We use the latest SEO tools and methods for maximum impact.",
+                  titleKey: "seo.why.features.1.title",
+                  descKey: "seo.why.features.1.desc",
                 },
                 {
                   icon: (
@@ -370,8 +354,8 @@ const SEO = () => {
                       </svg>
                     </span>
                   ),
-                  title: "Full-Service SEO",
-                  desc: "From audits to content, we handle every aspect of your SEO.",
+                  titleKey: "seo.why.features.2.title",
+                  descKey: "seo.why.features.2.desc",
                 },
                 {
                   icon: (
@@ -392,8 +376,8 @@ const SEO = () => {
                       </svg>
                     </span>
                   ),
-                  title: "Long-Term Partnership",
-                  desc: "We support your growth with ongoing insights and optimization.",
+                  titleKey: "seo.why.features.3.title",
+                  descKey: "seo.why.features.3.desc",
                 },
               ].map((feature, idx) => (
                 <div
@@ -402,10 +386,10 @@ const SEO = () => {
                 >
                   {feature.icon}
                   <div className="font-bold text-yellow-700 dark:text-yellow-300 text-lg mt-4 mb-2">
-                    {feature.title}
+                    {t(feature.titleKey)}
                   </div>
                   <p className="text-blue-800 dark:text-blue-200 text-base">
-                    {feature.desc}
+                    {t(feature.descKey)}
                   </p>
                 </div>
               ))}
@@ -422,18 +406,16 @@ const SEO = () => {
           <div className="absolute -top-16 -left-16 w-64 h-64 bg-yellow-300/20 rounded-full blur-2xl pointer-events-none"></div>
           <div className="absolute -bottom-16 -right-16 w-64 h-64 bg-cyan-400/10 rounded-full blur-2xl pointer-events-none"></div>
           <h2 className="text-4xl md:text-5xl font-extrabold text-blue-900 dark:text-yellow-200 mb-6 drop-shadow-lg tracking-tight">
-            Ready to Grow with SEO?
+            {t("seo.cta.title")}
           </h2>
           <p className="text-xl md:text-2xl text-blue-100 dark:text-yellow-100 mb-10 max-w-2xl mx-auto">
-            Let’s boost your rankings and traffic. Start your SEO project today
-            and unlock your business’s full potential with modern, high-impact
-            strategies.
+            {t("seo.cta.desc")}
           </p>
           <Link
             href="/contact-us"
             className="inline-block px-10 py-4 rounded-full bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-500 text-blue-900 font-bold text-xl shadow-lg hover:from-cyan-400 hover:to-blue-500 hover:text-yellow-100 transition-all duration-200"
           >
-            Start Your SEO Project
+            {t("seo.cta.button")}
           </Link>
         </section>
       </main>
