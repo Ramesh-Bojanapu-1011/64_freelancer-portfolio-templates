@@ -1045,8 +1045,89 @@
     },
     "cta": {
       "title": "Ready to Elevate Your Content?",
-      "desc": "Let’s tell your story and grow your brand. Start your writing project today and make your message unforgettable.",
+      "desc": "Let\u0027s tell your story and grow your brand. Start your writing project today and make your message unforgettable.",
       "button": "Start Your Content Project"
+    }
+  },
+  "digitalMarketing": {
+    "hero": {
+      "title": "Digital Marketing That Delivers",
+      "desc": "Grow your business with creative campaigns, data-driven strategies, and measurable results. We help you reach, engage, and convert your audience.",
+      "cta": "Get a Free Marketing Audit"
+    },
+    "philosophy": {
+      "title": "Our Marketing Philosophy",
+      "desc": "We believe in creativity, data, and growth. Every campaign is designed to inspire, engage, and deliver measurable results."
+    },
+    "philosophyPoints": [
+      "Creative, multi-channel campaigns",
+      "Data-driven targeting & optimization",
+      "Engaging content & visuals",
+      "Collaboration at every step"
+    ],
+    "projects": {
+      "title": "Featured Marketing Projects",
+      "items": [
+        {
+          "title": "Omni-Channel Launch",
+          "desc": "Launched a new product with integrated campaigns across web, social, and email."
+        },
+        {
+          "title": "Lead Generation Boost",
+          "desc": "Doubled qualified leads for a B2B client with targeted ads and landing pages."
+        },
+        {
+          "title": "Brand Awareness Campaign",
+          "desc": "Increased brand reach and engagement with creative social and video content."
+        }
+      ]
+    },
+    "process": {
+      "title": "Our Marketing Process",
+      "steps": [
+        {
+          "title": "Discovery & Strategy",
+          "desc": "We learn your goals, audience, and market to build a winning strategy."
+        },
+        {
+          "title": "Campaign Creation",
+          "desc": "We design and launch creative campaigns across the right channels."
+        },
+        {
+          "title": "Optimization & Analytics",
+          "desc": "We monitor, test, and optimize for the best results and ROI."
+        },
+        {
+          "title": "Reporting & Growth",
+          "desc": "We share insights, report on KPIs, and help you scale your success."
+        }
+      ]
+    },
+    "why": {
+      "title": "Why Choose Us for Digital Marketing?",
+      "items": [
+        {
+          "title": "Award-Winning Campaigns",
+          "desc": "Our campaigns are recognized for creativity, reach, and results."
+        },
+        {
+          "title": "Data-Driven Approach",
+          "desc": "We use analytics and insights to maximize your ROI."
+        },
+        {
+          "title": "Full-Service Expertise",
+          "desc": "From ads to content, we handle every aspect of your marketing."
+        },
+        {
+          "title": "Ongoing Partnership",
+          "desc": "We support your growth with insights, updates, and care."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ready to Grow Your Business?",
+      "desc": "Let\u0027s launch your next campaign. Start your digital marketing project today and unlock your business\u0027s full potential.",
+      "button": "Start Your Marketing Project"
     }
   }
 }
