@@ -46,7 +46,7 @@ const ContentWriting = () => {
             <div className="flex-1 flex justify-center items-center">
               <div className="size-full rounded-3xl bg-gradient-to-br from-cyan-200 via-blue-100 to-yellow-100 dark:from-cyan-900 dark:via-blue-950 dark:to-yellow-900 shadow-2xl flex items-center justify-center relative overflow-hidden group transition-transform duration-500 hover:scale-105">
                 <Image
-                  src="/content-writing-illustration.png"
+                  src="https://images.pexels.com/photos/1766604/pexels-photo-1766604.jpeg"
                   alt="Content Writing Illustration"
                   width={200}
                   height={200}
@@ -89,21 +89,21 @@ const ContentWriting = () => {
             {(() => {
               const projects = [
                 {
-                  img: "/content-project-1.png",
+                  img: "https://images.pexels.com/photos/7563663/pexels-photo-7563663.jpeg",
                   titleKey: "contentWriting.projects.items.0.title",
                   descKey: "contentWriting.projects.items.0.desc",
                   accent:
                     "-top-8 -left-8 bg-gradient-to-br from-yellow-200 via-cyan-200 to-blue-100 dark:from-yellow-900 dark:via-cyan-900 dark:to-blue-950",
                 },
                 {
-                  img: "/content-project-2.png",
+                  img: "https://images.pexels.com/photos/262508/pexels-photo-262508.jpeg",
                   titleKey: "contentWriting.projects.items.1.title",
                   descKey: "contentWriting.projects.items.1.desc",
                   accent:
                     "-top-8 -right-8 bg-gradient-to-br from-cyan-100 via-yellow-200 to-blue-100 dark:from-cyan-900 dark:via-yellow-900 dark:to-blue-950",
                 },
                 {
-                  img: "/content-project-3.png",
+                  img: "https://media.istockphoto.com/id/650662334/photo/application-software-icons-on-business-s-hand.webp?a=1&b=1&s=612x612&w=0&k=20&c=KWZrnpQUbT7kFaTspbclJjxYNlQPZ0kyZnoaFd0y-zE=",
                   titleKey: "contentWriting.projects.items.2.title",
                   descKey: "contentWriting.projects.items.2.desc",
                   accent:
@@ -117,15 +117,13 @@ const ContentWriting = () => {
                       key={i}
                       className="bg-white/90 dark:bg-gray-900/90 rounded-3xl p-8 border border-cyan-100 dark:border-cyan-900 shadow-xl flex flex-col items-center group hover:scale-[1.03] transition-transform duration-300 relative overflow-hidden"
                     >
-                      <span
-                        className={`absolute ${p.accent} w-20 h-20 rounded-full blur-2xl opacity-30 pointer-events-none group-hover:opacity-50 transition-opacity`}
-                      ></span>
+                       
                       <Image
                         src={p.img}
                         width={120}
                         height={120}
                         alt={t(p.titleKey)}
-                        className="rounded-xl w-full mb-4 object-cover shadow-lg"
+                        className="rounded-xl h-[200px] w-full mb-4 object-cover shadow-lg"
                       />
                       <div className="font-bold text-yellow-700 dark:text-yellow-300 text-lg mb-2">
                         {t(p.titleKey)}

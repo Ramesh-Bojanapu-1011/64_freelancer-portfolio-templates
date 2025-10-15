@@ -46,7 +46,7 @@ const DigitalMarketing = () => {
             <div className="flex-1 flex justify-center items-center">
               <div className="size-full rounded-3xl bg-gradient-to-br from-cyan-200 via-blue-100 to-yellow-100 dark:from-cyan-900 dark:via-blue-950 dark:to-yellow-900 shadow-2xl flex items-center justify-center relative overflow-hidden group transition-transform duration-500 hover:scale-105">
                 <Image
-                  src="/digital-marketing-illustration.png"
+                  src="https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg"
                   alt="Digital Marketing Illustration"
                   width={200}
                   height={200}
@@ -89,21 +89,21 @@ const DigitalMarketing = () => {
             {(() => {
               const projects = [
                 {
-                  img: "/marketing-project-1.png",
+                  img: "https://i.pinimg.com/736x/3e/f2/c0/3ef2c039d2704a35ad10f0d7ec993ac0.jpg",
                   titleKey: "digitalMarketing.projects.items.0.title",
                   descKey: "digitalMarketing.projects.items.0.desc",
                   accent:
                     "-top-8 -left-8 bg-gradient-to-br from-yellow-200 via-cyan-200 to-blue-100 dark:from-yellow-900 dark:via-cyan-900 dark:to-blue-950",
                 },
                 {
-                  img: "/marketing-project-2.png",
+                  img: "https://i.pinimg.com/736x/77/32/22/7732229f83cabdba08e901e9d81a81c7.jpg",
                   titleKey: "digitalMarketing.projects.items.1.title",
                   descKey: "digitalMarketing.projects.items.1.desc",
                   accent:
                     "-top-8 -right-8 bg-gradient-to-br from-cyan-100 via-yellow-200 to-blue-100 dark:from-cyan-900 dark:via-yellow-900 dark:to-blue-950",
                 },
                 {
-                  img: "/marketing-project-3.png",
+                  img: "https://i.pinimg.com/736x/00/09/bb/0009bb9acaa35e8ab41e5360c2fdc947.jpg",
                   titleKey: "digitalMarketing.projects.items.2.title",
                   descKey: "digitalMarketing.projects.items.2.desc",
                   accent:
@@ -125,7 +125,7 @@ const DigitalMarketing = () => {
                         width={120}
                         height={120}
                         alt={t(p.titleKey)}
-                        className="rounded-xl w-full mb-4 object-cover shadow-lg"
+                        className="rounded-xl  w-full mb-4 object-cover shadow-lg"
                       />
                       <div className="font-bold text-yellow-700 dark:text-yellow-300 text-lg mb-2">
                         {t(p.titleKey)}
