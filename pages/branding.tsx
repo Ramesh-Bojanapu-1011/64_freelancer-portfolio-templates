@@ -10,9 +10,23 @@ import i18n from "@/i18n";
 const Branding = () => {
   const { t } = useTranslation();
 
-  const projects = t("branding.projects", { returnObjects: true }) as
-    | Array<{ img: string; title: string; desc: string; accent?: string }>
-    | undefined;
+  const projects = [
+    {
+      img: "https://images.pexels.com/photos/32319625/pexels-photo-32319625.jpeg",
+      title: t("branding.projects.0.title"),
+      desc: t("branding.projects.0.desc"),
+    },
+    {
+      img: "https://images.pexels.com/photos/7688464/pexels-photo-7688464.jpeg",
+      title: t("branding.projects.1.title"),
+      desc: t("branding.projects.1.desc"),
+    },
+    {
+      img: "https://images.pexels.com/photos/9040539/pexels-photo-9040539.jpeg",
+      title: t("branding.projects.2.title"),
+      desc: t("branding.projects.2.desc"),
+    },
+  ];
 
   const processSteps = t("branding.processSteps", { returnObjects: true }) as
     | Array<{ title: string; desc: string }>
@@ -55,7 +69,7 @@ const Branding = () => {
             <div className="flex-1 flex justify-center items-center">
               <div className=" size-full rounded-3xl bg-gradient-to-br from-cyan-200 via-blue-100 to-yellow-100 dark:from-cyan-900 dark:via-blue-950 dark:to-yellow-900 shadow-2xl flex items-center justify-center relative overflow-hidden group transition-transform duration-500 hover:scale-105">
                 <Image
-                  src="/path/to/your/image.jpg"
+                  src="https://images.pexels.com/photos/7414283/pexels-photo-7414283.jpeg"
                   alt="Web Design Illustration"
                   width={200}
                   height={200}
@@ -103,14 +117,14 @@ const Branding = () => {
                   className="bg-white/90 dark:bg-gray-900/90 rounded-3xl p-8 border border-cyan-100 dark:border-cyan-900 shadow-xl flex flex-col items-center group hover:scale-[1.03] transition-transform duration-300 relative overflow-hidden"
                 >
                   <span
-                    className={`absolute ${p.accent} w-20 h-20 rounded-full blur-2xl opacity-30 pointer-events-none group-hover:opacity-50 transition-opacity`}
+                    className={`absolute   w-20 h-20 rounded-full blur-2xl opacity-30 pointer-events-none group-hover:opacity-50 transition-opacity`}
                   ></span>
                   <Image
                     src={p.img}
                     width={120}
                     height={120}
                     alt={p.title}
-                    className="rounded-xl w-full mb-4 object-cover shadow-lg"
+                    className="rounded-xl h-[200px] w-full mb-4 object-cover shadow-lg"
                   />
                   <div className="font-bold text-yellow-700 dark:text-yellow-300 text-lg mb-2">
                     {p.title}
@@ -237,19 +251,98 @@ const Branding = () => {
               {t("branding.whyTitle")}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {(whyItems || []).map((feature, idx) => (
-                <div
-                  key={idx}
-                  className="bg-white/90 dark:bg-gray-900/90 rounded-3xl p-8 border border-cyan-100 dark:border-cyan-900 shadow-xl flex flex-col items-center text-center group hover:scale-[1.03] transition-transform duration-300 relative overflow-hidden"
-                >
-                  <div className="font-bold text-yellow-700 dark:text-yellow-300 text-lg mt-4 mb-2">
-                    {feature.title}
+              {whyItems &&
+                whyItems.map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="bg-white/90 dark:bg-gray-900/90 rounded-3xl p-8 border border-cyan-100 dark:border-cyan-900 shadow-xl flex flex-col items-center text-center group hover:scale-[1.03] transition-transform duration-300 relative overflow-hidden"
+                  >
+                    <div className="w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-br from-cyan-200 via-blue-200 to-yellow-100 dark:from-cyan-900 dark:via-blue-950 dark:to-yellow-900 shadow-lg border-4 border-cyan-200 dark:border-cyan-800">
+                      {idx === 0 && (
+                        <>
+                          <svg
+                            width="32"
+                            height="32"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01z"
+                              fill="#facc15"
+                            />
+                          </svg>
+                        </>
+                      )}
+                      {idx === 1 && (
+                        <>
+                          <svg
+                            width="32"
+                            height="32"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                          >
+                            <circle cx="12" cy="12" r="10" fill="#bae6fd" />
+                            <path
+                              d="M8 12l2 2 4-4"
+                              stroke="#0891b2"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                          </svg>
+                        </>
+                      )}
+                      {idx === 2 && (
+                        <>
+                          <svg
+                            width="32"
+                            height="32"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                          >
+                            <rect
+                              x="5"
+                              y="5"
+                              width="14"
+                              height="14"
+                              rx="3"
+                              fill="#a7f3d0"
+                            />
+                            <path
+                              d="M9 9h6v6H9z"
+                              stroke="#0891b2"
+                              strokeWidth="2"
+                            />
+                          </svg>
+                        </>
+                      )}
+                      {idx === 3 && (
+                        <>
+                          <svg
+                            width="32"
+                            height="32"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M12 19V5M5 12l7-7 7 7"
+                              stroke="#10b981"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                          </svg>
+                        </>
+                      )}
+                    </div>
+                    <div className="font-bold text-cyan-700 dark:text-yellow-300 text-lg mt-4 mb-2">
+                      {item.title}
+                    </div>
+                    <p className="text-blue-800 dark:text-blue-200 text-base">
+                      {item.desc}
+                    </p>
                   </div>
-                  <p className="text-blue-800 dark:text-blue-200 text-base">
-                    {feature.desc}
-                  </p>
-                </div>
-              ))}
+                ))}
             </div>
           </div>
         </section>

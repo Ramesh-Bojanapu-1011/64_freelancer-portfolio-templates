@@ -46,7 +46,7 @@ const SEO = () => {
             <div className="flex-1 flex justify-center items-center">
               <div className="size-full rounded-3xl bg-gradient-to-br from-cyan-200 via-blue-100 to-yellow-100 dark:from-cyan-900 dark:via-blue-950 dark:to-yellow-900 shadow-2xl flex items-center justify-center relative overflow-hidden group transition-transform duration-500 hover:scale-105">
                 <Image
-                  src="/seo-illustration.png"
+                  src="https://images.pexels.com/photos/270637/pexels-photo-270637.jpeg"
                   alt="SEO Illustration"
                   width={200}
                   height={200}
@@ -69,7 +69,14 @@ const SEO = () => {
                     className="flex items-center gap-3 group/item hover:scale-105 transition-transform"
                   >
                     <span
-                      className={`inline-block w-4 h-4 rounded-full shadow-lg group-hover/item:scale-125 transition-transform ${["bg-yellow-300", "bg-cyan-300", "bg-blue-300", "bg-emerald-400"][i]}`}
+                      className={`inline-block w-4 h-4 rounded-full shadow-lg group-hover/item:scale-125 transition-transform ${
+                        [
+                          "bg-yellow-300",
+                          "bg-cyan-300",
+                          "bg-blue-300",
+                          "bg-emerald-400",
+                        ][i]
+                      }`}
                     ></span>
                     <span>{t(`seo.philosophy.points.${i}`)}</span>
                   </li>
@@ -89,21 +96,21 @@ const SEO = () => {
             {(() => {
               const projects = [
                 {
-                  img: "/seo-project-1.png",
+                  img: "https://images.pexels.com/photos/7289722/pexels-photo-7289722.jpeg",
                   titleKey: "seo.projects.items.0.title",
                   descKey: "seo.projects.items.0.desc",
                   accent:
                     "-top-8 -left-8 bg-gradient-to-br from-green-200 via-blue-200 to-purple-100 dark:from-green-900 dark:via-blue-900 dark:to-purple-950",
                 },
                 {
-                  img: "/seo-project-2.png",
+                  img: "https://images.pexels.com/photos/2890018/pexels-photo-2890018.jpeg",
                   titleKey: "seo.projects.items.1.title",
                   descKey: "seo.projects.items.1.desc",
                   accent:
                     "-top-8 -right-8 bg-gradient-to-br from-blue-100 via-green-200 to-purple-100 dark:from-blue-900 dark:via-green-900 dark:to-purple-950",
                 },
                 {
-                  img: "/seo-project-3.png",
+                  img: "https://images.pexels.com/photos/7495604/pexels-photo-7495604.jpeg",
                   titleKey: "seo.projects.items.2.title",
                   descKey: "seo.projects.items.2.desc",
                   accent:
@@ -118,7 +125,7 @@ const SEO = () => {
                       className="bg-white/90 dark:bg-gray-900/90 rounded-3xl p-8 border border-cyan-100 dark:border-cyan-900 shadow-xl flex flex-col items-center group hover:scale-[1.03] transition-transform duration-300 relative overflow-hidden"
                     >
                       <span
-                        className={`absolute ${p.accent} w-20 h-20 rounded-full blur-2xl opacity-30 pointer-events-none group-hover:opacity-50 transition-opacity`}
+                        className={`absolute   w-20 h-20 rounded-full blur-2xl opacity-30 pointer-events-none group-hover:opacity-50 transition-opacity`}
                       ></span>
                       <Image
                         src={p.img}

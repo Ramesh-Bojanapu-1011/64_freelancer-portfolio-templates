@@ -60,7 +60,7 @@ const RemoteWorkTipsBlog = () => {
           </div>
           <div className="w-full flex justify-center mb-6">
             <Image
-              src="/blog-remote-work-featured.jpg"
+              src="https://i.pinimg.com/736x/03/cb/36/03cb36b3ed3d5377618ab6f0daba46c9.jpg"
               alt="Remote Work Success: Tips for Freelancers"
               width={600}
               height={288}

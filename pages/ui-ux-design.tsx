@@ -10,9 +10,23 @@ import i18n from "@/i18n";
 const UIUXDesign = () => {
   const { t } = useTranslation();
 
-  const projects = t("uiUx.projects", { returnObjects: true }) as
-    | Array<{ img: string; title: string; desc: string; accent?: string }>
-    | undefined;
+  const projects = [
+    {
+      img: "https://images.pexels.com/photos/577210/pexels-photo-577210.jpeg",
+      title: t("uiUx.projects.0.title"),
+      desc: t("uiUx.projects.0.desc"),
+    },
+    {
+      img: "https://i.pinimg.com/1200x/9f/0b/77/9f0b778849b720b74943d4e9dbd75de6.jpg",
+      title: t("uiUx.projects.1.title"),
+      desc: t("uiUx.projects.1.desc"),
+    },
+    {
+      img: "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg",
+      title: t("uiUx.projects.2.title"),
+      desc: t("uiUx.projects.2.desc"),
+    },
+  ];
 
   const philosophyPoints = t("uiUx.philosophyPoints", {
     returnObjects: true,
@@ -54,12 +68,12 @@ const UIUXDesign = () => {
 
         {/* UI/UX Design Philosophy Section */}
         <section className="relative py-20 px-4 bg-gradient-to-tr from-white via-cyan-50 to-yellow-50 dark:from-gray-900 dark:via-cyan-950 dark:to-yellow-900 border-b border-cyan-100 dark:border-cyan-900 overflow-hidden">
-          <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12">
+          <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
             {/* Illustration or Accent */}
             <div className="flex-1 flex justify-center items-center">
               <div className=" size-full rounded-3xl bg-gradient-to-br from-cyan-200 via-blue-100 to-yellow-100 dark:from-cyan-900 dark:via-blue-950 dark:to-yellow-900 shadow-2xl flex items-center justify-center relative overflow-hidden group transition-transform duration-500 hover:scale-105">
                 <Image
-                  src="/path/to/your/image.jpg"
+                  src="https://i.pinimg.com/1200x/41/2d/af/412daf4a1debb173a90c0fb321ae0f0a.jpg"
                   alt="Web Design Illustration"
                   width={200}
                   height={200}
@@ -104,14 +118,14 @@ const UIUXDesign = () => {
                   className="bg-white/90 dark:bg-gray-900/90 rounded-3xl p-8 border border-cyan-100 dark:border-cyan-900 shadow-xl flex flex-col items-center group hover:scale-[1.03] transition-transform duration-300 relative overflow-hidden"
                 >
                   <span
-                    className={`absolute ${p.accent} w-20 h-20 rounded-full blur-2xl opacity-30 pointer-events-none group-hover:opacity-50 transition-opacity`}
+                    className={`absolute   w-20 h-20 rounded-full blur-2xl opacity-30 pointer-events-none group-hover:opacity-50 transition-opacity`}
                   ></span>
                   <Image
                     src={p.img}
                     width={120}
                     height={120}
                     alt={p.title}
-                    className="rounded-xl w-full mb-4 object-cover shadow-lg"
+                    className="rounded-xl h-[200px] w-full mb-4 object-cover shadow-lg"
                   />
                   <div className="font-bold text-cyan-700 dark:text-yellow-300 text-lg mb-2">
                     {p.title}
@@ -219,7 +233,9 @@ const UIUXDesign = () => {
                     </p>
                     {idx < arr.length - 1 && (
                       <span
-                        className={`hidden min-[769px]:block absolute top-7 ${i18n.language == "en" ? "right-[-50%]" : "left-[-50%]"}    w-[100%] h-1 bg-gradient-to-r from-cyan-200 via-yellow-100 to-blue-200 dark:from-cyan-900 dark:via-yellow-900 dark:to-blue-950 opacity-40 z-0`}
+                        className={`hidden min-[769px]:block absolute top-7 ${
+                          i18n.language == "en" ? "right-[-50%]" : "left-[-50%]"
+                        }    w-[100%] h-1 bg-gradient-to-r from-cyan-200 via-yellow-100 to-blue-200 dark:from-cyan-900 dark:via-yellow-900 dark:to-blue-950 opacity-40 z-0`}
                       ></span>
                     )}
                   </div>

@@ -217,7 +217,7 @@ const ServicesPage = () => {
                     "services.successStories.stories.0.desc",
                     "We reimagined NovaTech’s digital presence, resulting in a 60% increase in engagement and a fresh, modern brand identity.",
                   ),
-                  img: "/success/novatech.jpg",
+                  img: "https://i.pinimg.com/736x/70/52/ad/7052ad5f76a69b85133af4569959dc32.jpg",
                   align: "left",
                 },
                 {
@@ -230,7 +230,7 @@ const ServicesPage = () => {
                     "services.successStories.stories.1.desc",
                     "A new e-commerce platform and marketing strategy led to a 2x boost in sales and a loyal customer base.",
                   ),
-                  img: "/success/urbanstyle.jpg",
+                  img: "https://i.pinimg.com/1200x/b9/df/da/b9dfda82c560fcdcd211f47ddeb73e41.jpg",
                   align: "right",
                 },
                 {
@@ -243,7 +243,7 @@ const ServicesPage = () => {
                     "services.successStories.stories.2.desc",
                     "From concept to launch, we delivered a top-rated fitness app, praised for its design and usability.",
                   ),
-                  img: "/success/fittrackr.jpg",
+                  img: "https://i.pinimg.com/1200x/78/ca/7f/78ca7f46460eb43506f1c168bf6d4782.jpg",
                   align: "left",
                 },
               ].map((story, idx) => (
@@ -260,7 +260,7 @@ const ServicesPage = () => {
                         alt={story.title}
                         width={224}
                         height={224}
-                        className="object-cover w-full h-full"
+                        className="object-cover object-center w-full h-full"
                       />
                       <span className="absolute -top-6 -right-6 w-20 h-20 bg-gradient-to-br from-cyan-200 via-blue-200 to-yellow-100 dark:from-cyan-900 dark:via-blue-950 dark:to-yellow-900 rounded-full blur-2xl opacity-30 pointer-events-none"></span>
                     </div>

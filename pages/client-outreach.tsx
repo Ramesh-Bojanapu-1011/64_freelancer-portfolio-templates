@@ -65,7 +65,7 @@ const ClientOutreachBlog = () => {
           </div>
           <div className="w-full flex justify-center mb-6">
             <Image
-              src="/blog-client-outreach-featured.jpg"
+              src="https://images.pexels.com/photos/7915263/pexels-photo-7915263.jpeg"
               alt="Winning Clients: Outreach Strategies for 2025"
               width={600}
               height={288}

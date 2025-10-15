@@ -60,7 +60,7 @@ const StandoutPortfolioBlog = () => {
           </div>
           <div className="w-full flex justify-center mb-6">
             <Image
-              src="/blog-portfolio-featured.jpg"
+              src="https://plus.unsplash.com/premium_photo-1726729261718-ab541c498642?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170"
               alt="Standout Freelancer Portfolio"
               width={600}
               height={288}

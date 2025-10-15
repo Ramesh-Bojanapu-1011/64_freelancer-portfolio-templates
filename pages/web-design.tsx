@@ -8,13 +8,26 @@ import { useTranslation } from "react-i18next";
 import i18n from "@/i18n";
 
 const WebDesign = () => {
+  // webDesign.projects
   const { t } = useTranslation();
 
-  const projects = t("webDesign.projects", { returnObjects: true }) as Array<{
-    img: string;
-    title: string;
-    desc: string;
-  }>;
+  const projects = [
+    {
+      img: "https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg",
+      title: t("webDesign.projects.0.title"),
+      desc: t("webDesign.projects.0.desc"),
+    },
+    {
+      img: "https://i.pinimg.com/736x/c1/9a/95/c19a95b83399b9613f8bf048890f3255.jpg",
+      title: t("webDesign.projects.1.title"),
+      desc: t("webDesign.projects.1.desc"),
+    },
+    {
+      img: "https://images.pexels.com/photos/326514/pexels-photo-326514.jpeg",
+      title: t("webDesign.projects.2.title"),
+      desc: t("webDesign.projects.2.desc"),
+    },
+  ];
 
   const processSteps = t("webDesign.processSteps", {
     returnObjects: true,
@@ -67,7 +80,7 @@ const WebDesign = () => {
             <div className="flex-1 flex justify-center items-center">
               <div className=" size-full rounded-3xl bg-gradient-to-br from-cyan-200 via-blue-100 to-yellow-100 dark:from-cyan-900 dark:via-blue-950 dark:to-yellow-900 shadow-2xl flex items-center justify-center relative overflow-hidden group transition-transform duration-500 hover:scale-105">
                 <Image
-                  src="/path/to/your/image.jpg"
+                  src="https://i.pinimg.com/736x/77/2b/59/772b59ed1e6bc37c31f6aed4e02ae7a4.jpg"
                   alt="Web Design Illustration"
                   width={200}
                   height={200}
@@ -115,7 +128,7 @@ const WebDesign = () => {
                     width={120}
                     height={120}
                     alt={p.title}
-                    className="rounded-xl w-full mb-4 object-cover shadow-lg"
+                    className="rounded-xl h-[200px] w-full mb-4 object-cover object-center shadow-lg"
                   />
                   <div className="font-bold text-cyan-700 dark:text-yellow-300 text-lg mb-2">
                     {p.title}

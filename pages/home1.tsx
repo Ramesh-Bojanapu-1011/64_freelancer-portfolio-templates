@@ -35,12 +35,12 @@ const Home1 = () => {
               "Modern portfolio templates to showcase your skills, attract clients, and grow your business with confidence.",
             )}
           </p>
-          <a
-            href="#contact"
+          <Link
+            href="/about-us"
             className="inline-block px-8 py-3 rounded-full bg-gradient-to-r from-cyan-600 via-sky-500 to-blue-700 text-yellow-200 font-bold text-lg shadow-lg hover:from-yellow-300 hover:to-yellow-400 hover:text-blue-900 transition-all duration-200"
           >
             {t("home1.getStarted", "Get Started")}
-          </a>
+          </Link>
         </section>
 
         {/* About Section */}
@@ -48,17 +48,17 @@ const Home1 = () => {
           id="about"
           className="relative py-24 px-4 bg-gradient-to-tr from-cyan-50 via-blue-100 to-blue-200 dark:from-cyan-950 dark:via-gray-950 dark:to-blue-950/80 border-y border-cyan-200 dark:border-cyan-900/40 overflow-hidden"
         >
-          <div className="relative max-w-5xl mx-auto">
+          <div className="relative   mx-auto">
             <div className="bg-white/90 dark:bg-gray-900/90 rounded-3xl shadow-2xl flex flex-col md:flex-row items-center gap-10 p-10 md:p-16 border border-cyan-100 dark:border-cyan-900">
               {/* Avatar and badge */}
               <div className="flex flex-col items-center md:items-start">
-                <div className="w-36 h-36 rounded-2xl overflow-hidden border-4 border-cyan-400 shadow-xl mb-4 bg-white dark:bg-gray-900 flex items-center justify-center">
+                <div className="rounded-2xl overflow-hidden border-4 border-cyan-400 shadow-xl mb-4 bg-white dark:bg-gray-900 flex items-center justify-center">
                   <Image
-                    src="https://i.postimg.cc/DwdH9gv8/logo-stackly.png"
+                    src="https://i.pinimg.com/736x/b4/cf/c9/b4cfc93dd4aaa0e8d697ba95773a06e4.jpg"
                     alt="Avatar"
-                    className="w-full h-full object-cover"
-                    width={120}
-                    height={120}
+                    className=" size-[300px] object-cover object-bottom"
+                    width={100}
+                    height={100}
                   />
                 </div>
                 <span className="inline-block bg-gradient-to-r from-cyan-600 to-blue-700 text-yellow-200 font-bold px-5 py-2 rounded-full text-base shadow-lg tracking-wide mt-2">
