@@ -1129,5 +1129,21 @@
       "desc": "Let\u0027s launch your next campaign. Start your digital marketing project today and unlock your business\u0027s full potential.",
       "button": "Start Your Marketing Project"
     }
+  },
+  "admin": {
+    "title": "Admin Dashboard",
+    "totalUsers": "Total Users",
+    "loggedIn": "Logged In",
+    "loggedOut": "Logged Out",
+    "userDistribution": "User Distribution",
+    "registrationsLast7": "Registrations (Last 7 Days)",
+    "recentLoginsTitle": "Recent Logins (Last 7 Days)",
+    "noRecentLogins": "No recent logins",
+    "table": {
+      "email": "Email",
+      "loginTime": "Login Time",
+      "logoutTime": "Logout Time"
+    },
+    "userActivityTrend": "User Activity Trend"
   }
 }

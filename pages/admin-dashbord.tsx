@@ -2,6 +2,7 @@ import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 import Head from "next/head";
 import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import {
   PieChart,
   Pie,
@@ -38,6 +39,7 @@ type User = {
 const AdminDashboard = () => {
   const [users, setUsers] = useState<User[]>([]);
   const [loggedInCount, setLoggedInCount] = useState(0);
+  const { t } = useTranslation();
   const [recentLogins, setRecentLogins] = useState<User[]>([]);
   const [regPerDay, setRegPerDay] = useState<{ date: string; count: number }[]>(
     [],
@@ -97,7 +99,7 @@ const AdminDashboard = () => {
 
       <main className="min-h-screen bg-gradient-to-br from-blue-50 via-cyan-100 to-blue-100 dark:from-gray-950 dark:via-gray-900 dark:to-blue-950 p-2 sm:p-4 md:p-6 caret-transparent">
         <h1 className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-blue-900 dark:text-yellow-100 mb-6 sm:mb-8 text-center drop-shadow-lg">
-          Admin Dashboard
+          {t("admin.title")}
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
           <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-xl p-4 sm:p-6 flex flex-col items-center w-full">
@@ -105,7 +107,7 @@ const AdminDashboard = () => {
               {users.length}
             </div>
             <div className="text-base sm:text-lg text-blue-900 dark:text-blue-100">
-              Total Users
+              {t("admin.totalUsers")}
             </div>
           </div>
           <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-xl p-4 sm:p-6 flex flex-col items-center w-full">
@@ -113,7 +115,7 @@ const AdminDashboard = () => {
               {loggedInCount}
             </div>
             <div className="text-base sm:text-lg text-blue-900 dark:text-blue-100">
-              Logged In
+              {t("admin.loggedIn")}
             </div>
           </div>
           <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-xl p-4 sm:p-6 flex flex-col items-center w-full">
@@ -121,14 +123,14 @@ const AdminDashboard = () => {
               {users.length - loggedInCount}
             </div>
             <div className="text-base sm:text-lg text-blue-900 dark:text-blue-100">
-              Logged Out
+              {t("admin.loggedOut")}
             </div>
           </div>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-8 mb-6 sm:mb-8">
           <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-xl p-4 sm:p-6 flex flex-col items-center w-full min-w-0">
             <h2 className="text-lg sm:text-xl font-bold mb-2 sm:mb-4 text-blue-900 dark:text-yellow-100">
-              User Distribution
+              {t("admin.userDistribution")}
             </h2>
             <div className="w-full h-64 sm:h-[250px]">
               <ResponsiveContainer width="100%" height="100%">
@@ -157,7 +159,7 @@ const AdminDashboard = () => {
           </div>
           <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-xl p-4 sm:p-6 flex flex-col items-center w-full min-w-0">
             <h2 className="text-lg sm:text-xl font-bold mb-2 sm:mb-4 text-blue-900 dark:text-yellow-100">
-              Registrations (Last 7 Days)
+              {t("admin.registrationsLast7")}
             </h2>
             <div className="w-full h-64 sm:h-[250px]">
               <ResponsiveContainer width="100%" height="100%">
@@ -176,22 +178,22 @@ const AdminDashboard = () => {
         </div>
         <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-xl p-2 sm:p-6 mb-6 sm:mb-8 overflow-x-auto">
           <h2 className="text-lg sm:text-xl font-bold mb-2 sm:mb-4 text-blue-900 dark:text-yellow-100">
-            Recent Logins (Last 7 Days)
+            {t("admin.recentLoginsTitle")}
           </h2>
           <div className="w-full min-w-[350px]">
             <table className="min-w-full text-left text-xs sm:text-sm md:text-base">
               <thead>
                 <tr className="border-b border-blue-200 dark:border-blue-800">
-                  <th className="py-2 px-2 sm:px-4">Email</th>
-                  <th className="py-2 px-2 sm:px-4">Login Time</th>
-                  <th className="py-2 px-2 sm:px-4">Logout Time</th>
+                  <th className="py-2 px-2 sm:px-4">{t("admin.table.email")}</th>
+                  <th className="py-2 px-2 sm:px-4">{t("admin.table.loginTime")}</th>
+                  <th className="py-2 px-2 sm:px-4">{t("admin.table.logoutTime")}</th>
                 </tr>
               </thead>
               <tbody>
                 {recentLogins.length === 0 && (
                   <tr>
                     <td colSpan={3} className="py-4 text-center text-blue-400">
-                      No recent logins
+                      {t("admin.noRecentLogins")}
                     </td>
                   </tr>
                 )}
@@ -219,7 +221,7 @@ const AdminDashboard = () => {
         </div>
         <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-xl p-4 sm:p-6">
           <h2 className="text-lg sm:text-xl font-bold mb-2 sm:mb-4 text-blue-900 dark:text-yellow-100">
-            User Activity Trend
+            {t("admin.userActivityTrend")}
           </h2>
           <div className="w-full h-64 sm:h-[250px]">
             <ResponsiveContainer width="100%" height="100%">
